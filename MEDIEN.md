@@ -1,6 +1,6 @@
 # Medienherkunft
 
-Stand: 14.09.2026. Die folgenden Dateien wurden aus dem bestehenden FPMC-Auftritt beziehungsweise der dort verlinkten offiziellen Musikvideo-Veröffentlichung übernommen. Die Zuordnung wurde durch Sichtprüfung und identische SHA-256-Dateihashes zwischen Quelle und Export bestätigt. Es wurden keine neuen Bilder generiert. Die Dokumentation beschreibt die Herkunft; sie enthält keine eigenständige Aussage über Nutzungsrechte oder Lizenzen.
+Stand: 14.09.2026. Die folgenden Dateien wurden aus dem bestehenden FPMC-Auftritt beziehungsweise der dort verlinkten offiziellen Musikvideo-Veröffentlichung übernommen. Die Zuordnung wurde durch Sichtprüfung und identische SHA-256-Dateihashes zwischen Quelle und Export bestätigt. Die neue Social-Vorschau ist eine separat dokumentierte KI-generierte Markengrafik; die Produktionsmedien bleiben Originalmaterial. Die Dokumentation beschreibt die Herkunft; sie enthält keine eigenständige Aussage über Nutzungsrechte oder Lizenzen.
 
 ## Verwendete Abbildungen
 
@@ -46,7 +46,9 @@ Bei einem Medienaustausch Zielname, Originalquelle, Motivrolle und gegebenenfall
 
 ## Vorschau beim Teilen
 
-Das vorhandene Open-Graph-Bild bleibt unverändert unter `dist/media/film/home-logo/scene-02-poster.jpg` erhalten. Quelle: [FPMC-Original](https://www.fpmc.house/media/film/home-logo/scene-02-poster.jpg), 1920 × 1080 Pixel, 49.503 Bytes. Es zeigt das beleuchtete FPMC-Logo als atmosphärisches Markenmotiv und wird in den Social-Metadaten referenziert.
+Die aktuelle gemeinsame Social-Vorschau liegt unter `dist/og.png`: 1738 × 905 Pixel, PNG. Sie wurde am 14.09.2026 mit dem integrierten ImageGen-Werkzeug erzeugt und unverändert übernommen. Das Motiv zeigt die weiße Wortmarke „FPMC“ und „FILM. SOUND.“ auf schwarzem Hintergrund mit einem zurückhaltenden Lichtkegel. Es ist eine Markengrafik, keine Aufnahme eines realen FPMC-Auftrags. Die zentrale Platzierung hält die Schrift auch bei einem mittigen quadratischen Zuschnitt sichtbar. Alle 19 Inhaltsseiten referenzieren diese Grafik mit jeweils eigenem Titel und eigener Beschreibung.
+
+Das frühere Bild `dist/media/film/home-logo/scene-02-poster.jpg` bleibt im Medienarchiv: [FPMC-Original](https://www.fpmc.house/media/film/home-logo/scene-02-poster.jpg), 1920 × 1080 Pixel, 49.503 Bytes. Es wird nicht mehr als Social-Vorschaubild ausgegeben.
 
 ## Frühere Schriftfassungen (Dateiarchiv)
 

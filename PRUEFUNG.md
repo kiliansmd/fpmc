@@ -174,3 +174,13 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - Mobilmenü inklusive Escape/Fokus, Projektfilter (6/1/5), FAQ, Anfragevorbelegung, Entwurf und Zurücksetzen sowie BTS-Pause/Abspielen und Video-Sprung erneut bestanden. Keine Nachricht versendet und keine Zwischenablage überschrieben.
 - Keine JavaScript-Laufzeitfehler im Browserlauf. Statischer Check: 19 Seiten, 440 interne Linkverweise, 153 Asset-Verweise und 19 gültige JSON-LD-Blöcke.
 - Anti-Overscroll und manuelle Videosteuerung bleiben erhalten. Die Website lädt keine Serifenschriften und keine neuen Animationsbibliotheken.
+
+
+## Social-Vorschau und Metadaten – 14.09.2026
+
+- Ein gemeinsames cinematisches Markenmotiv, 1738 × 905 Pixel PNG, unverändert aus dem integrierten ImageGen-Werkzeug übernommen. Textinhalt und Gestaltung visuell geprüft.
+- Vorschauprüfung im isolierten Chromium-Browser: breite 620px-Karte, kompakte 340px-Karte, mittiger 260 × 260px-Zuschnitt sowie 110 × 110px-Miniatur. Die zentrale Wortmarke bleibt in allen vier Layouts erhalten. Dies sind Layoutprüfungen, keine tatsächlichen Veröffentlichungen auf Social-Plattformen.
+- Alle 19 Seiten: individuelle Titel/Beschreibungen, 17 vollständige und eindeutige Social-Metafelder, passende Canonical-/OG-URLs, absolute HTTPS-Bildadressen, korrekter PNG-Typ, tatsächliche Bildabmessungen und Alternativtext geprüft.
+- WebSite auf der Startseite sowie passende WebPage-Typen und Organization-Logo verknüpft. Vorhandene Service- und Breadcrumb-Daten erhalten. Auf Startseite, Labelseite und Redstar-Projektseite stimmt die VideoObject-Zuordnung mit dem tatsächlichen Videoplayer überein.
+- Build und statischer Check bestanden: 19 Seiten, 19 individuelle Titel/Beschreibungen, 440 interne Linkverweise, 153 Asset-Verweise, 19 gültige JSON-LD-Blöcke und 19 vollständige Social-Karten. JavaScript-Syntax und Diffprüfung bestanden.
+- noindex-Metatags und Vercel-Header erhalten. Keine Änderungen an Layout, Scrollverhalten oder Formularfunktionen in diesem Schritt.

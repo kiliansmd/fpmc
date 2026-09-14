@@ -4,7 +4,7 @@ Die vollständig bearbeitbare Fassung des überarbeiteten Auftritts. Grundlage s
 
 ## Lokal öffnen
 
-Veröffentlichungsadresse dieser Fassung: **https://fpmc-tau.vercel.app**
+Veröffentlichungsadresse dieser Fassung: **https://fpmc.meindigitalerbetrieb.de**
 
 Lokale Vorschau nach dem Start: **http://localhost:4179**
 
@@ -20,6 +20,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 ## Dateien
 
 - `src/build.mjs`: Seiten, Inhalte, gemeinsame Komponenten und Metadaten; erzeugt die statischen HTML-Seiten.
+- `src/seo.mjs`: gemeinsame Social-Vorschau, Open-Graph-/X-Metadaten und verknüpfte Website-/Seiten-Daten.
 - `src/art.mjs`: Art Direction für Startseite, Kontakt, Seiteneinstiege, Navigation, Footer und Bewegtbild.
 - `src/styles.css`: Gestaltung, responsive Ansichten, Schriftdefinitionen und Zustände.
 - `src/motion.css` und `src/motion.js`: Schriftauftritte, Bildenthüllungen, Scrolltiefe, Interaktionen und Seitenübergänge.
@@ -53,13 +54,13 @@ Nach Änderungen `npm run build` ausführen und die Browseransicht neu laden. `n
 
 Der E-Mail-Assistent ist absichtlich ein **Entwurfsassistent**: Eingaben werden zunächst im Browser sichtbar zur Prüfung aufbereitet. Die Nutzer können den Text kopieren oder an ihr E-Mail-Programm übergeben. Erst dort senden sie die Nachricht an FPMC. Name und Projektidee sind die Pflichtangaben; eine abweichende Antwortadresse, Organisation und Zeitraum sind optional aufklappbar. Es gibt keine irreführende Eingangsbestätigung und keinen vorgetäuschten Serverversand. Ein Formular-Backend oder ein Newsletter-Versanddienst war im Download nicht enthalten. Der unbestätigte Newsletter-POST der alten Seite wurde nicht übernommen; der Labelbereich verweist stattdessen auf die bestehenden Kanäle.
 
-Die aktuelle Website wird öffentlich über Vercel unter https://fpmc-tau.vercel.app bereitgestellt. Sowohl die lokale Vorschau als auch Vercel liefern `X-Robots-Tag: noindex, nofollow`; zusätzlich enthält jede HTML-Seite eine entsprechende Meta-Anweisung. Die Produktionsadresse steht in `site.config.json`. Ein späterer Domainwechsel erfordert eine entsprechende Anpassung und einen neuen Build.
+Die aktuelle Website wird öffentlich über Vercel unter https://fpmc.meindigitalerbetrieb.de bereitgestellt. Sowohl die lokale Vorschau als auch Vercel liefern `X-Robots-Tag: noindex, nofollow`; zusätzlich enthält jede HTML-Seite eine entsprechende Meta-Anweisung. Die Produktionsadresse steht in `site.config.json`. Ein späterer Domainwechsel erfordert eine entsprechende Anpassung und einen neuen Build.
 
 Vercel verwendet die Weiterleitungen in `vercel.json`. Die ältere Sites-Konfiguration in `dist/_redirects` bleibt für diesen separaten Auftritt erhalten. Die Datenschutzerklärung beschreibt die Bereitstellung über Vercel. Unternehmensdaten, steuerliche Preisinformationen und verbindliche Leistungs-/Vertragsbedingungen stammen aus dem bisherigen Auftritt. Es wurde keine Rechtsprüfung vorgenommen.
 
 ## Medien und Inhalte
 
-Die Bilder und Videos stammen aus dem bestehenden FPMC-Auftritt. Das Musikvideo-Vorschaubild stammt aus dem offiziellen verlinkten YouTube-Video. Künstlerportrait und Behind-the-scenes-Material werden nicht als unbelegte Szenen dieses veröffentlichten Videos ausgegeben. Das Plattenspielermotiv ist als atmosphärisches Motiv gekennzeichnet. Ein Mediennachweis liegt in `MEDIEN.md`. Die durchgeführten Funktions-, Darstellungs- und HTTP-Prüfungen sind in `PRUEFUNG.md` dokumentiert. Satoshi stammt unverändert aus dem offiziellen Fontshare-Paket und wird unter ITF Free Font License 2.0 lokal eingebunden; der Original-Lizenztext steht in `LIZENZEN/Satoshi-FFL.txt`.
+Die Produktionsbilder und Videos stammen aus dem bestehenden FPMC-Auftritt. Die neue gemeinsame Social-Vorschau `dist/og.png` ist eine mit dem integrierten ImageGen-Werkzeug erstellte Markengrafik. Das Musikvideo-Vorschaubild stammt aus dem offiziellen verlinkten YouTube-Video. Künstlerportrait und Behind-the-scenes-Material werden nicht als unbelegte Szenen dieses veröffentlichten Videos ausgegeben. Das Plattenspielermotiv ist als atmosphärisches Motiv gekennzeichnet. Ein Mediennachweis liegt in `MEDIEN.md`. Die durchgeführten Funktions-, Darstellungs- und HTTP-Prüfungen sind in `PRUEFUNG.md` dokumentiert. Satoshi stammt unverändert aus dem offiziellen Fontshare-Paket und wird unter ITF Free Font License 2.0 lokal eingebunden; der Original-Lizenztext steht in `LIZENZEN/Satoshi-FFL.txt`.
 
 Bestehende Preise wurden als Orientierung beibehalten. Pauschale Versprechen wie garantierte Reichweite, DSGVO-Konformität, Antwort in Minuten und universelle 48-Stunden-Produktion wurden durch konkrete Anfrageführung ersetzt.
 
@@ -115,3 +116,12 @@ Die öffentliche Fassung ist vorerst **nicht zur Suchmaschinenindexierung freige
 Für die spätere Indexierungsfreigabe `indexable` auf `true` setzen, den `X-Robots-Tag` aus `vercel.json` entfernen, neu bauen und veröffentlichen. `noindex` ist eine Suchmaschinenanweisung, keine Zugriffssperre.
 
 Das GitHub-Repository ist https://github.com/kiliansmd/fpmc. Die lokale Vercel-Verknüpfung und Umgebungsdateien werden nicht versioniert.
+
+
+## Social-Vorschau und Metadaten
+
+Alle 19 Inhaltsseiten liefern vollständige Open-Graph- und X-Kartendaten bereits im statischen HTML. Individuelle Titel und Beschreibungen bleiben erhalten; das gemeinsame schwarze Markenmotiv `dist/og.png` ist 1738 × 905 Pixel groß. Bildtyp, tatsächliche Abmessungen, Alternativtext und absolute HTTPS-Adresse sind hinterlegt. Die Wortmarke ist für breite Vorschauen und mittige quadratische Ausschnitte gesetzt. Die konkrete Darstellung und das Caching bestimmen die jeweiligen Plattformen.
+
+Canonicals, Open-Graph-URLs und Sitemap verwenden die Produktionsdomain. Strukturierte Daten verbinden Organization, WebSite und WebPage beziehungsweise passende Seitentypen; bestehende Services und Breadcrumbs bleiben erhalten. Seiten mit dem offiziellen Musikvideo enthalten dessen VideoObject. `npm run check` prüft alle 17 Social-Felder, deren Konsistenz und die echten PNG-Abmessungen. `noindex, nofollow` bleibt in HTML und HTTP-Header aktiv.
+
+Technische Grundlagen: [Open Graph](https://ogp.me/), [Google: Website-Name](https://developers.google.com/search/docs/appearance/site-names), [Google: Organization-Daten](https://developers.google.com/search/docs/appearance/structured-data/organization).
