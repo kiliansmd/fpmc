@@ -25,6 +25,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 - `src/motion.css` und `src/motion.js`: Schriftauftritte, Bildenthüllungen, Scrolltiefe, Interaktionen und Seitenübergänge.
 - `src/refinement.css`: verfeinerte Gestaltung, klare Typografieskala, neue Startseite, Anfrageformular und mobile Kontaktaktion.
 - `src/responsive.css`: responsive Umbrüche, Touchflächen, sichere Bildschirmränder, mobiles Menü und lesbare Anfrageentwürfe.
+- `src/bold.css`: aktuelle kräftige Sans-Serif-Gestaltung, Schwarz/Weiß/Kobaltblau, klare Abstände und angepasste mobile Typografie.
 - `site.config.json`: Veröffentlichungs-Origin für Canonicals, Sitemap und strukturierte Daten.
 - `src/site.js`: mobiles Menü, Projektfilter, bedarfsgesteuerter Videoplayer und E-Mail-Assistent.
 - `dist/`: fertige Website inklusive lokal gespeicherter Medien und Schriften.
@@ -64,11 +65,11 @@ Bestehende Preise wurden als Orientierung beibehalten. Pauschale Versprechen wie
 
 ## Aktuelle Gestaltung und Anfrageführung
 
-Der Auftritt verbindet eine ruhige Gestaltung mit dem Charakter eines unabhängigen Film- und Musikhauses: Papierweiß, dunkle Typografie, ein zurückhaltender roter Akzent und echte Arbeiten. Space Grotesk bildet die klare Grundschrift; Instrument Serif setzt ausgewählte redaktionelle Akzente. Beide werden lokal geladen.
+Der Auftritt verwendet klares Weiß, tiefes Schwarz und Kobaltblau. Space Grotesk wird lokal geladen und bildet die gesamte Typografie: kräftige, eng gesetzte Überschriften, größere Fließtexte und gut lesbare Bedienelemente. Es werden keine Serifenschriften mehr eingebunden. Dekorative Eyebrows, Nummerierungen und redundante Fülltexte sind aus dem HTML entfernt; sachliche Angaben wie Release-Datum, Preise und Formularhinweise bleiben erhalten.
 
 Die Startseite erklärt unmittelbar Film-, Musikvideo- und Audioproduktion für Artists, Labels und Marken. Der erste sichtbare Bereich kombiniert diese Aussage mit einer realen Arbeit und den beiden Wegen „Projekt anfragen“ und „Arbeiten ansehen“. Der übergroße FPMC-Schriftzug, das endlose Textband und der großflächig rote Labelabschnitt sind entfallen. Es folgen drei klar verlinkte Produktionsbereiche, ein ergänzender Web-/Digitalhinweis, die Menschen hinter FPMC und ein kompakter Labelabschnitt.
 
-Projektarchiv, Leistungen, Studio, Label und Detailseiten verwenden einheitlichere Abstände und eine abgestimmte Schriftgröße. Film, Musikvideo und Audio behalten ihre eigenen Bildkompositionen, das Label seinen dunklen Charakter. Die gemeinsame Einladung am Seitenende erläutert den nächsten Schritt und führt zu einer passenden Anfrage oder zur direkten E-Mail.
+Projektarchiv, Leistungen, Studio, Label und Detailseiten verwenden großzügige, abgestimmte Abstände und eine durchgehende Sans-Serif-Schriftgrößenskala. Film, Musikvideo und Audio behalten ihre eigenen Bildkompositionen, das Label seinen dunklen Charakter. Ein dunkler Studioabschnitt und die kobaltblaue Einladung am Seitenende setzen klare Schwerpunkte. Die Einladung führt zu einer passenden Anfrage oder zur direkten E-Mail.
 
 Der hervorgehobene Anfragebutton ist auf Desktop und Smartphone direkt in der Navigation erreichbar. Leistungslinks übernehmen die passende Projektart ins Formular. Paketlinks übergeben Simple, Professional, Cinematic, Digital Boost beziehungsweise Spec-Ad. Die Auswahl ist dort sichtbar und änderbar. Allgemeine Anfragen beginnen mit „Eine erste Idee“. Jede Änderung macht einen bereits erzeugten Entwurf ungültig und setzt dessen Kopierstatus zurück.
 

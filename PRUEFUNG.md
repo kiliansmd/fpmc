@@ -81,3 +81,14 @@ Die normale Desktopansicht wurde vor der Übergabe wiederhergestellt. Die urspr�
 - Die Geräteprüfungen verwenden den eingebetteten Browser mit angepassten Viewports. Keine separate Safari-, Firefox- oder physische iOS-/Android-Geräteprüfung; die Grundschriftprüfung ist eine lokale CSS-Prüfansicht, kein Betriebssystem-Schriftgrößentest.
 - Mobile Projektfilter abschließend geprüft: Web/Digital 5, Alle 6. Tab aus dem geöffneten Menü führt zum ersten sichtbaren Inhalts-Steuerelement, schließt das Menü und entfernt die Scrollsperre. Keine Warnungen oder Fehler im abschließenden Browserlog.
 - Finaler Build und Syntaxcheck bestanden; statischer Check weiterhin 19 Seiten, 447 interne Linkverweise, 131 Medienverweise und 19 gültige JSON-LD-Blöcke.
+
+
+## Kräftige Sans-Serif-Gestaltung
+
+- Alle 19 Inhaltsseiten mit Space Grotesk, Schwarz/Weiß/Kobaltblau, größeren Bedienelementen und abgestimmten Abständen überarbeitet. Keine Serifenschrift oder synthetische Kursivschrift im kontrollierten Text; keine dekorativen Eyebrow-Elemente mehr im HTML. Sachliche Angaben wie Release-Datum, Preise, Teamrollen und Formularhinweise bleiben erhalten.
+- 133 lokale Seiten-/Breitenprüfungen: alle 19 Seiten bei gemessenen 320, 391, 640, 851, 1024, 1280 und 1727 CSS-Pixeln. Kein horizontaler Seitenüberlauf, keine abgeschnittenen kontrollierten Überschriften/Buttons/Footerlinks, keine defekten Bilder, jeweils ein H1.
+- Nach den letzten Schriftkorrekturen alle 19 Seiten erneut bei 320 und 1727 CSS-Pixeln geprüft: kein Überlauf, keine abgeschnittenen Überschriften/Buttons und keine verbliebenen Serif-/Kursivstile in den kontrollierten Überschriften und Absätzen.
+- Visuelle Kontrolle von Startseite, Leistungsübersicht, Audio und Abschluss-CTA auf Desktop sowie Startseite im Smartphoneformat. Die technische Breitenprüfung nutzt den eingebetteten Browser; keine separate Prüfung auf physischen Geräten oder in anderen Browser-Engines.
+- Kontraste: Standard-Fließtext auf Papierweiß ca. 6,81:1, Kobaltblau auf Papierweiß ca. 6,20:1. Den Introtext des dunklen Audio-Einstiegs auf helles Grau korrigiert; Fokusringe für Audio-Einstieg, Studioabschnitt und blauen Abschlussbereich angepasst.
+- Mobiles Menü bei 391 CSS-Pixeln geöffnet und per Escape geschlossen. Film-Anfrage mit Testname und Projektidee erfolgreich vorbereitet: Projektart übernommen, Entwurf sichtbar, Fokus auf Entwurfsüberschrift, korrektes mailto-Ziel, kein Überlauf. Entwurfsüberschrift liegt rund 20px unter dem Header. Keine Nachricht versendet.
+- Finaler statischer Check: 19 Seiten, 19 individuelle Titel/Beschreibungen, 447 interne Linkverweise, 131 Medienverweise und 19 gültige JSON-LD-Blöcke.
