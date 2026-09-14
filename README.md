@@ -20,6 +20,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 ## Dateien
 
 - `src/build.mjs`: Seiten, Inhalte, gemeinsame Komponenten und Metadaten; erzeugt die statischen HTML-Seiten.
+- `src/adaptive.css`: abschließende responsive Gestaltung für Smartphone, Tablet, breite Monitore, kurze Fenster und Touch-Bedienung.
 - `src/seo.mjs`: gemeinsame Social-Vorschau, Open-Graph-/X-Metadaten und verknüpfte Website-/Seiten-Daten.
 - `src/art.mjs`: Art Direction für Startseite, Kontakt, Seiteneinstiege, Navigation, Footer und Bewegtbild.
 - `src/styles.css`: Gestaltung, responsive Ansichten, Schriftdefinitionen und Zustände.
@@ -125,3 +126,12 @@ Alle 19 Inhaltsseiten liefern vollständige Open-Graph- und X-Kartendaten bereit
 Canonicals, Open-Graph-URLs und Sitemap verwenden die Produktionsdomain. Strukturierte Daten verbinden Organization, WebSite und WebPage beziehungsweise passende Seitentypen; bestehende Services und Breadcrumbs bleiben erhalten. Seiten mit dem offiziellen Musikvideo enthalten dessen VideoObject. `npm run check` prüft alle 17 Social-Felder, deren Konsistenz und die echten PNG-Abmessungen. `noindex, nofollow` bleibt in HTML und HTTP-Header aktiv.
 
 Technische Grundlagen: [Open Graph](https://ogp.me/), [Google: Website-Name](https://developers.google.com/search/docs/appearance/site-names), [Google: Organization-Daten](https://developers.google.com/search/docs/appearance/structured-data/organization).
+
+
+## Aktuelle responsive Fassung
+
+Die abschließend eingebundene `adaptive.css` stimmt die cinematische Gestaltung auf schmale Smartphones, Tablet-Zwischenstufen und breite Monitore ab. Die Navigation wechselt bis einschließlich 1024px ins Mobilmenü; CSS und JavaScript verwenden dieselbe Grenze. Die Headerhöhe folgt dem tatsächlichen Inhalt einschließlich Displayrändern. Kurze Querformatfenster erhalten kompaktere Einstiege und ein zweispaltiges, scrollbar bleibendes Menü.
+
+Auf Tablets erscheinen die drei Produktionsbereiche als große Bild-/Textzeilen. Auf Smartphones stehen Filmbeschriftungen unter dem Bild, damit längere Texte und größere Schrift nicht abgeschnitten werden. Teamangaben und der Wechsel zum nächsten Projekt besitzen ein eindeutiges Raster. Das Film-BTS bleibt im Inhaltsbereich ausgerichtet; DOM- und visuelle Reihenfolge stimmen überein. Touchgeräte erhalten auch bei großer Breite ausreichend hohe Footerlinks. Formulare verwenden skalierbare Eingabeschrift.
+
+Die schwarzen Flächen, serifenlosen Schriften, vorhandenen Medien, Animationen, Anti-Overscroll-Regeln und Social-Metadaten bleiben erhalten.

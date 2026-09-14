@@ -1,7 +1,7 @@
 document.documentElement.classList.remove('no-js');
 const menuButton=document.querySelector('[data-menu-toggle]');
 const nav=document.querySelector('[data-nav]');
-const mobileNavigation=window.matchMedia('(max-width: 850px)');
+const mobileNavigation=window.matchMedia('(max-width: 1024px)');
 const siteHeader=document.querySelector('.header');
 if(siteHeader&&'ResizeObserver' in window){
  const headerSize=new ResizeObserver(()=>document.documentElement.style.setProperty('--header-size',`${siteHeader.getBoundingClientRect().height}px`));

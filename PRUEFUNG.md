@@ -184,3 +184,15 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - WebSite auf der Startseite sowie passende WebPage-Typen und Organization-Logo verknüpft. Vorhandene Service- und Breadcrumb-Daten erhalten. Auf Startseite, Labelseite und Redstar-Projektseite stimmt die VideoObject-Zuordnung mit dem tatsächlichen Videoplayer überein.
 - Build und statischer Check bestanden: 19 Seiten, 19 individuelle Titel/Beschreibungen, 440 interne Linkverweise, 153 Asset-Verweise, 19 gültige JSON-LD-Blöcke und 19 vollständige Social-Karten. JavaScript-Syntax und Diffprüfung bestanden.
 - noindex-Metatags und Vercel-Header erhalten. Keine Änderungen an Layout, Scrollverhalten oder Formularfunktionen in diesem Schritt.
+
+
+## Responsive Überarbeitung – 14.09.2026
+
+- Ausgangslage auf allen 19 Seiten in zehn Formaten geprüft: 320 × 568, 390 × 844, 600 × 900, 768 × 1024, 850 × 650, 900 × 600, 1024 × 768, 1440 × 900, 2560 × 1440 sowie 844 × 390 CSS-Pixel. Konkrete schmale Teamspalten gefunden und korrigiert.
+- Nach der Überarbeitung 190 Seiten-/Formatprüfungen bestanden: kein horizontaler Seitenüberlauf und keine abgeschnittenen kontrollierten Titel, Absätze oder Bedienelemente. Repräsentative Start-, Label-, Leistungs-, Kontakt- und Studioansichten visuell kontrolliert.
+- Zusätzlich alle 19 Seiten bei 320, 768 und 1440px in Chromium, Firefox und WebKit geprüft (171 Kombinationen). Keine festgestellten Überläufe oder JavaScript-Laufzeitfehler.
+- In allen drei Engines: Mobilmenü, Escape/Fokusrückgabe, Wechsel ins Desktopmenü, kurze Querformatnavigation, Kontaktentwurf mit langer Projektbeschreibung, drei Projektfilter, FAQ und BTS-Videopause bestanden. Keine Nachricht versendet. Ein zunächst zu früh ausgeführter Testassert beim asynchronen Media-Query-Wechsel wurde durch Warten auf den tatsächlichen Menüzustand korrigiert.
+- Ohne JavaScript bleiben Navigation und Kontaktwege erreichbar. WebKit im Mobil-/Touchmodus bei 390 × 844, 844 × 390 und 1024 × 768: Menü sichtbar, innerhalb des Fensters und kein horizontaler Überlauf.
+- Vergrößerte Basisschrift (`html { font-size:200% }`) auf acht repräsentativen Seiten bei 320, 768 und 1440px geprüft. Zwei lange Produktionsbeschreibungen benötigten zusätzliche Wortumbrüche. Diese sind ergänzt und gezielt nachgeprüft. Der Test betrifft die CSS-Basisschrift; er bildet nicht sämtliche Betriebssystem-Zoommodi ab.
+- Safe-Area-Abstände berücksichtigt; Film-CTA steht im DOM vor der Videosteuerung wie in der mobilen Ansicht. Die Website bleibt auf noindex, Social-Vorschau und Anti-Overscroll sind unverändert.
+- Die Browserprüfungen simulieren Geräteformate und Eingabemodi. Sie ersetzen keine Tests auf jedem physischen Endgerät.

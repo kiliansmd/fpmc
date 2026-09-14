@@ -71,7 +71,7 @@ page('/datenschutz/','Datenschutz – FPMC','Informationen zum Datenschutz bei F
 page('/404/','Seite nicht gefunden – FPMC','Diese Seite wurde nicht gefunden. Entdecke die Projekte und Leistungen von FPMC oder kontaktiere unser Team.',`${pageHero('404 · Seite nicht gefunden','Hier geht es<br>anders weiter.','Diese Adresse gibt es nicht. Unsere Projekte, Leistungen und das Team findest du über die Navigation.',button('Zur Startseite','/'))}`);
 copyFileSync(join(OUT,'404/index.html'),join(OUT,'404.html'));
 routes.pop();
-writeFileSync(join(OUT,'assets/styles.css'),readFileSync(join(ROOT,'src/styles.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/motion.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/refinement.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/responsive.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/bold.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/direction.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/experience.css'),'utf8'));
+writeFileSync(join(OUT,'assets/styles.css'),readFileSync(join(ROOT,'src/styles.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/motion.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/refinement.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/responsive.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/bold.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/direction.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/experience.css'),'utf8')+'\n'+readFileSync(join(ROOT,'src/adaptive.css'),'utf8'));
 copyFileSync(join(ROOT,'src/site.js'),join(OUT,'assets/site.js'));
 copyFileSync(join(ROOT,'src/media.js'),join(OUT,'assets/media.js'));
 copyFileSync(join(ROOT,'src/motion.js'),join(OUT,'assets/motion.js'));
