@@ -71,7 +71,7 @@ Die vollständigen SIL-OFL-1.1-Lizenztexte liegen unter `LIZENZEN/` und zusätzl
 
 ## BTS im Hero – 14.09.2026
 
-Der unveränderte Clip wird auf Desktop bis 350 CSS-Pixel breit gezeigt; mobil teilt er die erste Zeile mit dem Titel. Das passende Originalposter hält die Bildfläche beim Laden stabil. Der Hero setzt src und preload=auto bereits im HTML; die bestehende Sichtbarkeitssteuerung startet stumm und inline ohne vorherige Interaktion. Außerhalb des sichtbaren Bereichs pausiert das Video, eine manuelle Pause bleibt beim Zurückscrollen erhalten. Ein 44 × 44px SVG-Regler erlaubt Pause, Fortsetzen und erneuten Abruf nach einem Ladefehler. Die übrigen BTS-Einbindungen laden weiterhin bei Sichtbarkeit.
+Der unveränderte Clip wird auf Desktop nach verfügbarer Hero-Höhe bis 480 CSS-Pixel breit gezeigt. Mobil und im Tablet-Hochformat liegt der große Titel vor dem unteren Filmbereich; ein dezenter Verlauf hält die Schrift lesbar. Das ursprüngliche Seitenverhältnis bleibt erhalten. Das passende Originalposter hält die Bildfläche beim Laden stabil. Der Hero setzt src und preload=auto bereits im HTML; die bestehende Sichtbarkeitssteuerung startet stumm und inline ohne vorherige Interaktion. Außerhalb des sichtbaren Bereichs pausiert das Video, eine manuelle Pause bleibt beim Zurückscrollen erhalten. Ein 44 × 44px SVG-Regler erlaubt Pause, Fortsetzen und erneuten Abruf nach einem Ladefehler. Die übrigen BTS-Einbindungen laden weiterhin bei Sichtbarkeit.
 
 ## Globale Filmkörnung – 14.09.2026
 

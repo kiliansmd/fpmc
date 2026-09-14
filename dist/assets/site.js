@@ -3,9 +3,13 @@ const menuButton=document.querySelector('[data-menu-toggle]');
 const nav=document.querySelector('[data-nav]');
 const mobileNavigation=window.matchMedia('(max-width: 1024px)');
 const siteHeader=document.querySelector('.header');
-if(siteHeader&&'ResizeObserver' in window){
- const headerSize=new ResizeObserver(()=>document.documentElement.style.setProperty('--header-size',`${siteHeader.getBoundingClientRect().height}px`));
- headerSize.observe(siteHeader);
+if(siteHeader){
+ const measureHeader=()=>document.documentElement.style.setProperty('--header-size',`${siteHeader.getBoundingClientRect().height}px`);
+ measureHeader();
+ if('ResizeObserver' in window){
+  const headerSize=new ResizeObserver(measureHeader);
+  headerSize.observe(siteHeader);
+ }
 }
 let menuAnimation;
 function setMenu(open,immediate=false){
