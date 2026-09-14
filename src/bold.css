@@ -211,3 +211,155 @@ body[data-page=leistungen-audioproduktion] .page-hero{background:var(--paper);co
 .desktop-nav{border-color:var(--line)}
 ::selection{background:var(--accent);color:var(--button-ink)}
 @media(hover:none){.project-open{background:#101113e6;color:var(--ink)}}
+
+/* Editorial direction: the work sets the scale; every page has its own rhythm. */
+:root{--max:1680px;--pad:clamp(20px,5.2vw,88px);--line:#292b2f}
+h1,h2,h3{font-kerning:normal}
+.section{padding-block:clamp(64px,7.4vw,120px)}
+.home-intro{padding-block:52px 72px}
+.hero-layout{display:block}
+.hero-copy{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.85fr);gap:72px;align-items:end;max-width:none;margin-bottom:48px}
+.hero-copy h1{font-size:clamp(76px,8.6vw,148px);line-height:.98;letter-spacing:-.065em}
+.hero-subline{font-size:.59em;line-height:1.12;margin-top:14px;color:#b0b2b7}
+.hero-introduction{padding-bottom:7px}
+.hero-description{font-size:20px;line-height:1.55;margin:0;max-width:430px}
+.hero-copy .actions{margin-top:26px;gap:16px 28px}
+.hero-film-image{aspect-ratio:2.35;background:#08090a}
+.hero-film-photo{object-fit:cover;object-position:center 48%}
+.hero-film-caption{padding-top:24px;align-items:baseline}
+.hero-film-caption h2{font-size:36px}
+.hero-film-caption>span{max-width:none;font-size:16px;text-align:left}
+.hero-film-label{font-size:16px;bottom:41px}
+.hero-film-label>span{font-size:14px}
+.hero-film-image:after{inset:62% 0 0;background:linear-gradient(transparent,#000b)}
+.section-head{margin-bottom:44px}
+.section-head h2,.home-studio-copy h2,.label-feature h2,.studio-copy h2,.team-heading{font-size:clamp(44px,4.8vw,74px);letter-spacing:-.052em;line-height:1.06}
+.section-head p:not(.eyebrow){font-size:18px;line-height:1.6;max-width:450px}
+.service-overview{display:block;border-top:0}
+.service-overview-item,.service-overview-item+.service-overview-item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr) 56px;gap:50px;align-items:center;padding:34px 0;border:0;border-top:1px solid var(--line)}
+.service-overview h3{font-size:clamp(44px,4.6vw,72px);letter-spacing:-.055em;margin:0}
+.service-overview p{font-size:18px;line-height:1.55;margin:0;max-width:470px}
+.service-more{margin:0;justify-self:end;align-self:center}
+.service-more .arrow{font-size:38px}
+.digital-note{padding-top:28px}
+.home-studio{background:var(--paper);border-block:1px solid var(--line)}
+.home-studio-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(56px,8vw,130px)}
+.home-studio-motion{max-width:440px}
+.home-studio-copy>p:not(.eyebrow){font-size:21px;line-height:1.55;max-width:570px}
+.studio-credits{padding-top:28px;border-top:1px solid var(--line);margin-block:36px;gap:26px 36px}
+.label-feature-layout{grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:96px}
+.label-feature-image{max-width:500px;width:100%;aspect-ratio:1.06}
+.label-feature p:not(.eyebrow){font-size:20px;line-height:1.6}
+.page-hero{padding-block:52px 42px}
+body[data-page] .page-heading h1{font-size:clamp(68px,9vw,146px);line-height:1.01}
+.page-intro,body[data-page=label] .page-intro,body[data-page=projekte] .page-intro,body[data-page=leistungen] .page-intro{margin-top:28px}
+.page-intro p{max-width:760px;font-size:20px;line-height:1.6}
+body[data-page=projekte] .page-hero+section,body[data-page^=projekte-] .page-hero+section{padding-top:40px}
+body[data-page=projekte] .project-grid{gap:80px 64px}
+body[data-page=projekte] .project-card:nth-child(2n+3){padding-top:90px}
+.project-media{aspect-ratio:1.5}
+.project-card.wide .project-media{aspect-ratio:2.35}
+.project-card.wide .project-media img{object-fit:cover;object-position:center 48%}
+.project-info{padding-top:22px;margin:0}
+.project-info h3{font-size:36px}
+.project-card.wide .project-info h3{font-size:44px}
+.project-info p{margin-top:8px;font-size:16px}
+.project-open{border-radius:50%;width:52px;height:52px;background:var(--button);color:var(--button-ink)}
+.project-card:focus-visible{outline-offset:9px}
+.web-case-image{border-color:var(--line)}
+.facts{margin-block:34px 18px;gap:40px}
+.fact dt{font-size:15px}.fact dd{font-size:19px}
+.fact dd a{text-decoration:underline;text-decoration-color:#64666c;text-underline-offset:5px}
+.case-navigation{padding-block:72px}
+.content-grid>h2,.content-grid>div:not(.prose)>h2{font-size:clamp(36px,3.7vw,60px);line-height:1.1;letter-spacing:-.045em}
+.service-hero{padding-block:36px 64px}
+.service-hero .breadcrumbs{margin-bottom:28px}
+.service-hero-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:80px}
+.service-hero-copy{min-width:0;padding-block:24px}
+.service-hero h1{font-size:clamp(80px,10vw,164px);font-weight:700;line-height:1;letter-spacing:-.06em}
+.service-hero-copy>p{font-size:21px;line-height:1.6;color:var(--muted);max-width:560px;margin-top:32px}
+.service-hero-copy .actions{margin-top:32px}
+.service-hero-media{min-width:0;overflow:hidden;width:100%;background:#101113}
+.service-hero-media img{width:100%;height:100%;object-fit:cover}
+body[data-page=leistungen-filmproduktion] .service-hero-media{aspect-ratio:3/4;width:85%;max-width:470px;justify-self:end}
+body[data-page=leistungen-musikvideoproduktion] .service-hero-layout{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px}
+body[data-page=leistungen-musikvideoproduktion] .service-hero h1{font-size:clamp(64px,7.7vw,128px)}
+body[data-page=leistungen-musikvideoproduktion] .service-hero-media{aspect-ratio:1.75}
+body[data-page=leistungen-audioproduktion] .service-hero-media{aspect-ratio:1.12}
+.service-introduction{border-top:1px solid var(--line)}
+.service-introduction .content-grid{grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:96px;align-items:start}
+.service-introduction p{font-size:21px;line-height:1.65;color:var(--dark-text);max-width:650px}
+.process{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 64px}
+.process-item,.service-process .process-item{padding-block:28px 34px}
+.process-item h3{font-size:29px;margin-bottom:18px}
+.process-item p:not(.num){max-width:560px}
+.service-process{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.section-faq>.wrap{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:80px;align-items:start}
+.section-faq .section-head{margin:0}
+.section-faq .section-head h2{font-size:clamp(36px,3.5vw,54px)}
+.section-faq .faq{width:100%;margin:0;max-width:none}
+.faq summary{font-size:21px;line-height:1.4;padding-block:25px}
+.faq details p{padding-right:18px}
+body[data-page=studio] .team-heading{margin-top:0}
+.team-card{padding-block:38px;grid-template-columns:minmax(0,1.3fr) minmax(0,.75fr) minmax(0,1fr);gap:20px 40px}
+.team-card h3{font-size:clamp(30px,3vw,48px)}
+.team-card .role{color:var(--ink);font-size:18px}
+.team-card .languages{color:var(--muted);font-size:15px}
+.contact-workspace{padding-block:64px 100px}
+.contact-sheet{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(64px,8vw,128px)}
+.contact-editorial h1{font-size:clamp(72px,8.5vw,136px);line-height:.98;letter-spacing:-.065em;margin-bottom:30px}
+.contact-intro{font-size:20px;line-height:1.6;max-width:430px}
+.contact-direct{margin-top:44px}
+.contact-address a:first-child{font-size:clamp(26px,2.2vw,36px);letter-spacing:-.035em}
+.contact-letter{padding:30px 0 0;background:transparent;border:0;border-top:1px solid #64666d}
+.contact-letter>h2{font-size:36px;letter-spacing:-.04em}
+.contact-how{margin-block:16px 30px;max-width:500px}
+.field input,.field select,.field textarea{background:#111315;border:1px solid #44474e;padding:14px 16px}
+.field input:focus,.field select:focus,.field textarea:focus{background:#17191d}
+.field textarea{min-height:150px}
+.contact-letter .form-grid{gap:26px}
+.cta-section,body[data-page=label] .cta-section{background:var(--paper);padding-block:96px;border-top:1px solid #46484e}
+.cta-copy h2{font-size:clamp(64px,7.6vw,124px);line-height:1;letter-spacing:-.06em}
+.cta-invitation>p:first-child{max-width:470px;font-size:22px;line-height:1.55;color:var(--dark-text)}
+.cta-layout{gap:96px;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.footer{padding-top:56px;background:#0d0e10;border-top:1px solid var(--line)}
+.footer-top{padding-bottom:52px}
+.footer p,.footer a{color:#b5b7bd}
+.footer .footer-signature{color:var(--ink)}
+.footer a:hover{color:var(--ink)}
+body[data-section=Rechtliches] .page-heading h1{font-size:clamp(56px,6.3vw,98px)}
+body[data-section=Rechtliches] .page-intro p{max-width:650px}
+body[data-section=Rechtliches] .prose{max-width:880px}
+body[data-section=Rechtliches] .prose h2{font-size:30px;line-height:1.2}
+html:not(.no-js) .service-hero .title-line{animation:800ms var(--ease-film) both title-in;animation-delay:calc(var(--line-index,0)*75ms)}
+html:not(.no-js) .hero-introduction{animation:700ms var(--ease-film) 120ms both copy-in}
+@media(max-width:1200px){
+ .hero-copy{gap:40px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}.hero-copy h1{font-size:8.6vw}.hero-description{font-size:18px}.hero-copy .actions{gap:14px 22px}.hero-copy .button{padding-inline:18px}
+ .service-hero-layout{gap:48px}.service-hero-copy>p{font-size:19px}.service-introduction .content-grid{gap:56px}.service-introduction p{font-size:19px}.section-faq>.wrap{gap:48px}.team-card{grid-template-columns:minmax(0,1.1fr) minmax(0,.8fr);gap:20px 36px}.team-card .role{grid-column:2}.team-card p:not(.role),.team-card .languages{grid-column:2}
+ .contact-sheet{gap:60px}.contact-editorial h1{font-size:8.3vw}.cta-layout{gap:56px}
+}
+@media(max-width:900px){
+ .hero-copy{grid-template-columns:minmax(0,1fr);gap:28px;align-items:start;margin-bottom:36px}.hero-copy h1{font-size:clamp(62px,10.5vw,96px)}.hero-introduction{max-width:620px}.hero-description{max-width:580px}.hero-copy .actions{margin-top:22px}.hero-film-image{aspect-ratio:1.8}.hero-film-caption h2{font-size:30px}.hero-film-caption>span{font-size:15px}
+ .service-overview-item,.service-overview-item+.service-overview-item{grid-template-columns:minmax(0,1fr) minmax(0,.85fr) 32px;gap:24px}.service-overview h3{font-size:42px}.service-overview p{font-size:17px}.service-more .arrow{font-size:30px}
+ .service-hero-layout,body[data-page=leistungen-musikvideoproduktion] .service-hero-layout{gap:36px;grid-template-columns:minmax(0,1fr) minmax(0,.9fr)}.service-hero h1{font-size:clamp(66px,10vw,100px)}body[data-page=leistungen-musikvideoproduktion] .service-hero h1{font-size:clamp(52px,7.5vw,72px)}.service-hero-copy>p{font-size:18px;margin-top:24px}.service-hero-copy .actions{margin-top:24px}
+ .section-faq>.wrap{grid-template-columns:minmax(0,1fr);gap:32px}.section-faq .section-head h2{font-size:44px}.contact-sheet{grid-template-columns:minmax(0,1fr);gap:40px;max-width:760px}.contact-editorial h1{font-size:clamp(64px,10vw,88px)}.contact-letter{padding:28px 0 0}.contact-editorial{position:static}.contact-intro{font-size:19px;max-width:520px}
+ body[data-page=projekte] .project-grid{gap:52px 32px}body[data-page=projekte] .project-card:nth-child(2n+3){padding-top:0}
+}
+@media(max-width:720px){
+ .home-intro{padding-block:36px 56px}.section{padding-block:64px}.hero-copy h1{font-size:clamp(54px,11.7vw,82px)}.hero-subline{font-size:.63em}.hero-film-caption{gap:20px;align-items:start}.hero-film-caption>span{max-width:48%}
+ .section-head h2,.home-studio-copy h2,.label-feature h2,.studio-copy h2,.team-heading{font-size:clamp(38px,7.4vw,54px)}
+ .service-overview-item,.service-overview-item+.service-overview-item{grid-template-columns:minmax(0,1fr) 30px;gap:16px 24px;padding-block:28px}.service-overview h3{font-size:42px}.service-overview p{grid-column:1;grid-row:2;font-size:17px;max-width:520px}.service-more{grid-column:2;grid-row:1;align-self:center}.digital-note{padding-top:24px}
+ .home-studio-layout{gap:36px}.home-studio-copy>p:not(.eyebrow){font-size:19px}.home-studio-motion{max-width:320px;width:75%}.label-feature-layout{grid-template-columns:minmax(0,1fr);gap:32px}.label-feature-image{width:85%;max-width:420px;justify-self:end}.label-feature p:not(.eyebrow){font-size:18px}
+ .service-hero{padding-block:24px 44px}.service-hero-layout,body[data-page=leistungen-musikvideoproduktion] .service-hero-layout{grid-template-columns:minmax(0,1fr);gap:32px}.service-hero-copy{padding:0}.service-hero h1{font-size:clamp(64px,15vw,108px)}body[data-page=leistungen-musikvideoproduktion] .service-hero h1{font-size:clamp(54px,11.8vw,86px)}.service-hero-copy>p{max-width:600px}.service-hero-media{max-width:none}body[data-page=leistungen-filmproduktion] .service-hero-media{width:80%;max-width:360px;justify-self:end;aspect-ratio:3/4}body[data-page=leistungen-audioproduktion] .service-hero-media{width:90%;max-width:480px;justify-self:end;aspect-ratio:1.3}
+ .service-introduction .content-grid{grid-template-columns:minmax(0,1fr);gap:28px}.service-introduction p{font-size:18px}.content-grid>h2,.content-grid>div:not(.prose)>h2{font-size:clamp(34px,6.8vw,48px)}
+ .process,.service-process{grid-template-columns:minmax(0,1fr);gap:0}.process-item,.service-process .process-item{padding-block:26px}.process-item h3{font-size:27px}.section-faq .section-head h2{font-size:38px}.faq summary{font-size:19px}
+ .team-card{display:block;padding-block:30px}.team-card h3{font-size:clamp(30px,6.4vw,42px)}.team-card .role{margin-top:14px;font-size:17px}.team-card p:not(.role):not(.languages){margin-top:18px;max-width:540px}.team-card .languages{margin-top:16px}
+ .contact-editorial h1{font-size:clamp(58px,12vw,82px)}.contact-intro{font-size:18px}.contact-direct{margin-top:28px}.contact-letter>h2{font-size:32px}.cta-section,body[data-page=label] .cta-section{padding-block:64px}.cta-layout{grid-template-columns:minmax(0,1fr);gap:30px}.cta-copy h2{font-size:clamp(52px,10.4vw,76px)}.cta-invitation>p:first-child{font-size:19px}.footer{padding-top:40px}.footer-top{padding-bottom:36px}.facts{gap:24px;margin-block:28px 12px}.fact dd{font-size:17px}
+}
+@media(max-width:600px){
+ :root{--pad:20px}.hero-copy h1{font-size:clamp(45px,11.8vw,68px)}.hero-subline{font-size:.66em;margin-top:12px}.hero-description{font-size:18px;line-height:1.55}.hero-copy .actions{gap:12px 22px}.hero-film-image{aspect-ratio:1.5}.hero-film-caption{padding-top:18px;gap:14px}.hero-film-caption h2{font-size:27px}.hero-film-caption>span{font-size:14px;max-width:45%}.hero-film-label{font-size:13px;bottom:31px}.hero-film-label>span{font-size:12px}
+ body[data-page] .page-heading h1{font-size:clamp(44px,11.4vw,66px);line-height:1.05}body[data-page=label] .page-heading h1{font-size:clamp(66px,17vw,96px)}.page-hero{padding-block:28px 32px}.page-intro p{font-size:18px}.page-intro,body[data-page=label] .page-intro,body[data-page=projekte] .page-intro,body[data-page=leistungen] .page-intro{margin-top:24px}
+ .service-overview h3{font-size:38px}.service-overview p{font-size:17px}.home-studio-copy>p:not(.eyebrow){font-size:18px}.studio-credits{padding-top:24px;margin-block:28px}.project-info h3{font-size:28px}.project-card.wide .project-info h3{font-size:32px}.project-info p{font-size:15px}.project-card.wide .project-media{aspect-ratio:1.6}.project-open{width:46px;height:46px}
+ body[data-page=projekte] .page-hero+section,body[data-page^=projekte-] .page-hero+section{padding-top:28px}.service-hero .breadcrumbs{margin-bottom:22px}.service-hero-copy>p{font-size:18px}.service-hero-copy .actions{margin-top:26px}.service-introduction p{font-size:18px}.section-faq .section-head h2{font-size:36px}.faq summary{font-size:19px}.contact-workspace{padding-block:32px 60px}.contact-sheet{gap:36px}.contact-editorial h1{font-size:clamp(54px,12.5vw,72px)}.contact-letter{padding-top:26px}.contact-how{font-size:16px}.field input,.field select,.field textarea{padding:13px 12px}.field textarea{min-height:150px}.field-hint,.form-info{font-size:14px}.case-navigation{padding-block:52px}body[data-section=Rechtliches] .page-heading h1{font-size:clamp(39px,9.8vw,58px)}body[data-section=Rechtliches] .prose h2{font-size:27px}
+}
+@media(max-width:359px){:root{--pad:18px}.hero-copy h1{font-size:42px}.hero-copy .button{width:100%}.hero-copy .actions{align-items:stretch}.hero-film-caption h2{font-size:25px}.service-overview h3{font-size:35px}.contact-editorial h1{font-size:51px}}

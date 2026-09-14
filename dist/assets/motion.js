@@ -8,7 +8,7 @@
   // Editorial rhythm. Every element is revealed once, when it enters the frame.
   const groups = [
     ['.section-head h2, .home-note h2, .people-heading h2, .label-copy h2, .team-heading, .studio-copy h2, .coda-link h2, .home-studio-copy h2, .label-feature h2, .cta-copy h2', 'type'],
-    ['.project-media, .service-entry-media, .studio-image, .motion-screen, .label-portrait, .video-container, .case-image, .hero-film-image, .label-feature-image', 'image'],
+    ['.project-media, .service-entry-media, .studio-image, .motion-screen, .label-portrait, .video-container, .case-image, .hero-film-image, .label-feature-image, .service-hero-media', 'image'],
     ['.team-card, .process-item, .price-card, .related-link, .fact, .people-names span, .craft-links>a, .service-overview-item, .studio-credits>span', 'row'],
     ['.note-aside, .people-copy>p, .studio-copy>p, .prose>p, .section-head>p, .label-copy>p, .footer-top>*, .contact-address, .contact-location', 'copy']
   ];

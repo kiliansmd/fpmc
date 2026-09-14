@@ -102,3 +102,17 @@ Die normale Desktopansicht wurde vor der Übergabe wiederhergestellt. Die urspr�
 - Weitere 76 lokale Größenprüfungen: alle 19 Seiten bei gemessenen 320, 391, 640 und 1024 CSS-Pixeln. Keine horizontalen Überläufe, abgeschnittenen kontrollierten Überschriften/Buttons/Footerlinks oder defekten Bilder.
 - Visuelle Kontrolle der schwarzen Startseite und Kontaktansicht. Kontakt bei 320px: schwarzes Mobilmenü, lesbare helle Primäraktion, Escape, dunkler Feldfokus mit hellem Fokusring und korrekt erstellter E-Mail-Entwurf geprüft. Entwurf sichtbar, Fokus auf Überschrift, kein Überlauf; keine Nachricht versendet.
 - Die bestehenden Inhalte, SEO-Metadaten, Animationen und Funktionen bleiben erhalten. Die Prüfung erfolgte im eingebetteten Browser; keine separate Safari-/Firefox- oder physische Geräteprüfung.
+
+
+## Redaktionelle und bildgeführte Überarbeitung
+
+- Vollständige Inhalts- und Gestaltungsprüfung der 19 Routen. Größere Filmfläche auf der Startseite, neue Leistungszeilen, drei bildgeführte Leistungs-Einstiege, differenziertes Archiv, ruhigere FAQ- und Kontaktkomposition sowie kürzere Texte umgesetzt. Schwarze Palette, Satoshi-Schrift und vorhandene Inhalte/Funktionen bleiben erhalten.
+- 114 lokale Seiten-/Größenprüfungen: alle 19 Seiten bei 320, 391, 640, 851, 1024 und 1727 CSS-Pixeln. Keine seitlichen Überläufe, abgeschnittenen kontrollierten Überschriften/Buttons/Footerlinks, defekten Bilder oder sichtbaren Eyebrows; jeweils genau ein H1. Eine Browser-Auswertung hatte einen Timeout und wurde erfolgreich wiederholt.
+- Visuelle Kontrolle der neuen Startseite, Film- und Musikvideo-Einstiege sowie der Ausgangslage im Projektarchiv und der mobilen Leistungsübersicht. Bildausschnitte nutzen ausschließlich vorhandenes FPMC-Material.
+- Projektfilter nach Layoutänderung erneut geprüft: Web/Digital 5, Film/Musik 1, Alle 6. Keine seitlichen Überläufe im geprüften Filterzustand.
+- Film-FAQ geöffnet; neue zweispaltige Desktopkomposition und nativer Open-Zustand bestätigt.
+- Bei 320px vom Film-Anfragelink ins Formular navigiert: „Film“ übernommen, Menü/Escape geprüft, Testentwurf erzeugt, Fokus auf Entwurfsüberschrift, rund 20px Abstand zum Header, korrektes mailto-Ziel und kein horizontaler Überlauf. Keine Nachricht versendet.
+- Webprojekt-CTA übernimmt „Website“; Paketlink übernimmt Website/Professional. Generischer Zwischenabschnitt auf den fünf Webprojektseiten entfernt; Fakten verweisen auf Web/Digital.
+- Statischer Check bestanden: 19 Seiten, 19 individuelle Titel/Beschreibungen, 442 interne Linkverweise, 131 Medienverweise, 19 gültige JSON-LD-Blöcke. Keine Aussage über gemessene Conversion-, Ranking- oder Ladezeitverbesserungen.
+
+- Abschließend berechnete Textkontraste auf soliden Hintergrundflächen aller 19 Seiten geprüft: keine Unterschreitung der angesetzten 4,5:1 für normalen beziehungsweise 3:1 für großen Text. Bildüberlagerungen sind aus dieser Berechnung ausgenommen.
