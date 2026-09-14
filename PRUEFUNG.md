@@ -141,3 +141,13 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 ## Overscroll- und Bounce-Schutz
 
 `overscroll-behavior: none` gilt für HTML/Body sowie die eigenständigen Scrollbereiche Mobilmenü, Entwurf und Textfeld. Die bisherigen `contain`-Werte werden durch die zuletzt eingebundene Interaktionsgestaltung überschrieben. Der Dokumenthintergrund bleibt schwarz. Normales Scrollen, Zoom und Ankersprünge verwenden weiterhin die Browserfunktionen. Build und statische Prüfung der 19 Seiten bestanden. Die Wirkung des systemseitigen Bounce-Effekts hängt von der CSS-Unterstützung des jeweiligen Browsers ab; keine separate Prüfung alter Browser oder externer iframe-Inhalte. Grundlage: [MDN: overscroll-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overscroll-behavior).
+
+
+## Vercel-Veröffentlichung ohne Indexierung
+
+- Statische Vercel-Konfiguration: `npm run build && npm run check`, Ausgabe `dist`, native Verzeichnisrouten, Slash-Normalisierung, Weiterleitungen aus den bisherigen Kurzpfaden.
+- Gemeinsame Origin-Auflösung für Build und Check; stabile Vercel-Produktionsdomain für Canonicals, Open Graph und strukturierte Daten. Lokaler Fallback: https://fpmc-tau.vercel.app.
+- Alle 19 Seiten und die 404-Seite erhalten `noindex, nofollow`. Zusätzlich catch-all `X-Robots-Tag` auf Vercel. Statischer Check prüft Meta-Tags, Headerkonfiguration und die erlaubte Abrufbarkeit der Seiten in robots.txt.
+- Hostingabschnitt in der Datenschutzerklärung auf Vercel und dessen Datenschutzhinweise aktualisiert.
+- Die ursprüngliche Domain www.fpmc.house und die bisherige Sites-Veröffentlichung werden durch diese Vercel-Konfiguration nicht umgestellt.
+- Grundlagen: [Google: Indexierung blockieren](https://developers.google.com/search/docs/crawling-indexing/block-indexing), [Vercel: Konfiguration](https://vercel.com/docs/project-configuration/vercel-json), [Vercel: Systemvariablen](https://vercel.com/docs/environment-variables/system-environment-variables#vercel_project_production_url), [Vercel: Datenschutz](https://vercel.com/legal/privacy-notice).

@@ -4,7 +4,7 @@ Die vollständig bearbeitbare Fassung des überarbeiteten Auftritts. Grundlage s
 
 ## Lokal öffnen
 
-Veröffentlichungsadresse dieser Fassung: **https://fpmc-house.sdjnksd.chatgpt.site**
+Veröffentlichungsadresse dieser Fassung: **https://fpmc-tau.vercel.app**
 
 Lokale Vorschau nach dem Start: **http://localhost:4179**
 
@@ -26,7 +26,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 - `src/refinement.css`: verfeinerte Gestaltung, klare Typografieskala, neue Startseite, Anfrageformular und mobile Kontaktaktion.
 - `src/responsive.css`: responsive Umbrüche, Touchflächen, sichere Bildschirmränder, mobiles Menü und lesbare Anfrageentwürfe.
 - `src/bold.css`: aktuelle schwarze Gestaltung, Satoshi-Typografie, Graphitflächen, klare Abstände und angepasste mobile Ansichten.
-- `site.config.json`: Veröffentlichungs-Origin für Canonicals, Sitemap und strukturierte Daten.
+- `site.config.json` und `src/config.mjs`: Veröffentlichungs-Origin und Indexierungsstatus. Vercel verwendet beim Build seine stabile Produktionsdomain.
 - `src/site.js`: mobiles Menü, Projektfilter, bedarfsgesteuerter Videoplayer und E-Mail-Assistent.
 - `dist/`: fertige Website inklusive lokal gespeicherter Medien und Schriften.
 - `serve.mjs`: lokaler Server mit Redirects, Medien-Range-Requests und echten 404-Antworten.
@@ -100,3 +100,14 @@ Die Gestaltung berücksichtigt kleine Smartphones, Zwischenbreiten, Tablets, Que
 Das Mobilmenü besitzt einen eigenen Scrollbereich, dessen Höhe sich an den sichtbaren Bildschirm und die gemessene Headerhöhe anpasst. Beim Wechsel zwischen Mobil- und Desktopnavigation werden Animationen, Zustand und Fokus zurückgesetzt. Eigenständige mobile Navigations- und Kontaktlinks haben mindestens 44px Trefferhöhe. Auf der Kontaktseite führt die Navigation direkt zum Formular.
 
 Längere Entwürfe zeigen den Text in einem per Tastatur und Touch erreichbaren Scrollbereich. Die Entwurfsüberschrift wird beim Vorbereiten sichtbar unter dem Header positioniert. Notch-Abstände werden über CSS-Umgebungsvariablen berücksichtigt; die Grundlage beschreibt [MDN zu sicheren Bildschirmrändern](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/env). Die Größenprüfung ersetzt keine Prüfung auf jeder existierenden Kombination aus Gerät und Browser; die konkret durchgeführten Prüfungen stehen in PRUEFUNG.md.
+
+
+## Vercel und Indexierung
+
+Die Website ist als statische Vercel-Site konfiguriert. `vercel.json` setzt Build, Ausgabeordner `dist`, abschließende Slashes und die bisherigen Kurzpfad-Weiterleitungen. Die originalen Medien in `dist/assets` und `dist/media` sind versionierte Quelldateien; `dist` vor dem Build nicht löschen.
+
+Die öffentliche Fassung ist vorerst **nicht zur Suchmaschinenindexierung freigegeben**: `indexable: false` erzeugt `noindex, nofollow` in jeder HTML-Seite. Zusätzlich liefert Vercel den Header `X-Robots-Tag: noindex, nofollow` für sämtliche Pfade. `robots.txt` erlaubt den Abruf dieser Anweisungen und bewirbt bis zur Freigabe keine Sitemap.
+
+Für die spätere Indexierungsfreigabe `indexable` auf `true` setzen, den `X-Robots-Tag` aus `vercel.json` entfernen, neu bauen und veröffentlichen. `noindex` ist eine Suchmaschinenanweisung, keine Zugriffssperre.
+
+Das GitHub-Repository ist https://github.com/kiliansmd/fpmc. Die lokale Vercel-Verknüpfung und Umgebungsdateien werden nicht versioniert.
