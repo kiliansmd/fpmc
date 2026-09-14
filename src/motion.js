@@ -10,7 +10,7 @@
     ['.hero-copy h1, .page-heading h1, .service-hero-copy h1, .contact-editorial h1, .stage-content h1, .label-opening h1, .studio-opening-copy h1, .cinema-opening h1, .screen-hero h1', 'title'],
     ['.hero-introduction, .page-intro, .service-hero-copy>p, .service-hero-copy>.actions, .contact-intro, .stage-introduction, .label-opening>p, .cinema-opening-copy, .screen-hero-content p', 'intro'],
     ['.section-head h2, .home-studio-copy h2, .label-feature h2, .cta-copy h2, .studio-copy h2, .team-heading, .service-entry-copy h2, .service-introduction h2, .content-grid h2, .case-navigation h2, .release-copy h2, .premiere-heading h2, .production-title h3, .audio-production-release h3', 'type'],
-    ['.project-media, .service-entry-media, .studio-image, .motion-screen:not(.cinema-atmosphere), .label-portrait, .video-container, .case-image, .web-case-image, .hero-film-image, .label-feature-image, .service-hero-media, .next-project-image, .release-artwork, .production-image, .audio-release-image', 'image'],
+    ['.project-media, .service-entry-media, .studio-image, .motion-screen:not(.cinema-atmosphere):not(.hero-bts-screen), .label-portrait, .video-container, .case-image, .web-case-image, .hero-film-image, .label-feature-image, .service-hero-media, .next-project-image, .release-artwork, .production-image, .audio-release-image', 'image'],
     ['.team-card, .process-item, .price-card, .related-link, .fact, .service-overview-item, .studio-credits>span', 'row'],
     ['.prose>p, .section-head>p, .footer-top>*, .contact-address, .home-studio-copy>p, .studio-copy>p, .studio-opening-copy>p, .release-copy>p', 'copy']
   ];

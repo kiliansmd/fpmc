@@ -26,7 +26,7 @@ Der bestehende FPMC-Auftritt verlinkt [Redstar Radi – موسم الهجرة إ
 |---|---|---|---|
 | `stage.png` | `hero.png` · [FPMC-Original](https://www.fpmc.house/media/hero.png) | 1376 × 768 | Monochromer Bühnenstrahler und Mikrofon; atmosphärisches Markenbild, keine belegte Produktionsreferenz. |
 | `stage.mp4` | `hero-loop.mp4` · [FPMC-Original](https://www.fpmc.house/media/hero-loop.mp4) | 1280 × 720 · 5,04 s | Bewegter Strahler im dunklen Raum; atmosphärische Animation. |
-| `studio-bts.mp4` | `reel.mp4` · [FPMC-Original](https://www.fpmc.house/media/reels/DbsUtDCOc1u.mp4) | 404 × 720 · 8 s | FPMC-Reel mit Einblicken in den Autodreh. Jetzt auf Start- und Studioseite eingesetzt, mit Abspiel-/Pausensteuerung; kein Showreel der gesamten Produktion. |
+| `studio-bts.mp4` | `reel.mp4` · [FPMC-Original](https://www.fpmc.house/media/reels/DbsUtDCOc1u.mp4) | 404 × 720 · 8 s | FPMC-Reel mit Einblicken in den Autodreh. Jetzt im Startseiten-Hero sowie auf Studio- und Filmproduktionsseite eingesetzt, mit Abspiel-/Pausensteuerung; kein Showreel der gesamten Produktion. |
 
 ## Logo und Schriften
 
@@ -62,8 +62,13 @@ Die vollständigen SIL-OFL-1.1-Lizenztexte liegen unter `LIZENZEN/` und zusätzl
 
 ## Aktuelle cinematische Fassung
 
-- Der Einstieg verwendet `stage.mp4` stumm als atmosphärisches Markenmotiv. Er wird nicht als Projekt oder Musikproduktionsreferenz bezeichnet. Der Clip enthält eine Audiostream-Spur, die im Hintergrund grundsätzlich stumm bleibt.
+- Der Startseiten-Einstieg verwendet das originale `studio-bts.mp4` in seinem Seitenverhältnis 404:720. Das 8-sekündige Reel besitzt keine Audiospur. Es ersetzt den bisherigen Bühnenlicht-Loop und die wiederholte BTS-Fläche im unteren Teamabschnitt. `stage.mp4` bleibt im Medienarchiv erhalten.
 - `stage-motion-poster.jpg` ist ein unveränderter Videoframe bei 1,00 Sekunden aus `stage.mp4`, 1280 × 720 Pixel. Das passende Standbild ersetzt für diesen Einsatzzweck das abweichende Bühnenfoto `stage.png`.
 - Das offizielle Musikvideo folgt direkt auf der Startseite und wird weiterhin ausschließlich nach Klick über YouTube geladen. Spotify bleibt der Zugang zum veröffentlichten Track. Es gibt keinen erfundenen lokalen Audioausschnitt.
 - Das originale BTS-Reel erscheint zusätzlich auf der Filmproduktionsseite. Sein Portraitformat bleibt erhalten. Dieses Video besitzt keine Audiospur.
 - Hauptschrift ist Satoshi Variable; die Wortmarke verwendet Space Grotesk. Beide werden lokal eingebunden. Der aktuelle Auftritt lädt keine Serifenschrift. Satoshi-Lizenz: `LIZENZEN/Satoshi-FFL.txt`.
+
+
+## BTS im Hero – 14.09.2026
+
+Der unveränderte Clip wird auf Desktop bis 350 CSS-Pixel breit gezeigt; mobil teilt er die erste Zeile mit dem Titel. Das passende Originalposter hält die Bildfläche beim Laden stabil. Der Hero setzt src und preload=auto bereits im HTML; die bestehende Sichtbarkeitssteuerung startet stumm und inline ohne vorherige Interaktion. Außerhalb des sichtbaren Bereichs pausiert das Video, eine manuelle Pause bleibt beim Zurückscrollen erhalten. Ein 44 × 44px SVG-Regler erlaubt Pause, Fortsetzen und erneuten Abruf nach einem Ladefehler. Die übrigen BTS-Einbindungen laden weiterhin bei Sichtbarkeit.

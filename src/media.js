@@ -108,13 +108,16 @@
     let failed = false;
     let wantsPlayback = false;
     let generation = 0;
+    function labelToggle(text) {
+      if (!('motionCompact' in toggle.dataset)) toggle.textContent = text;
+      toggle.setAttribute('aria-label',text);
+    }
     function setState(state) {
       clearTimeout(loadingTimer);
       frame.dataset.playback = state;
       const active = wantsPlayback && !userPaused;
       const text = state === 'error' ? 'Bewegtbild erneut laden' : active ? 'Bewegtbild pausieren' : 'Bewegtbild abspielen';
-      toggle.textContent = text;
-      toggle.setAttribute('aria-label',text);
+      labelToggle(text);
       toggle.setAttribute('aria-pressed',String(active));
       toggle.removeAttribute('aria-busy');
     }
@@ -123,8 +126,7 @@
       loadingTimer = setTimeout(() => {
         if (!wantsPlayback) return;
         frame.dataset.playback = 'loading';
-        toggle.textContent = 'Lädt · pausieren';
-        toggle.setAttribute('aria-label','Bewegtbild lädt – pausieren');
+        labelToggle('Bewegtbild lädt – pausieren');
         toggle.setAttribute('aria-busy','true');
       }, 300);
     }
@@ -171,7 +173,10 @@
     video.addEventListener('waiting',waitForFrames);
     video.addEventListener('stalled', () => { if (video.readyState < 3) waitForFrames(); });
     video.addEventListener('pause', () => { if (!wantsPlayback) setState(failed ? 'error' : 'paused'); });
-    video.addEventListener('error', () => { failed = true; wantsPlayback = false; setState('error'); });
+    function mediaError() { failed = true; wantsPlayback = false; setState('error'); }
+    video.addEventListener('error',mediaError);
+    // An eager hero request can fail before this script attaches its listeners.
+    if (video.error) mediaError();
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => {
         const latest = entries[entries.length-1];
