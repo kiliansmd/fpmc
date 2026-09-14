@@ -8,16 +8,41 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/arbeit", "destination": "/projekte/", "permanent": true },
-    { "source": "/connect", "destination": "/kontakt/", "permanent": true },
-    { "source": "/v0/:path*", "destination": "/", "permanent": true },
-    { "source": "/v1/:path*", "destination": "/", "permanent": true }
+    {
+      "source": "/arbeit/",
+      "destination": "/projekte/",
+      "permanent": true
+    },
+    {
+      "source": "/connect/",
+      "destination": "/kontakt/",
+      "permanent": true
+    },
+    {
+      "source": "/v0/:path*/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/v1/:path*/",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }
