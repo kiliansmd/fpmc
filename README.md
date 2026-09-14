@@ -24,6 +24,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 - `src/styles.css`: Gestaltung, responsive Ansichten, Schriftdefinitionen und Zustände.
 - `src/motion.css` und `src/motion.js`: Schriftauftritte, Bildenthüllungen, Scrolltiefe, Interaktionen und Seitenübergänge.
 - `src/refinement.css`: verfeinerte Gestaltung, klare Typografieskala, neue Startseite, Anfrageformular und mobile Kontaktaktion.
+- `src/responsive.css`: responsive Umbrüche, Touchflächen, sichere Bildschirmränder, mobiles Menü und lesbare Anfrageentwürfe.
 - `site.config.json`: Veröffentlichungs-Origin für Canonicals, Sitemap und strukturierte Daten.
 - `src/site.js`: mobiles Menü, Projektfilter, bedarfsgesteuerter Videoplayer und E-Mail-Assistent.
 - `dist/`: fertige Website inklusive lokal gespeicherter Medien und Schriften.
@@ -88,3 +89,11 @@ Der aktuelle statische Check umfasst 19 Seiten, 447 interne Linkverweise und 131
 Auf ausdrücklichen Wunsch gibt es keine automatische Reduced-Motion-, No-Motion- oder Save-Data-Abschaltung. Lesbare Inhalte ohne JavaScript und manuelle Videosteuerungen bleiben erhalten. Die Bewegung erfordert keine externe Animationsbibliothek.
 
 Technische Referenzen: [MDN: Element.animate](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate), [MDN: @view-transition](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@view-transition).
+
+## Responsive Fassung
+
+Die Gestaltung berücksichtigt kleine Smartphones, Zwischenbreiten, Tablets, Querformat und große Desktopansichten. Enge Inhaltsgruppen werden rechtzeitig gestapelt: Leistungsformate und Webpakete bis 720px, der Kontaktbereich bis 900px. Das Projektselect nutzt immer die gesamte verfügbare Formularbreite. Lange Titel und Linktexte können umbrechen.
+
+Das Mobilmenü besitzt einen eigenen Scrollbereich, dessen Höhe sich an den sichtbaren Bildschirm und die gemessene Headerhöhe anpasst. Beim Wechsel zwischen Mobil- und Desktopnavigation werden Animationen, Zustand und Fokus zurückgesetzt. Eigenständige mobile Navigations- und Kontaktlinks haben mindestens 44px Trefferhöhe. Auf der Kontaktseite führt die Navigation direkt zum Formular.
+
+Längere Entwürfe zeigen den Text in einem per Tastatur und Touch erreichbaren Scrollbereich. Die Entwurfsüberschrift wird beim Vorbereiten sichtbar unter dem Header positioniert. Notch-Abstände werden über CSS-Umgebungsvariablen berücksichtigt; die Grundlage beschreibt [MDN zu sicheren Bildschirmrändern](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/env). Die Größenprüfung ersetzt keine Prüfung auf jeder existierenden Kombination aus Gerät und Browser; die konkret durchgeführten Prüfungen stehen in PRUEFUNG.md.

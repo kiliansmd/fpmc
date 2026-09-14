@@ -68,3 +68,16 @@ Die normale Desktopansicht wurde vor der Übergabe wiederhergestellt. Die urspr�
 - Keine zusätzliche externe Animationsbibliothek, kein Tracking und kein Formularbackend ergänzt. Keine Conversion-Messung oder A/B-Prüfung durchgeführt.
 - Labelseite: Text- und Outline-Hoverfarben sowie primäre Buttons für den dunklen Bereich korrigiert; dunkle Fokusringe auf der hellen Navigation, Abschluss-CTA und im Footer. Helle CTA im Browser visuell und anhand der berechneten Farben kontrolliert.
 - Browserlogs: Beim schnellen automatisierten Wechsel zwischen Seiten meldete der Browser einmal „AbortError: Transition was skipped“. Die Navigation und Zielseite funktionierten. Keine weiteren Website-Warnungen oder -Fehler im kontrollierten Log.
+
+## Responsive Überarbeitung
+
+- 323 lokale Seiten-/Größenprüfungen über alle 19 Inhaltsseiten, mit beobachteten Breiten zwischen 320 und 1920 CSS-Pixeln. Keine seitlichen Überläufe oder abgeschnittenen Überschriften/Buttons in diesem Durchlauf. Die Viewport-Umschaltung des eingebetteten Browsers lieferte während einzelner Wechsel Zwischenbreiten; die tatsächlichen DOM-Breiten wurden gemessen.
+- Gezielte Kontrolle der schmalen Tabletansicht bei 640px: Webpakete einspaltig, alle Paketlinks erhalten.
+- Mobiles Menü bei 568×320: Unterkante innerhalb des Viewports, eigener Scrollbereich; Escape setzt Fokus auf den Menübutton. Wechsel zu 1200px und zurück schließt das Menü und überträgt den Fokus auf das jeweils sichtbare Bedienelement.
+- Anfrage bei rund 390px mit langem Nachrichtentext erstellt: Entwurfsüberschrift ca.20px unter dem Header, korrekter Fokus, kein horizontaler Überlauf. Die kontrollierten eigenständigen Kontakt-, Footer-, Menü- und Entwurfsaktionen haben mindestens 44px Höhe.
+- Kontakt-Schnelllink auf derselben Seite springt zu #anfrage, ohne Formulareingaben neu zu laden.
+- Vier temporäre lokale Prüfansichten mit 200% CSS-Grundschrift: Startseite, Kontakt, Web/Digital und Label. Nach Korrekturen auch bei 320px keine abgeschnittenen Überschriften oder Buttons. Der Webbereich zeigte bei dieser Extremprüfung eine Rundungsdifferenz von 1px in der dokumentweiten Messung. Die Prüfansichten wurden vor dem Veröffentlichungsbuild entfernt.
+- Source-Review der Menülogik: keine festgestellte Race Condition beim schnellen Umschalten oder bei Breakpointwechseln. Geänderte Syntax und statische Website-Verknüpfungen werden vor Veröffentlichung erneut geprüft.
+- Die Geräteprüfungen verwenden den eingebetteten Browser mit angepassten Viewports. Keine separate Safari-, Firefox- oder physische iOS-/Android-Geräteprüfung; die Grundschriftprüfung ist eine lokale CSS-Prüfansicht, kein Betriebssystem-Schriftgrößentest.
+- Mobile Projektfilter abschließend geprüft: Web/Digital 5, Alle 6. Tab aus dem geöffneten Menü führt zum ersten sichtbaren Inhalts-Steuerelement, schließt das Menü und entfernt die Scrollsperre. Keine Warnungen oder Fehler im abschließenden Browserlog.
+- Finaler Build und Syntaxcheck bestanden; statischer Check weiterhin 19 Seiten, 447 interne Linkverweise, 131 Medienverweise und 19 gültige JSON-LD-Blöcke.
