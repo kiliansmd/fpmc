@@ -15,7 +15,6 @@ function setMenu(open,immediate=false){
  nav.querySelectorAll('a').forEach(item=>item.getAnimations().forEach(animation=>animation.cancel()));
  menuButton.setAttribute('aria-expanded',String(open));
  menuButton.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
- menuButton.textContent=open?'Menü −':'Menü +';
  document.documentElement.classList.toggle('menu-is-open',open);
  if(immediate){nav.classList.toggle('is-open',open);nav.inert=false;return;}
  if(open){

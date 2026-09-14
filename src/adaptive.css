@@ -173,3 +173,66 @@
  .footer-links{gap:0}
  .filter{min-height:48px}
 }
+
+/* Vector marks preserve the same quiet appearance on iOS and other platforms. */
+.arrow{display:inline-flex;width:1em;height:1em;align-items:center;justify-content:center;vertical-align:-.12em}
+.ui-icon{display:block;width:100%;height:100%;max-width:none;flex:none;pointer-events:none}
+.play-circle .ui-icon{width:1em;height:1em}
+.menu-mark{display:inline-flex;width:16px;height:16px;flex:none;transition:transform .25s var(--ease-film)}
+.menu-toggle[aria-expanded=true] .menu-mark{transform:rotate(45deg)}
+.footer .arrow,.tag .arrow,.fact .arrow,.embed-note .arrow,.contact-address .arrow{font-size:.95em;margin-inline-start:.3em}
+.footer-links a{gap:6px}
+.project-info{padding-top:0}
+@media(max-width:1024px){
+ .menu-toggle{display:inline-flex;align-items:center;justify-content:end;gap:8px}
+}
+/* Mobile sections use one measured gap at each transition. */
+@media(max-width:720px){
+ .page-hero{padding-block:28px 24px}
+ .page-intro,body[data-page] .page-intro{margin-top:22px}
+ .page-intro p{font-size:1rem;line-height:1.6;max-width:42ch}
+ .page-intro .actions{width:100%;max-width:none;margin-top:24px;gap:12px 24px;align-items:start}
+ .page-intro .actions>.button{width:100%}
+ .page-hero+.section{padding-top:24px}
+ body[data-page=leistungen] .service-directory{padding-top:0;padding-bottom:28px}
+ body[data-page=projekte] .page-hero{padding-bottom:18px}
+ body[data-page=projekte] .page-hero+.section{padding-top:0}
+ body[data-page=projekte] .filter-bar{padding-top:8px;margin-bottom:24px}
+ .service-entry{padding-block:28px;gap:20px;grid-template-columns:minmax(0,1fr) 24px}
+ .service-entry:first-child{padding-top:16px}
+ .service-entry-media,.service-entry:nth-of-type(1) .service-entry-media,.service-entry:nth-of-type(2) .service-entry-media{grid-column:1/-1;grid-row:1;aspect-ratio:1.65}
+ .service-entry-copy{grid-column:1;grid-row:2}
+ .service-entry>.arrow{grid-column:2;grid-row:2;font-size:24px;margin-top:6px}
+ .service-entry-copy h2{font-size:clamp(2.5rem,10.5vw,3.5rem);line-height:1.06}
+ .service-entry-copy p{font-size:1rem;line-height:1.55;margin-top:14px}
+ .service-formats{display:block;font-size:.875rem;line-height:1.6;margin-top:12px}
+ .service-entry-media img{object-position:center 42%}
+ .project-info{margin-top:18px;padding-top:0}
+ .project-info h3{font-size:clamp(1.75rem,7.2vw,2.25rem)}
+ .studio-masthead{padding-bottom:32px}
+ .team-grid{margin-top:0}
+ .team-card:first-child{padding-top:22px}
+ .screen-hero:not(.screen-hero-filmproduktion) .screen-hero-content{min-height:clamp(440px,72svh,560px);padding-top:120px;padding-bottom:36px}
+ .screen-hero-content p{margin-top:22px;line-height:1.6}
+ .screen-hero-content .actions{margin-top:24px}
+ .label-masthead{padding-top:28px}
+ .label-opening{margin-bottom:24px}
+ .release-layout{gap:28px}
+ .cta-section,body[data-page=label] .cta-section{padding-block:52px}
+ .footer{padding-top:32px}
+}
+@media(max-width:480px){
+ :root{--header-height:64px}
+ .header-inner{padding-block:8px;gap:8px 18px}
+ .header-quick{font-size:.875rem;padding-inline:12px}
+ .header-quick .arrow{display:none}
+ .menu-toggle{font-size:.875rem;min-width:62px}
+ .menu-mark{width:14px;height:14px}
+ .page-intro .button:not(.outline){min-height:52px;padding-block:15px;font-size:1rem}
+ .page-hero+.section .section-head{margin-bottom:24px}
+}
+@media(max-width:720px) and (max-height:550px){
+ :root{--header-height:60px}
+ .header-inner{padding-block:6px}
+ .screen-hero:not(.screen-hero-filmproduktion) .screen-hero-content{min-height:360px;padding-block:40px}
+}

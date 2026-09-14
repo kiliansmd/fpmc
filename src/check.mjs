@@ -35,6 +35,8 @@ for(const route of routes){
    if(png.length>5*1024*1024)errors.push('Social image exceeds 5 MB delivery budget');
  }
  socialCards++;
+ if(/\p{Extended_Pictographic}|\p{Regional_Indicator}|\uFE0F/u.test(html.slice(html.indexOf('<body')).replaceAll('©','')))errors.push(`${route.path}: emoji-capable UI glyph; use a vector icon`);
+ for(const icon of html.matchAll(/<span class="arrow"[^>]*>(.*?)<\/span>/gs))if(!icon[1].includes('<svg'))errors.push(`${route.path}: non-vector arrow`);
  if((html.match(/<h1\b/g)||[]).length!==1)errors.push(`${route.path}: expected one h1`);
  if(!html.includes('<html lang="de"'))errors.push(`${route.path}: language missing`);
  if(!html.includes(`rel="canonical" href="${origin}${route.path}"`))errors.push(`${route.path}: canonical mismatch`);

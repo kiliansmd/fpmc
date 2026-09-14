@@ -196,3 +196,13 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - Vergrößerte Basisschrift (`html { font-size:200% }`) auf acht repräsentativen Seiten bei 320, 768 und 1440px geprüft. Zwei lange Produktionsbeschreibungen benötigten zusätzliche Wortumbrüche. Diese sind ergänzt und gezielt nachgeprüft. Der Test betrifft die CSS-Basisschrift; er bildet nicht sämtliche Betriebssystem-Zoommodi ab.
 - Safe-Area-Abstände berücksichtigt; Film-CTA steht im DOM vor der Videosteuerung wie in der mobilen Ansicht. Die Website bleibt auf noindex, Social-Vorschau und Anti-Overscroll sind unverändert.
 - Die Browserprüfungen simulieren Geräteformate und Eingabemodi. Sie ersetzen keine Tests auf jedem physischen Endgerät.
+
+
+## Mobile Korrektur nach iPhone-Screenshot – 14.09.2026
+
+- Screenshotursache nachvollzogen: Unicode-Pfeile können von iOS als farbige Emoji-Zeichen gerendert werden. Alle Pfeile im HTML und das Playzeichen durch eigene Inline-SVGs ersetzt; Menüsymbol ebenfalls SVG. Kein Symbolfont und keine neue Bibliothek. Icons verwenden currentColor, aria-hidden und focusable=false.
+- WebKit im Mobilmodus, 393 × 700px: zuvor 132px addierter Abstand zwischen Hero-Aktionen und erster Leistung. Jetzt 40px bis zum ersten Produktionsbild; das Bild beginnt bei rund 361px. Einleitung gekürzt und redundanten Sprunglink auf die unmittelbar folgenden Leistungen entfernt. Header kompakter; die Kurzanfrage bleibt mindestens 44px hoch.
+- Produktionsbilder stehen mobil vor den Kartentexten. Doppelte Bild-/Titelabstände normaler Projektkarten entfernt. Teamliste näher an den Studio-Einstieg gerückt. Musikvideo-/Audio-Einstiege auf mobilen Geräten mit kleineren Mindesthöhen und weniger oberem Leerraum.
+- Statischer Check: 19 Seiten, 19 individuelle Titel/Beschreibungen, 439 interne Links, 153 Asset-Verweise, 19 JSON-LD-Blöcke und vollständige Social-Metadaten. Neue Prüfung auf Emoji-fähige UI-Zeichen und nicht grafische Pfeile. Copyrightzeichen bleibt normaler Text. Keine Emoji-Zeichen in CSS-content-Regeln gefunden.
+
+- Alle 19 Seiten in Chromium, Firefox und WebKit bei 320, 768 und 1440px erneut geprüft: 171 Layoutkombinationen ohne festgestellte Überläufe oder JavaScript-Laufzeitfehler. Menü, Breakpointwechsel, Querformat, Kontaktentwurf, Filter, FAQ und Videopause bestanden. Weitere 30 Kontrollen mit vergrößerter Basisschrift, ohne JavaScript und im WebKit-Touchmodus bestanden. Kurze 667 × 375px-Fenster für Musikvideo und Audio gesondert nachgeprüft. Die Prüfung verwendet Browseremulation, keine physischen iPhones.

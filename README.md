@@ -20,6 +20,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 ## Dateien
 
 - `src/build.mjs`: Seiten, Inhalte, gemeinsame Komponenten und Metadaten; erzeugt die statischen HTML-Seiten.
+- `src/icons.mjs`: einheitliche SVG-Pfeile, Play- und Menüsymbole ohne plattformabhängige Emoji-Glyphen.
 - `src/adaptive.css`: abschließende responsive Gestaltung für Smartphone, Tablet, breite Monitore, kurze Fenster und Touch-Bedienung.
 - `src/seo.mjs`: gemeinsame Social-Vorschau, Open-Graph-/X-Metadaten und verknüpfte Website-/Seiten-Daten.
 - `src/art.mjs`: Art Direction für Startseite, Kontakt, Seiteneinstiege, Navigation, Footer und Bewegtbild.
@@ -135,3 +136,10 @@ Die abschließend eingebundene `adaptive.css` stimmt die cinematische Gestaltung
 Auf Tablets erscheinen die drei Produktionsbereiche als große Bild-/Textzeilen. Auf Smartphones stehen Filmbeschriftungen unter dem Bild, damit längere Texte und größere Schrift nicht abgeschnitten werden. Teamangaben und der Wechsel zum nächsten Projekt besitzen ein eindeutiges Raster. Das Film-BTS bleibt im Inhaltsbereich ausgerichtet; DOM- und visuelle Reihenfolge stimmen überein. Touchgeräte erhalten auch bei großer Breite ausreichend hohe Footerlinks. Formulare verwenden skalierbare Eingabeschrift.
 
 Die schwarzen Flächen, serifenlosen Schriften, vorhandenen Medien, Animationen, Anti-Overscroll-Regeln und Social-Metadaten bleiben erhalten.
+
+
+## Mobile Feinabstimmung nach iPhone-Rückmeldung
+
+Unicode-Pfeile wurden vollständig durch einheitliche SVG-Icons ersetzt. Das betrifft Hauptaktionen, Footer, Tags, externe Links, Player und Menü. Icons sind für Screenreader ausgeblendet und nicht fokussierbar; die Bedienelemente behalten ihre Textbeschriftungen. Die Prüfung verhindert neue Emoji-Glyphen und nicht grafische Pfeile im ausgelieferten HTML.
+
+Die mobile Leistungsübersicht verwendet eine kürzere Einleitung und eine Hauptaktion. Danach folgen direkt die echten Produktionsbilder, jeweils vor den zugehörigen Kartentexten. Addierte Abschnittsabstände sind bereinigt; zwischen Aktion und erstem Bild verbleiben bei 393px Fensterbreite 40px. Auch Projektbeschriftungen, Teamliste sowie die mobilen Musikvideo-/Audio-Einstiege sind kompakter abgestimmt.
