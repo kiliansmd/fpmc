@@ -48,8 +48,7 @@ mobileNavigation.addEventListener('change',()=>{
  if(mobileNavigation.matches&&focusWasInNav)menuButton?.focus();
  else if(!mobileNavigation.matches&&focusWasOnMobileControl)nav?.querySelector('a')?.focus();
 });
-document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{const before=new Map([...document.querySelectorAll('[data-category]:not([hidden])')].map(card=>[card,card.getBoundingClientRect()]));document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelectorAll('[data-category]').forEach(card=>{card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;});const result=document.querySelector('[data-filter-status]');if(result)result.textContent=`${document.querySelectorAll('[data-category]:not([hidden])').length} Projekte angezeigt.`;document.dispatchEvent(new CustomEvent('fpmc:filter',{detail:{before}}));}));
-document.querySelectorAll('[data-video]').forEach(button=>button.addEventListener('click',()=>{const iframe=document.createElement('iframe');iframe.src=`https://www.youtube-nocookie.com/embed/${button.dataset.video}?autoplay=1`;iframe.title=button.dataset.title||'Musikvideo';iframe.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';iframe.allowFullscreen=true;iframe.referrerPolicy='strict-origin-when-cross-origin';const parent=button.parentElement;parent.replaceChildren(iframe);iframe.focus();}));
+document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{if(button.getAttribute('aria-pressed')==='true')return;const before=new Map([...document.querySelectorAll('[data-category]:not([hidden])')].map(card=>{const rect=card.getBoundingClientRect();return [card,{left:rect.left,top:rect.top,opacity:Number(getComputedStyle(card).opacity)}];}));document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelectorAll('[data-category]').forEach(card=>{card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;});const result=document.querySelector('[data-filter-status]');if(result)result.textContent=`${document.querySelectorAll('[data-category]:not([hidden])').length} Projekte angezeigt.`;document.dispatchEvent(new CustomEvent('fpmc:filter',{detail:{before}}));}));
 const contactForm=document.querySelector('[data-contact-form]');
 if(contactForm){contactForm.addEventListener('invalid',event=>{const group=event.target.closest('details');if(group)group.open=true;},true);const preset=new URLSearchParams(location.search).get('projekt');if(preset){const select=contactForm.elements.projekt;if([...select.options].some(o=>o.value===preset))select.value=preset;}
 const offerField=contactForm.querySelector('[data-offer-field]'),offerSelect=contactForm.elements.paket;
@@ -60,17 +59,40 @@ const invalidateDraft=()=>{const draft=document.querySelector('[data-draft]');dr
 contactForm.addEventListener('submit',e=>{e.preventDefault();if(!contactForm.reportValidity())return;const data=new FormData(contactForm);const name=String(data.get('name')).trim(),email=String(data.get('email')||'').trim();if(!name){contactForm.elements.name.setCustomValidity('Bitte gib deinen Namen ein.');contactForm.elements.name.reportValidity();return;}const type=data.get('projekt')||'Projektidee';const body=`Hallo FPMC,\n\nich möchte mit euch über ein Projekt sprechen.\n\nProjekt: ${type}\n${data.get('paket')?'Angebot: '+data.get('paket')+'\n':''}Name: ${name}\n${email?'Antwortadresse: '+email+'\n':''}${data.get('firma')?'Firma / Artist: '+data.get('firma')+'\n':''}${data.get('termin')?'Zeitraum: '+data.get('termin')+'\n':''}\n${data.get('nachricht')||''}\n\nViele Grüße\n${name}`;const draft=document.querySelector('[data-draft]');draft.querySelector('pre').textContent=body;draft.querySelector('[data-mail-link]').href=`mailto:hello@fpmc.house?subject=${encodeURIComponent('Projektanfrage · '+type)}&body=${encodeURIComponent(body)}`;draft.hidden=false;const heading=draft.querySelector('[data-draft-heading]');heading.focus({preventScroll:true});heading.scrollIntoView({behavior:'smooth',block:'start'});});contactForm.elements.name.addEventListener('input',()=>contactForm.elements.name.setCustomValidity(''));}
 document.querySelector('[data-copy-draft]')?.addEventListener('click',async()=>{const draft=document.querySelector('[data-draft]'),text=draft.querySelector('pre').textContent,status=draft.querySelector('[role=status]');try{await navigator.clipboard.writeText(text);if(!draft.hidden&&draft.querySelector('pre').textContent===text)status.textContent='Text kopiert. Du kannst ihn in deine E-Mail einfügen.';}catch{if(!draft.hidden&&draft.querySelector('pre').textContent===text)status.textContent='Bitte markiere den Nachrichtentext und kopiere ihn manuell.';}});
 
-// Local set footage starts in view. Manual playback controls remain available.
-document.querySelectorAll('[data-motion-src]').forEach(video=>{
-  const toggle=video.parentElement.querySelector('[data-motion-toggle]');
-  let userPaused=false;
-  let inView=false;
-  const load=()=>{if(!video.getAttribute('src')){video.src=video.dataset.motionSrc;video.load();}};
-  const update=()=>{const playing=!video.paused;toggle.textContent=playing?'Bewegtbild pausieren':'Bewegtbild abspielen';toggle.setAttribute('aria-label',playing?'Bewegtbild pausieren':'Bewegtbild abspielen');};
-  const play=()=>{load();video.play().then(update).catch(update);};
-  toggle.hidden=false;
-  toggle.addEventListener('click',()=>{if(video.paused){userPaused=false;play();}else{userPaused=true;video.pause();}});
-  video.addEventListener('play',update);video.addEventListener('pause',update);
-  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;if(inView&&!userPaused)play();else video.pause();},{threshold:.15});observer.observe(video);}
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();else if(inView&&!userPaused)play();});
+
+window.addEventListener('pageshow',event=>{if(event.persisted)setMenu(false,true);});
+
+// Feedback never intercepts a document navigation or adds an artificial delay.
+let navigationTimer;
+let navigationReset;
+const navigationStatus=document.createElement('span');
+navigationStatus.className='sr-only';
+navigationStatus.setAttribute('role','status');
+document.body.append(navigationStatus);
+function clearNavigation(){
+ clearTimeout(navigationTimer);clearTimeout(navigationReset);
+ delete document.documentElement.dataset.navigation;
+ navigationStatus.textContent='';
+}
+document.addEventListener('click',event=>{
+ const anchor=event.target.closest('a[href]');
+ if(!anchor||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||anchor.hasAttribute('download')||(anchor.target&&anchor.target!=='_self'))return;
+ const url=new URL(anchor.href);
+ if(url.origin!==location.origin||url.pathname===location.pathname&&url.search===location.search||/\.[a-z0-9]+$/i.test(url.pathname)&&!url.pathname.endsWith('.html'))return;
+ clearNavigation();
+ navigationTimer=setTimeout(()=>{
+  document.documentElement.dataset.navigation='loading';
+  navigationStatus.textContent='Seite wird geladen.';
+ },180);
+ navigationReset=setTimeout(clearNavigation,15000);
+});
+window.addEventListener('pagehide',clearNavigation);
+window.addEventListener('pageshow',clearNavigation);
+window.addEventListener('pageswap',event=>{
+ event.viewTransition?.ready.catch(()=>{});
+ clearNavigation();
+ setMenu(false,true);
+});
+window.addEventListener('pagereveal',event=>{
+ event.viewTransition?.ready.catch(()=>{});
 });

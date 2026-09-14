@@ -13,15 +13,15 @@
 .masthead-top{overflow:clip}
 .masthead-name{overflow:visible;padding-bottom:.075em;margin-bottom:-.075em}
 .masthead-name .logo-letter{display:inline-block;transform-origin:50% 100%}
-html:not(.no-js) .logo-letter{animation:1050ms var(--ease-film) both letter-in;animation-delay:calc(var(--letter-index)*75ms)}
-html:not(.no-js) .masthead-top>p{animation:850ms var(--ease-film) 240ms both copy-in}
-html:not(.no-js) .masthead-bottom{animation:800ms var(--ease-film) 350ms both copy-in}
-html:not(.no-js) .cinema-frame{animation:1150ms var(--ease-film) 180ms both frame-in}
-html:not(.no-js) .page-heading .title-line{animation:900ms var(--ease-film) both title-in;animation-delay:calc(var(--line-index,0)*95ms)}
-html:not(.no-js) .page-heading>.eyebrow,html:not(.no-js) .contact-editorial>.eyebrow{animation:750ms var(--ease-film) 70ms both copy-in}
-html:not(.no-js) .page-intro,html:not(.no-js) .contact-intro{animation:800ms var(--ease-film) 230ms both copy-in}
-html:not(.no-js) .contact-editorial h1{animation:950ms var(--ease-film) both title-in}
-html:not(.no-js) .contact-letter{animation:900ms var(--ease-film) 170ms both copy-in}
+
+
+
+
+
+
+
+
+
 .header{transition:box-shadow .45s var(--ease-film),background .45s;isolation:isolate}
 .menu-toggle{white-space:nowrap;flex-shrink:0}
 .header.has-scrolled{background:rgba(244,244,240,.94);box-shadow:0 7px 28px #1616160a;backdrop-filter:blur(18px)}

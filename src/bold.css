@@ -331,8 +331,8 @@ body[data-section=Rechtliches] .page-heading h1{font-size:clamp(56px,6.3vw,98px)
 body[data-section=Rechtliches] .page-intro p{max-width:650px}
 body[data-section=Rechtliches] .prose{max-width:880px}
 body[data-section=Rechtliches] .prose h2{font-size:30px;line-height:1.2}
-html:not(.no-js) .service-hero .title-line{animation:800ms var(--ease-film) both title-in;animation-delay:calc(var(--line-index,0)*75ms)}
-html:not(.no-js) .hero-introduction{animation:700ms var(--ease-film) 120ms both copy-in}
+
+
 @media(max-width:1200px){
  .hero-copy{gap:40px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}.hero-copy h1{font-size:8.6vw}.hero-description{font-size:18px}.hero-copy .actions{gap:14px 22px}.hero-copy .button{padding-inline:18px}
  .service-hero-layout{gap:48px}.service-hero-copy>p{font-size:19px}.service-introduction .content-grid{gap:56px}.service-introduction p{font-size:19px}.section-faq>.wrap{gap:48px}.team-card{grid-template-columns:minmax(0,1.1fr) minmax(0,.8fr);gap:20px 36px}.team-card .role{grid-column:2}.team-card p:not(.role),.team-card .languages{grid-column:2}

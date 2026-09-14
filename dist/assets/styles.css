@@ -89,15 +89,15 @@ body[data-page=label] a:focus-visible,body[data-page=label] button:focus-visible
 .masthead-top{overflow:clip}
 .masthead-name{overflow:visible;padding-bottom:.075em;margin-bottom:-.075em}
 .masthead-name .logo-letter{display:inline-block;transform-origin:50% 100%}
-html:not(.no-js) .logo-letter{animation:1050ms var(--ease-film) both letter-in;animation-delay:calc(var(--letter-index)*75ms)}
-html:not(.no-js) .masthead-top>p{animation:850ms var(--ease-film) 240ms both copy-in}
-html:not(.no-js) .masthead-bottom{animation:800ms var(--ease-film) 350ms both copy-in}
-html:not(.no-js) .cinema-frame{animation:1150ms var(--ease-film) 180ms both frame-in}
-html:not(.no-js) .page-heading .title-line{animation:900ms var(--ease-film) both title-in;animation-delay:calc(var(--line-index,0)*95ms)}
-html:not(.no-js) .page-heading>.eyebrow,html:not(.no-js) .contact-editorial>.eyebrow{animation:750ms var(--ease-film) 70ms both copy-in}
-html:not(.no-js) .page-intro,html:not(.no-js) .contact-intro{animation:800ms var(--ease-film) 230ms both copy-in}
-html:not(.no-js) .contact-editorial h1{animation:950ms var(--ease-film) both title-in}
-html:not(.no-js) .contact-letter{animation:900ms var(--ease-film) 170ms both copy-in}
+
+
+
+
+
+
+
+
+
 .header{transition:box-shadow .45s var(--ease-film),background .45s;isolation:isolate}
 .menu-toggle{white-space:nowrap;flex-shrink:0}
 .header.has-scrolled{background:rgba(244,244,240,.94);box-shadow:0 7px 28px #1616160a;backdrop-filter:blur(18px)}
@@ -347,9 +347,9 @@ body[data-section=Rechtliches] .page-heading h1{font-size:clamp(48px,5vw,78px)}
 .links-list{max-width:1000px;gap:12px}
 .links-list .button{font-size:clamp(20px,2.2vw,32px);padding:22px 25px;min-height:80px}
 /* Motion has a shorter, calmer cadence; the requested always-on behavior remains. */
-html:not(.no-js) .hero-copy h1{animation:800ms var(--ease-film) both title-in}
-html:not(.no-js) .hero-copy>.eyebrow{animation:650ms var(--ease-film) both copy-in}
-html:not(.no-js) .hero-description,html:not(.no-js) .hero-copy .actions{animation:750ms var(--ease-film) 120ms both copy-in}
+
+
+
 .desktop-nav>a:not(.button):hover,.footer-links a:hover{translate:0 0}
 .brand:hover .wordmark{letter-spacing:-.055em}
 .footer-signature:hover{letter-spacing:-.055em}
@@ -939,8 +939,8 @@ body[data-section=Rechtliches] .page-heading h1{font-size:clamp(56px,6.3vw,98px)
 body[data-section=Rechtliches] .page-intro p{max-width:650px}
 body[data-section=Rechtliches] .prose{max-width:880px}
 body[data-section=Rechtliches] .prose h2{font-size:30px;line-height:1.2}
-html:not(.no-js) .service-hero .title-line{animation:800ms var(--ease-film) both title-in;animation-delay:calc(var(--line-index,0)*75ms)}
-html:not(.no-js) .hero-introduction{animation:700ms var(--ease-film) 120ms both copy-in}
+
+
 @media(max-width:1200px){
  .hero-copy{gap:40px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}.hero-copy h1{font-size:8.6vw}.hero-description{font-size:18px}.hero-copy .actions{gap:14px 22px}.hero-copy .button{padding-inline:18px}
  .service-hero-layout{gap:48px}.service-hero-copy>p{font-size:19px}.service-introduction .content-grid{gap:56px}.service-introduction p{font-size:19px}.section-faq>.wrap{gap:48px}.team-card{grid-template-columns:minmax(0,1.1fr) minmax(0,.8fr);gap:20px 36px}.team-card .role{grid-column:2}.team-card p:not(.role),.team-card .languages{grid-column:2}
@@ -971,3 +971,68 @@ html:not(.no-js) .hero-introduction{animation:700ms var(--ease-film) 120ms both 
  body[data-page=projekte] .page-hero+section,body[data-page^=projekte-] .page-hero+section{padding-top:28px}.service-hero .breadcrumbs{margin-bottom:22px}.service-hero-copy>p{font-size:18px}.service-hero-copy .actions{margin-top:26px}.service-introduction p{font-size:18px}.section-faq .section-head h2{font-size:36px}.faq summary{font-size:19px}.contact-workspace{padding-block:32px 60px}.contact-sheet{gap:36px}.contact-editorial h1{font-size:clamp(54px,12.5vw,72px)}.contact-letter{padding-top:26px}.contact-how{font-size:16px}.field input,.field select,.field textarea{padding:13px 12px}.field textarea{min-height:150px}.field-hint,.form-info{font-size:14px}.case-navigation{padding-block:52px}body[data-section=Rechtliches] .page-heading h1{font-size:clamp(39px,9.8vw,58px)}body[data-section=Rechtliches] .prose h2{font-size:27px}
 }
 @media(max-width:359px){:root{--pad:18px}.hero-copy h1{font-size:42px}.hero-copy .button{width:100%}.hero-copy .actions{align-items:stretch}.hero-film-caption h2{font-size:25px}.service-overview h3{font-size:35px}.contact-editorial h1{font-size:51px}}
+
+/* FPMC interaction cadence: quick response, quiet settling, stable frames. */
+:root{--ease-film:cubic-bezier(.22,.75,.2,1)}
+html{scroll-behavior:auto;scrollbar-gutter:stable;scroll-padding-top:calc(var(--header-size,90px) + 24px)}
+.anchor-link{scroll-margin-top:0}
+::view-transition-old(root){animation:180ms ease-out both page-out}
+::view-transition-new(root){animation:240ms var(--ease-film) both page-in}
+@keyframes page-out{to{opacity:0}}
+@keyframes page-in{from{opacity:0}}
+.header{view-transition-name:fpmc-header}
+::view-transition-group(fpmc-header){animation-duration:0s}
+::view-transition-old(fpmc-header){display:none}
+::view-transition-new(fpmc-header){animation-duration:0s}
+
+/* The navigation indicator only appears when a real navigation takes time. */
+.header:before{content:'';position:absolute;z-index:2;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);opacity:0;pointer-events:none;transform-origin:left}
+html[data-navigation=loading] .header:before{opacity:1;animation:navigation-wait 1.1s ease-in-out infinite}
+@keyframes navigation-wait{0%{transform:translateX(-100%) scaleX(.22)}60%{transform:translateX(25%) scaleX(.55)}100%{transform:translateX(100%) scaleX(.22)}}
+html[data-navigation=loading] .header{overflow:clip}
+
+/* Image frames keep their dimensions while pixels arrive. */
+img[data-load-state]{transition:opacity .42s var(--ease-film)}
+img[data-load-state=pending]{opacity:0}
+img[data-load-state=ready]{opacity:1}
+.hero-film-image,.project-media,.service-entry-media,.label-feature-image,.service-hero-media,.next-project-image,.label-portrait{position:relative;overflow:clip;background:#111315}
+[data-media-state=loading]:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 20%,#ffffff06 48%,transparent 76%);animation:media-wait 1.8s ease-in-out infinite}
+@keyframes media-wait{from{translate:-100% 0}to{translate:100% 0}}
+.media-fallback{position:absolute;inset:0;display:grid;place-content:center;padding:24px;text-align:center;font-size:14px;color:#bfc1c5}
+[data-media-state=error]>img{opacity:0}
+.service-hero-media>img,.label-feature-image>img,.next-project-image>img{transform:translate3d(0,var(--frame-offset,0px),0) scale(1.065);transition:opacity .42s var(--ease-film),scale .7s var(--ease-film)}
+.label-feature-image:hover>img,.next-project:hover .next-project-image>img{transform:translate3d(0,var(--frame-offset,0px),0) scale(1.065);scale:1.025}
+
+.video-container{position:relative;aspect-ratio:16/9;overflow:clip;isolation:isolate}
+.video-container .video-facade{z-index:2;transition:opacity .22s var(--ease-film)}
+.video-container .video-embed{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .24s var(--ease-film)}
+.video-container[data-player-state=ready] .video-embed{opacity:1}
+.video-facade[aria-disabled=true]{cursor:progress}
+.video-container[data-player-state=loading] .play-circle{animation:player-breathe 1.2s ease-in-out infinite}
+@keyframes player-breathe{50%{box-shadow:0 0 0 9px #ffffff0a;opacity:.6}}
+.player-status{position:absolute;left:24px;right:24px;bottom:14px;z-index:3;color:#eeeee9;background:#08090aea;padding:10px 14px;font-size:14px;line-height:1.45;text-align:center;pointer-events:none}
+.player-status:empty,.video-container[data-player-state=loading] .player-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.motion-toggle{transition:background .2s,color .2s,border-color .2s,translate .2s var(--ease-film);min-height:44px}
+.motion-screen[data-playback=loading]:after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform-origin:left;animation:navigation-wait 1.2s ease-in-out infinite;pointer-events:none}
+.motion-screen[data-playback=error] .motion-toggle{border-color:#bfc1c5;background:#08090ae8}
+
+.button,.header-quick,.menu-toggle,.filter,.motion-toggle,.video-facade,.quiet-link,.desktop-nav>a{touch-action:manipulation;-webkit-tap-highlight-color:#ffffff18}
+.button,.header-quick,.menu-toggle,.filter{transition:background .2s,color .2s,border-color .2s,translate .2s var(--ease-film),box-shadow .2s}
+.button:active,.header-quick:active,.menu-toggle:active,.filter:active,.motion-toggle:active{translate:0 1px}
+.button:active,.header-quick:active{filter:brightness(.86)}
+.project-card:active .project-media>img,.hero-film:active .hero-film-photo{scale:1.02}
+.service-overview-item:active,.service-row:active,.related-link:active{background:#ffffff05}
+.desktop-nav>a:active,.text-link:active,.quiet-link:active{opacity:.7}
+.faq summary{transition:color .2s}
+.faq summary:hover{padding-left:0}
+.faq summary:after{transition:transform .3s var(--ease-film)}
+.faq details[open]>p{animation:240ms var(--ease-film) both copy-in}
+.faq-moving{overflow:clip}
+.draft:not([hidden]){animation:300ms var(--ease-film) both draft-in}
+@keyframes draft-in{from{opacity:.2}to{opacity:1}}
+.field input,.field select,.field textarea{transition:border-color .18s,background-color .18s,box-shadow .18s}
+:where(section,div)[tabindex="-1"]:focus{outline:none}
+@media(max-width:600px){
+ .player-status{left:12px;right:12px;bottom:8px;padding:8px;font-size:13px}
+ .video-container[data-player-state=error] .video-play{translate:0 -16px}
+}

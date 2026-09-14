@@ -77,15 +77,17 @@ Der Kontaktbereich ist als offene zweispaltige Komposition ohne äußeren Formul
 
 Das originale achtsekündige Behind-the-scenes-Video wird auf Start- und Studioseite erst in Sichtnähe geladen. Es bleibt stumm und lässt sich manuell pausieren. Keine neuen Fotos, Filmprojekte, Referenzen, Kundenstimmen oder Erfolgszahlen wurden erfunden.
 
-Der aktuelle statische Check umfasst 19 Seiten, 442 interne Linkverweise und 131 Medienverweise. Breadcrumb-Daten und strukturierte Leistungsdaten ergänzen die individuellen Metadaten. Die Anfrageführung wurde vereinfacht; eine gemessene Steigerung der Conversion-Rate wird nicht behauptet.
+Der aktuelle statische Check umfasst 19 Seiten, 442 interne Linkverweise und 150 Asset-Verweise. Breadcrumb-Daten und strukturierte Leistungsdaten ergänzen die individuellen Metadaten. Die Anfrageführung wurde vereinfacht; eine gemessene Steigerung der Conversion-Rate wird nicht behauptet.
 
 ## Animationen
 
-- Kürzere Titelauftritte und einmalige Bildenthüllungen beim Eintritt in den sichtbaren Bereich.
+- Eine zentrale, kurze Auftrittsanimation je Element; Einblendungen beim Eintritt in den sichtbaren Bereich berücksichtigen den Ladezustand der Bilder.
 - Gestaffelte Text- und Zeilenauftritte sowie eine geringe, an den Bildüberstand angepasste Tiefenbewegung.
 - Bewegliche Projektpfeile, fein animierte Linien und Hoverzustände.
 - Animiertes Umordnen des Projektarchivs, ein aufklappendes Mobilmenü und weich öffnende FAQ-Antworten.
-- Native Übergänge zwischen Seiten in Browsern mit Unterstützung für Cross-document View Transitions. Andere Browser navigieren weiterhin normal.
+- Kurze native Seitenüberblendungen mit stabiler Navigation in Browsern mit Unterstützung für Cross-document View Transitions. Andere Browser navigieren weiterhin normal.
+- Native Scrollsteuerung mit weichen, gezielten Ankersprüngen. Ladehinweise erscheinen erst bei tatsächlicher Wartezeit; Video- und Bildfehler haben einen definierten Zustand.
+- Medienlogik in `src/media.js`, Bewegungen in `src/motion.js`, Interaktionsgestaltung in `src/experience.css`.
 
 Auf ausdrücklichen Wunsch gibt es keine automatische Reduced-Motion-, No-Motion- oder Save-Data-Abschaltung. Lesbare Inhalte ohne JavaScript und manuelle Videosteuerungen bleiben erhalten. Die Bewegung erfordert keine externe Animationsbibliothek.
 

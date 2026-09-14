@@ -116,3 +116,23 @@ Die normale Desktopansicht wurde vor der Übergabe wiederhergestellt. Die urspr�
 - Statischer Check bestanden: 19 Seiten, 19 individuelle Titel/Beschreibungen, 442 interne Linkverweise, 131 Medienverweise, 19 gültige JSON-LD-Blöcke. Keine Aussage über gemessene Conversion-, Ranking- oder Ladezeitverbesserungen.
 
 - Abschließend berechnete Textkontraste auf soliden Hintergrundflächen aller 19 Seiten geprüft: keine Unterschreitung der angesetzten 4,5:1 für normalen beziehungsweise 3:1 für großen Text. Bildüberlagerungen sind aus dieser Berechnung ausgenommen.
+
+
+## Scrollen, Ladezustände und Interaktionen
+
+- Eine zentrale Bewegungsebene ersetzt verschachtelte Titel-/Introanimationen. Lange Bildvorhänge entfallen zugunsten kurzer Einblendungen. Bereits gelesene Inhalte werden bei verzögert eintreffendem JavaScript nicht nachträglich ausgeblendet.
+- Normales Scrollen und die Wiederherstellung der Scrollposition bleiben beim Browser. Bewusste Ankersprünge und der Kontaktentwurf scrollen weich mit 24px Abstand zum gemessenen Header. Der Entwurf animiert nur seine Deckkraft, damit seine Zielposition nicht nachträglich verrutscht.
+- Scrollabhängige Bildbewegung und Zeigerreaktion lesen Geometrie gebündelt und schreiben sie anschließend einmal pro angefordertem Frame. Arbeit am unsichtbaren Lesefortschritt entfernt. Kein dauerhaft laufender JavaScript-Animationsloop.
+- Native Seitenüberblendung auf 180/240ms gekürzt; die Navigation bleibt an ihrer Position. Eine schmale unbestimmte Ladeanzeige erscheint nur, wenn ein tatsächlicher Seitenwechsel länger als 180ms dauert. Keine künstliche Wartezeit und keine erfundenen Prozentwerte.
+- Bilder behalten ihre Abmessungen und werden nach erfolgreichem Laden/Decodieren eingeblendet. Langsame Bilder erhalten einen verzögerten Ladezustand, fehlerhafte gerahmte Bilder einen verständlichen Ersatzhinweis.
+- YouTube behält das Vorschaubild während des Ladens. Fehler und ein 15s-Timeout erlauben einen erneuten Versuch; der bestehende direkte YouTube-Link bleibt verfügbar. Der Zustand „ready“ bezeichnet das geladene iframe-Dokument, nicht eine garantierte Wiedergabebereitschaft des externen Anbieters.
+- Lokales Video unterscheidet tatsächliche Wiedergabe, Pufferung, Pause und Fehler. Die neueste Sichtbarkeitsmeldung entscheidet über automatisches Starten/Pausieren; manuelle Pause bleibt erhalten. Wiedergabeabbrüche mit schnellem Neustart und die Rückkehr aus dem Hintergrund berücksichtigt.
+- FAQ, Zusatzangaben und Filter verarbeiten schnelle Richtungswechsel. Ungültige Zusatzangaben bleiben nach dem Öffnen zur Korrektur sichtbar. Tasten, Links und Projektflächen geben auch beim Tippen Rückmeldung.
+- 57 Browserprüfungen: alle 19 Seiten bei 320, 768 und 1440 CSS-Pixeln, ohne festgestellten horizontalen Überlauf oder abweichende H1-Anzahl. Keine gemeldeten Bildfehler im jeweils erfassten Zustand. Noch nicht sichtbare Lazy-Loading-Bilder müssen dabei nicht bereits geladen sein.
+- Bedienprüfung: lokale Video-Wiedergabe/Pause, Anker zur Leistungsübersicht, schnelle FAQ-Wechsel, Web/Film/Alle-Filter, mobiles Menü und Escape, Kontaktanker, Zusatzangaben, Validierungsfokus und Entwurf. Bei 320px lag die Entwurfsüberschrift nach Abschluss 24px unter dem Header. Keine Anfrage versendet.
+- YouTube-Fassade wurde im Browser aktiviert; die iframe-Anzeige erreichte „ready“ bei gleichbleibenden Rahmenabmessungen. Externe Wiedergabe hängt weiterhin vom Anbieter und der Verbindung ab.
+- 26 gezielte Node-VM-Ereignisprüfungen bestanden: 17 Lade-/Fehler-/Retry-Fälle, sechs Offen-/Zu-/Validierungsfälle sowie drei Sichtbarkeits-/Pufferungsfälle. Langsame und fehlgeschlagene Medienereignisse wurden kontrolliert simuliert; keine Aussage über gemessene reale Netzwerklatenzen.
+- Build, JavaScript-Syntax, Diff und statischer Check bestanden: 19 individuelle Titel/Beschreibungen, 442 lokale Linkverweise, 150 Asset-Verweise einschließlich der zusätzlichen lokalen Mediendatei und 19 gültige JSON-LD-Blöcke.
+- Prüfung im eingebetteten Browser; keine separate Messung auf physischen Geräten oder in Safari/Firefox. Native View Transitions können bei unterbrochenen Navigationen vom Browser übersprungen werden; die Links bleiben normale Dokumentnavigationen.
+
+Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-behavior), [MDN: scrollRestoration](https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration), [Chrome: Cross-document View Transitions](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document).

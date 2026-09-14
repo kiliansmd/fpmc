@@ -189,9 +189,9 @@ body[data-section=Rechtliches] .page-heading h1{font-size:clamp(48px,5vw,78px)}
 .links-list{max-width:1000px;gap:12px}
 .links-list .button{font-size:clamp(20px,2.2vw,32px);padding:22px 25px;min-height:80px}
 /* Motion has a shorter, calmer cadence; the requested always-on behavior remains. */
-html:not(.no-js) .hero-copy h1{animation:800ms var(--ease-film) both title-in}
-html:not(.no-js) .hero-copy>.eyebrow{animation:650ms var(--ease-film) both copy-in}
-html:not(.no-js) .hero-description,html:not(.no-js) .hero-copy .actions{animation:750ms var(--ease-film) 120ms both copy-in}
+
+
+
 .desktop-nav>a:not(.button):hover,.footer-links a:hover{translate:0 0}
 .brand:hover .wordmark{letter-spacing:-.055em}
 .footer-signature:hover{letter-spacing:-.055em}
