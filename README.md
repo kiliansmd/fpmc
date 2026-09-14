@@ -143,3 +143,7 @@ Die schwarzen Flächen, serifenlosen Schriften, vorhandenen Medien, Animationen,
 Unicode-Pfeile wurden vollständig durch einheitliche SVG-Icons ersetzt. Das betrifft Hauptaktionen, Footer, Tags, externe Links, Player und Menü. Icons sind für Screenreader ausgeblendet und nicht fokussierbar; die Bedienelemente behalten ihre Textbeschriftungen. Die Prüfung verhindert neue Emoji-Glyphen und nicht grafische Pfeile im ausgelieferten HTML.
 
 Die mobile Leistungsübersicht verwendet eine kürzere Einleitung und eine Hauptaktion. Danach folgen direkt die echten Produktionsbilder, jeweils vor den zugehörigen Kartentexten. Addierte Abschnittsabstände sind bereinigt; zwischen Aktion und erstem Bild verbleiben bei 393px Fensterbreite 40px. Auch Projektbeschriftungen, Teamliste sowie die mobilen Musikvideo-/Audio-Einstiege sind kompakter abgestimmt.
+
+## Feine Filmkörnung
+
+Die gesamte Website erhält eine zurückhaltende monochrome Textur über `body::after`. Die lokale, nahtlos wiederholte `grain.svg` ist 420 Bytes groß und wird aus `src/` in die öffentlichen Assets kopiert. Die Deckkraft beträgt 9%, auf Smartphones bis 600px 7,5%. Der fixierte Layer liegt über Bildern, Film und Navigation, nimmt keine Zeigerereignisse entgegen und erzeugt keinen Inhalt für Screenreader. Er benötigt weder JavaScript noch eine fortlaufende Animation oder einen bildschirmfüllenden SVG-Filter. Im Druck wird die rein dekorative Textur ausgeblendet.

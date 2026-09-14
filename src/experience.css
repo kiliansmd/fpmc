@@ -66,3 +66,21 @@ img[data-load-state=ready]{opacity:1}
  .player-status{left:12px;right:12px;bottom:8px;padding:8px;font-size:13px}
  .video-container[data-player-state=error] .video-play{translate:0 -16px}
 }
+/* A small cached tile adds fine film grain without a full-screen SVG filter. */
+body::after {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:100;
+  pointer-events:none;
+  user-select:none;
+  background:url("/assets/grain.svg") repeat;
+  background-size:256px 256px;
+  opacity:.09;
+}
+@media(max-width:600px) {
+  body::after { opacity:.075; }
+}
+@media print {
+  body::after { display:none; }
+}

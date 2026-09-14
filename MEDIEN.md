@@ -72,3 +72,7 @@ Die vollständigen SIL-OFL-1.1-Lizenztexte liegen unter `LIZENZEN/` und zusätzl
 ## BTS im Hero – 14.09.2026
 
 Der unveränderte Clip wird auf Desktop bis 350 CSS-Pixel breit gezeigt; mobil teilt er die erste Zeile mit dem Titel. Das passende Originalposter hält die Bildfläche beim Laden stabil. Der Hero setzt src und preload=auto bereits im HTML; die bestehende Sichtbarkeitssteuerung startet stumm und inline ohne vorherige Interaktion. Außerhalb des sichtbaren Bereichs pausiert das Video, eine manuelle Pause bleibt beim Zurückscrollen erhalten. Ein 44 × 44px SVG-Regler erlaubt Pause, Fortsetzen und erneuten Abruf nach einem Ladefehler. Die übrigen BTS-Einbindungen laden weiterhin bei Sichtbarkeit.
+
+## Globale Filmkörnung – 14.09.2026
+
+`src/grain.svg` / `dist/assets/grain.svg`: eigens erstellte prozedurale SVG-Textur, 256 × 256 Einheiten, 420 Bytes. Monochromes Fraktalrauschen mit festem Seed und nahtlosem Kachelrand. Kein Fremdbild und keine bearbeitete Produktionsaufnahme. Die Einbindung als CSS-Hintergrund verändert die Originalbilder und -videos nicht.

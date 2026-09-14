@@ -75,6 +75,7 @@ writeFileSync(join(OUT,'assets/styles.css'),readFileSync(join(ROOT,'src/styles.c
 copyFileSync(join(ROOT,'src/site.js'),join(OUT,'assets/site.js'));
 copyFileSync(join(ROOT,'src/media.js'),join(OUT,'assets/media.js'));
 copyFileSync(join(ROOT,'src/motion.js'),join(OUT,'assets/motion.js'));
+copyFileSync(join(ROOT,'src/grain.svg'),join(OUT,'assets/grain.svg'));
 writeFileSync(join(OUT,'_redirects'),'/arbeit /projekte/ 301\n/arbeit/ /projekte/ 301\n/connect /kontakt/ 301\n/connect/ /kontakt/ 301\n/v0 / 301\n/v0/* / 301\n/v1 / 301\n/v1/* / 301\n');
 writeFileSync(join(OUT,'robots.txt'),`User-agent: *\nAllow: /\n${indexable?'Sitemap: '+origin+'/sitemap.xml\n':''}`);
 writeFileSync(join(OUT,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(r=>`<url><loc>${origin+r.path}</loc></url>`).join('')}</urlset>`);

@@ -215,3 +215,11 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - Mobilmenü inklusive Escape, Sprung zum offiziellen Film unterhalb des Headers sowie weiterhin erst nach Klick eingebundener YouTube-Player geprüft. Keine JavaScript-Laufzeitfehler. Zusätzliche Sichtprüfung im WebKit-Mobil-/Touchmodus bei 320 und 393px sowie bei 768 und 1440px.
 - Langsames Videoladen und Fehler vor Ausführung des Medien-Skripts simuliert. Standbild, SVG-Regler, aria-busy, Fehlerbeschriftung und erneutes Laden per Klick funktionieren. Für den eager Hero wird ein bereits vorhandener video.error-Zustand beim Initialisieren übernommen.
 - Build, Syntax und statischer Check bestanden: 19 individuelle Titel/Beschreibungen, 439 interne Links, 153 Asset-Verweise, 19 JSON-LD-Blöcke und 19 vollständige Social-Karten. noindex, Social-Grafik, Anti-Overscroll und Emoji-freie SVG-Oberfläche bleiben erhalten. Geprüft mit Browseremulation, nicht mit jedem physischen Endgerät.
+
+## Globale Filmkörnung – 14.09.2026
+
+- Lokale monochrome SVG-Kachel über einen festen, nicht interaktiven CSS-Layer eingebunden. 420 Bytes; keine neue Bibliothek, JavaScript-Schleife oder fortlaufende Animation. Ursprüngliche Bild- und Videodateien bleiben unverändert.
+- Desktop- und mobile Startseite visuell kontrolliert. Die geringere mobile Deckkraft erhält die Lesbarkeit kleiner Texte; dunkle Flächen zeigen eine feine Textur.
+- 50 Seiten-/Breitenkontrollen bestanden: alle 19 Inhaltsseiten bei 393 und 1440px in Chromium, zusätzlich Startseite, Label und Kontakt in Firefox und WebKit bei beiden Breiten. Grain eingebunden, kein horizontaler Überlauf, noindex erhalten.
+- In allen drei Engines bleiben Videopause/Fortsetzen, Mobilmenü, Navigation zur Labelseite, Footer-Kontaktlink und Kontaktentwurf bedienbar. Keine JavaScript-Laufzeitfehler; keine Nachricht versendet. WebKit zusätzlich mit Mobil-/Touchmodus und dreifacher Pixeldichte betrieben. Browseremulation, kein Test sämtlicher physischer Geräte.
+- Build und statischer Check bestanden: 19 individuelle Titel/Beschreibungen, 439 interne Links, 153 HTML-Asset-Verweise, 19 JSON-LD-Blöcke und 19 vollständige Social-Karten. Der neue CSS-Assetverweis wurde durch die Browserprüfung zusätzlich kontrolliert.
