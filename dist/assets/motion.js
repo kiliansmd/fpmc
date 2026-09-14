@@ -7,12 +7,12 @@
   const pending = new Map();
   const entrances = new Map();
   const groups = [
-    ['.hero-copy h1, .page-heading h1, .service-hero-copy h1, .contact-editorial h1', 'title'],
-    ['.hero-introduction, .page-intro, .service-hero-copy>p, .service-hero-copy>.actions, .contact-intro', 'intro'],
-    ['.section-head h2, .home-studio-copy h2, .label-feature h2, .cta-copy h2, .studio-copy h2, .team-heading, .service-entry-copy h2, .service-introduction h2, .content-grid h2, .case-navigation h2', 'type'],
-    ['.project-media, .service-entry-media, .studio-image, .motion-screen, .label-portrait, .video-container, .case-image, .web-case-image, .hero-film-image, .label-feature-image, .service-hero-media, .next-project-image', 'image'],
+    ['.hero-copy h1, .page-heading h1, .service-hero-copy h1, .contact-editorial h1, .stage-content h1, .label-opening h1, .studio-opening-copy h1', 'title'],
+    ['.hero-introduction, .page-intro, .service-hero-copy>p, .service-hero-copy>.actions, .contact-intro, .stage-introduction, .label-opening>p', 'intro'],
+    ['.section-head h2, .home-studio-copy h2, .label-feature h2, .cta-copy h2, .studio-copy h2, .team-heading, .service-entry-copy h2, .service-introduction h2, .content-grid h2, .case-navigation h2, .release-copy h2', 'type'],
+    ['.project-media, .service-entry-media, .studio-image, .motion-screen, .label-portrait, .video-container, .case-image, .web-case-image, .hero-film-image, .label-feature-image, .service-hero-media, .next-project-image, .release-artwork', 'image'],
     ['.team-card, .process-item, .price-card, .related-link, .fact, .service-overview-item, .studio-credits>span', 'row'],
-    ['.prose>p, .section-head>p, .footer-top>*, .contact-address, .home-studio-copy>p, .studio-copy>p', 'copy']
+    ['.prose>p, .section-head>p, .footer-top>*, .contact-address, .home-studio-copy>p, .studio-copy>p, .studio-opening-copy>p, .release-copy>p', 'copy']
   ];
   groups.forEach(([selector, kind]) => document.querySelectorAll(selector).forEach((element, index) => {
     if (!pending.has(element)) pending.set(element, {kind, index});

@@ -1,6 +1,6 @@
 /* Loading states follow real media events; the page never waits for every asset. */
 (() => {
-  const frameSelector = '.hero-film-image, .project-media, .service-entry-media, .label-feature-image, .service-hero-media, .next-project-image, .video-facade, .label-portrait';
+  const frameSelector = '.hero-film-image, .project-media, .service-entry-media, .label-feature-image, .service-hero-media, .next-project-image, .video-facade, .label-portrait, .stage-image, .release-artwork';
   document.querySelectorAll('img').forEach(img => {
     const frame = img.closest(frameSelector);
     let timer;

@@ -151,3 +151,15 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - Hostingabschnitt in der Datenschutzerklärung auf Vercel und dessen Datenschutzhinweise aktualisiert.
 - Die ursprüngliche Domain www.fpmc.house und die bisherige Sites-Veröffentlichung werden durch diese Vercel-Konfiguration nicht umgestellt.
 - Grundlagen: [Google: Indexierung blockieren](https://developers.google.com/search/docs/crawling-indexing/block-indexing), [Vercel: Konfiguration](https://vercel.com/docs/project-configuration/vercel-json), [Vercel: Systemvariablen](https://vercel.com/docs/environment-variables/system-environment-variables#vercel_project_production_url), [Vercel: Datenschutz](https://vercel.com/legal/privacy-notice).
+
+
+## Neue Art Direction – 14.09.2026
+
+- Alle 19 Inhaltsseiten in einem isolierten Chromium-Browser bei 320, 390, 720, 900, 1024 und 1440 CSS-Pixeln geprüft (114 Seiten-/Breitenkombinationen): HTTP 200, genau ein H1, keine horizontalen Überläufe oder abgeschnittenen Titel/Bedienelemente, noindex und Anti-Overscroll erhalten.
+- Ganzseitige Sichtprüfung der neuen Label-, Studio-, Archiv-, Leistungs- und Kontaktgestaltung auf Desktop und Smartphone. Der bildfüllende Einstieg und die mobile Ausblendung des Filmframes wurden separat kontrolliert.
+- Kaskadenkonflikte bei Release-Titel, Archivversatz und Footer-Schriftzug korrigiert. Der Spotify-Link bleibt auch auf der Redstar-Projektseite direkt erreichbar.
+- Mobilmenü mit Escape und Fokusrückgabe erneut geprüft. Alle drei Projektfilter zeigen 6, 1 beziehungsweise 5 passende Projekte. FAQ lässt sich öffnen und schließen.
+- Anfrage mit URL-Vorbelegung Website/Professional erzeugt einen korrekten lokalen E-Mail-Entwurf. Änderung auf Film blendet den veralteten Entwurf aus. Keine Nachricht versendet.
+- Originales BTS-Video spielt, pausiert und startet wieder. Der Video-Sprung auf der Labelseite landet unterhalb des festen Headers.
+- Keine JavaScript-Laufzeitfehler in den Browserdurchläufen. Statischer Check: 19 Seiten, 439 interne Linkverweise, 149 Medienverweise und 19 gültige JSON-LD-Blöcke.
+- Schriften bleiben lokal und serifenlos. Es wurden keine zusätzlichen Medien, Referenzen oder Erfolgszahlen erfunden. Die Prüfung simuliert Bildschirmgrößen; sie ist kein Test jedes physischen Geräts.
