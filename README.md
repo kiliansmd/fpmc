@@ -25,7 +25,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 - `src/motion.css` und `src/motion.js`: Schriftauftritte, Bildenthüllungen, Scrolltiefe, Interaktionen und Seitenübergänge.
 - `src/refinement.css`: verfeinerte Gestaltung, klare Typografieskala, neue Startseite, Anfrageformular und mobile Kontaktaktion.
 - `src/responsive.css`: responsive Umbrüche, Touchflächen, sichere Bildschirmränder, mobiles Menü und lesbare Anfrageentwürfe.
-- `src/bold.css`: aktuelle kräftige Sans-Serif-Gestaltung, Schwarz/Weiß/Kobaltblau, klare Abstände und angepasste mobile Typografie.
+- `src/bold.css`: aktuelle schwarze Gestaltung, Satoshi-Typografie, Graphitflächen, klare Abstände und angepasste mobile Ansichten.
 - `site.config.json`: Veröffentlichungs-Origin für Canonicals, Sitemap und strukturierte Daten.
 - `src/site.js`: mobiles Menü, Projektfilter, bedarfsgesteuerter Videoplayer und E-Mail-Assistent.
 - `dist/`: fertige Website inklusive lokal gespeicherter Medien und Schriften.
@@ -59,17 +59,17 @@ Die Weiterleitungen liegen für das statische Hosting in `dist/_redirects`. Die 
 
 ## Medien und Inhalte
 
-Die Bilder und Videos stammen aus dem bestehenden FPMC-Auftritt. Das Musikvideo-Vorschaubild stammt aus dem offiziellen verlinkten YouTube-Video. Künstlerportrait und Behind-the-scenes-Material werden nicht als unbelegte Szenen dieses veröffentlichten Videos ausgegeben. Das Plattenspielermotiv ist als atmosphärisches Motiv gekennzeichnet. Ein Mediennachweis liegt in `MEDIEN.md`. Die durchgeführten Funktions-, Darstellungs- und HTTP-Prüfungen sind in `PRUEFUNG.md` dokumentiert.
+Die Bilder und Videos stammen aus dem bestehenden FPMC-Auftritt. Das Musikvideo-Vorschaubild stammt aus dem offiziellen verlinkten YouTube-Video. Künstlerportrait und Behind-the-scenes-Material werden nicht als unbelegte Szenen dieses veröffentlichten Videos ausgegeben. Das Plattenspielermotiv ist als atmosphärisches Motiv gekennzeichnet. Ein Mediennachweis liegt in `MEDIEN.md`. Die durchgeführten Funktions-, Darstellungs- und HTTP-Prüfungen sind in `PRUEFUNG.md` dokumentiert. Satoshi stammt unverändert aus dem offiziellen Fontshare-Paket und wird unter ITF Free Font License 2.0 lokal eingebunden; der Original-Lizenztext steht in `LIZENZEN/Satoshi-FFL.txt`.
 
 Bestehende Preise wurden als Orientierung beibehalten. Pauschale Versprechen wie garantierte Reichweite, DSGVO-Konformität, Antwort in Minuten und universelle 48-Stunden-Produktion wurden durch konkrete Anfrageführung ersetzt.
 
 ## Aktuelle Gestaltung und Anfrageführung
 
-Der Auftritt verwendet klares Weiß, tiefes Schwarz und Kobaltblau. Space Grotesk wird lokal geladen und bildet die gesamte Typografie: kräftige, eng gesetzte Überschriften, größere Fließtexte und gut lesbare Bedienelemente. Es werden keine Serifenschriften mehr eingebunden. Dekorative Eyebrows, Nummerierungen und redundante Fülltexte sind aus dem HTML entfernt; sachliche Angaben wie Release-Datum, Preise und Formularhinweise bleiben erhalten.
+Der Auftritt ist überwiegend schwarz. Feine Graphitabstufungen trennen Kontaktformular und Abschlussbereich; gebrochenes Weiß hebt Schrift und primäre Aktionen hervor. Ein heller, kühler Akzent bleibt Interaktionszuständen vorbehalten. Satoshi Variable bildet die Hauptschrift: kräftige Überschriften, ruhig gesetzte Fließtexte und gut lesbare Bedienelemente. Die FPMC-Wortmarke bleibt in Space Grotesk. Beide Schriften werden lokal geladen; es werden keine Serifenschriften eingebunden. Dekorative Eyebrows, Nummerierungen und redundante Fülltexte sind aus dem HTML entfernt; sachliche Angaben wie Release-Datum, Preise und Formularhinweise bleiben erhalten.
 
 Die Startseite erklärt unmittelbar Film-, Musikvideo- und Audioproduktion für Artists, Labels und Marken. Der erste sichtbare Bereich kombiniert diese Aussage mit einer realen Arbeit und den beiden Wegen „Projekt anfragen“ und „Arbeiten ansehen“. Der übergroße FPMC-Schriftzug, das endlose Textband und der großflächig rote Labelabschnitt sind entfallen. Es folgen drei klar verlinkte Produktionsbereiche, ein ergänzender Web-/Digitalhinweis, die Menschen hinter FPMC und ein kompakter Labelabschnitt.
 
-Projektarchiv, Leistungen, Studio, Label und Detailseiten verwenden großzügige, abgestimmte Abstände und eine durchgehende Sans-Serif-Schriftgrößenskala. Film, Musikvideo und Audio behalten ihre eigenen Bildkompositionen, das Label seinen dunklen Charakter. Ein dunkler Studioabschnitt und die kobaltblaue Einladung am Seitenende setzen klare Schwerpunkte. Die Einladung führt zu einer passenden Anfrage oder zur direkten E-Mail.
+Projektarchiv, Leistungen, Studio, Label und Detailseiten verwenden großzügige, abgestimmte Abstände und eine durchgehende Sans-Serif-Schriftgrößenskala. Film, Musikvideo und Audio behalten ihre eigenen Bildkompositionen, das Label seinen dunklen Charakter. Studioabschnitt und Einladung am Seitenende bleiben ebenfalls dunkel. Bilder, Typografie und kontrastreiche Aktionen setzen die Schwerpunkte. Die Einladung führt zu einer passenden Anfrage oder zur direkten E-Mail.
 
 Der hervorgehobene Anfragebutton ist auf Desktop und Smartphone direkt in der Navigation erreichbar. Leistungslinks übernehmen die passende Projektart ins Formular. Paketlinks übergeben Simple, Professional, Cinematic, Digital Boost beziehungsweise Spec-Ad. Die Auswahl ist dort sichtbar und änderbar. Allgemeine Anfragen beginnen mit „Eine erste Idee“. Jede Änderung macht einen bereits erzeugten Entwurf ungültig und setzt dessen Kopierstatus zurück.
 

@@ -34,5 +34,13 @@
     "source": "https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjgn7MsNo.woff2",
     "bytes": 12384,
     "sha256": "d0014821252a8a770bf7551641572f239a8ede83d75652d84fef0c3627751baf"
+  },
+  {
+    "family": "Satoshi Variable",
+    "file": "dist/assets/fonts/satoshi-variable.woff2",
+    "source": "https://api.fontshare.com/v2/fonts/download/satoshi",
+    "license": "ITF Free Font License 2.0, 17 Aug 2026",
+    "licenseFile": "LIZENZEN/Satoshi-FFL.txt",
+    "sha256": "e739aff9b4d02c264341d6d4872edcda28e79373aeda936f659566a1cd3eb47f"
   }
 ]

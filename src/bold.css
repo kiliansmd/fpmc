@@ -1,7 +1,7 @@
-/* FPMC: a strong sans-serif voice, clear space, real work. */
-:root{--paper:#fafafa;--ink:#111215;--accent:#2349ed;--muted:#555861;--line:#d8d9df;--dark-text:#555861;--max:1600px;--pad:clamp(20px,5vw,80px)}
-body{font-family:Grotesk,Arial,sans-serif;letter-spacing:-.015em;background:var(--paper);color:var(--ink)}
-h1,h2,h3,h4,.quote-block,.title-emphasis,em{font-family:Grotesk,Arial,sans-serif;font-style:normal;font-weight:650;letter-spacing:-.05em}
+/* FPMC: black frames, Satoshi typography, real work. */
+:root{--paper:#08090a;--ink:#f0f0ed;--accent:#cbd4f7;--muted:#aaadb3;--line:#303237;--dark-text:#bfc1c5;--surface:#111214;--control:#17191c;--button:#eeeee9;--button-ink:#101113;color-scheme:dark;--max:1600px;--pad:clamp(20px,5vw,80px)}
+body{font-family:Satoshi,Arial,sans-serif;letter-spacing:-.005em;background:var(--paper);color:var(--ink)}
+h1,h2,h3,h4,.quote-block,.title-emphasis,em{font-family:Satoshi,Arial,sans-serif;font-style:normal;font-weight:650;letter-spacing:-.05em}
 em,.title-emphasis{font-weight:inherit;letter-spacing:inherit}
 h1,h2,h3{line-height:1.03}
 p{line-height:1.65}
@@ -9,19 +9,19 @@ p{line-height:1.65}
 .section{padding-block:clamp(64px,7vw,112px)}
 .light{background:var(--paper)}
 .header{background:var(--paper);border-color:var(--line)}
-.header.has-scrolled{background:rgba(250,250,250,.97);box-shadow:none}
+.header.has-scrolled{background:rgba(8,9,10,.97);box-shadow:none}
 .header:after{display:none}
 .wordmark{font-size:38px;font-weight:700;letter-spacing:-.065em}
 .brand:hover .wordmark{letter-spacing:-.065em}
 .desktop-nav>a{font-size:16px;font-weight:500}
 .desktop-nav{gap:32px}
-.button:not(.outline),.header .button,.header-quick{background:var(--accent);border-color:var(--accent);color:#fff;border-radius:0;font-weight:600}
+.button:not(.outline),.header .button,.header-quick{background:var(--button);border-color:var(--button);color:var(--button-ink);border-radius:0;font-weight:600}
 .button:not(.outline){min-height:56px;padding:17px 24px;font-size:16px;gap:32px}
-.button:not(.outline):hover,.header .button:hover,.header-quick:hover{background:#1534c6;border-color:#1534c6;color:#fff}
+.button:not(.outline):hover,.header .button:hover,.header-quick:hover{background:var(--accent);border-color:var(--accent);color:var(--button-ink)}
 .header .button{font-size:15px;min-height:46px;padding:13px 19px}
-.button.outline{border-radius:0;border-color:#a5a8b2;font-size:16px;font-weight:500}
+.button.outline{border-radius:0;border-color:#54575e;font-size:16px;font-weight:500}
 .button.outline:hover{color:var(--accent);border-color:var(--accent)}
-.text-link{font-size:16px;font-weight:600;border-color:#a5a8b2;gap:24px}
+.text-link{font-size:16px;font-weight:600;border-color:#54575e;gap:24px}
 .text-link:hover,.quiet-link:hover{color:var(--accent)}
 .button:after,.text-link:after{display:none}
 .actions{gap:16px 28px}
@@ -29,7 +29,7 @@ p{line-height:1.65}
 .hero-layout{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:64px;align-items:center}
 .hero-copy{padding:0}
 .hero-copy h1{font-size:clamp(3.5rem,6.3vw,6.3rem);font-weight:700;line-height:.99;letter-spacing:-.065em}
-.hero-subline{display:block;font-size:.69em;line-height:1.12;letter-spacing:-.05em;color:var(--accent);margin-top:14px}
+.hero-subline{display:block;font-size:.69em;line-height:1.12;letter-spacing:-.045em;color:#a7a9ae;margin-top:14px}
 .hero-description{font-size:20px;line-height:1.6;color:var(--muted);max-width:490px;margin-top:32px}
 .hero-copy .actions{margin-top:32px}
 .hero-film-image{aspect-ratio:1.12}
@@ -50,7 +50,7 @@ p{line-height:1.65}
 .service-more .arrow{font-size:28px}
 .digital-note{font-size:16px;padding-top:24px}
 .digital-note .text-link{font-size:16px}
-.home-studio{background:var(--ink);color:#fff}
+.home-studio{background:var(--surface);color:var(--ink);border-block:1px solid var(--line)}
 .home-studio-layout{grid-template-columns:minmax(0,.7fr) minmax(0,1fr);gap:100px}
 .home-studio-copy>p:not(.eyebrow){font-size:19px;color:#c9cbd2;margin-top:30px;max-width:600px}
 .studio-credits{gap:24px 36px;margin-block:36px}
@@ -116,24 +116,24 @@ body[data-page=leistungen-audioproduktion] .page-hero :is(a,button):focus-visibl
 .small-note,.embed-note,.price-note,.notice{font-size:15px;line-height:1.7}
 .prose p{font-size:18px;line-height:1.75}
 .prose h2{font-weight:650;line-height:1.2}
-body[data-page=label]{background:var(--ink);color:#fff}
-body[data-page=label] .light{background:var(--ink);color:#fff}
+body[data-page=label]{background:var(--paper);color:var(--ink)}
+body[data-page=label] .light{background:var(--paper);color:var(--ink)}
 body[data-page=label] .page-intro p,body[data-page=label] .muted,body[data-page=label] .embed-note{color:#c2c6d0}
-body[data-page=label] .section-head h2{font-family:Grotesk,Arial,sans-serif;font-style:normal;font-weight:650}
+body[data-page=label] .section-head h2{font-family:Satoshi,Arial,sans-serif;font-style:normal;font-weight:650}
 body[data-page=label] #release h2{font-size:clamp(3rem,6.4vw,6.5rem);font-weight:650;line-height:1.03}
 .release-date{font-size:16px;color:inherit;margin-bottom:24px}
-body[data-page=label] main .button:not(.outline){background:#fff;color:var(--ink);border-color:#fff}
-body[data-page=label] main .button:not(.outline):hover{background:#b7c4ff;border-color:#b7c4ff}
+body[data-page=label] main .button:not(.outline){background:var(--button);color:var(--button-ink);border-color:var(--button)}
+body[data-page=label] main .button:not(.outline):hover{background:var(--accent);border-color:var(--accent)}
 body[data-page=label] main .button.outline:hover,body[data-page=label] main .text-link:hover{color:#b7c4ff;border-color:#b7c4ff}
 body[data-page=label] a:focus-visible,body[data-page=label] button:focus-visible{outline-color:#b7c4ff}
 /* One direct invitation, followed by contact and navigation. */
-.cta-section,body[data-page=label] .cta-section{background:var(--accent);color:#fff;padding-block:88px;border:0}
+.cta-section,body[data-page=label] .cta-section{background:var(--surface);color:var(--ink);padding-block:88px;border:0;border-top:1px solid var(--line)}
 .cta-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px}
 .cta-copy h2{font-size:clamp(3rem,6vw,6rem);font-weight:650;line-height:1;letter-spacing:-.055em}
 .cta-invitation>p:first-child{font-size:20px;color:#fff;max-width:550px}
-.cta-invitation .button:not(.outline){background:#fff;border-color:#fff;color:var(--ink)}
-.cta-invitation .button:not(.outline):hover{background:var(--ink);border-color:var(--ink);color:#fff}
-.cta-invitation .quiet-link{color:#fff;font-size:16px;text-decoration-color:#abbcff}
+.cta-invitation .button:not(.outline){background:var(--button);border-color:var(--button);color:var(--button-ink)}
+.cta-invitation .button:not(.outline):hover{background:var(--accent);border-color:var(--accent);color:var(--button-ink)}
+.cta-invitation .quiet-link{color:#fff;font-size:16px;text-decoration-color:#60636a}
 .cta-section :is(a,button):focus-visible,body[data-page=label] .cta-section :is(a,button):focus-visible{outline-color:#fff}
 .footer{background:var(--paper);border-top:0;padding-top:56px}
 .footer-top{gap:40px;padding-bottom:48px;grid-template-columns:minmax(0,1.2fr) minmax(0,1.2fr) minmax(0,.7fr) minmax(0,.7fr)}
@@ -152,14 +152,14 @@ body[data-page=label] a:focus-visible,body[data-page=label] button:focus-visible
 .contact-address{margin-top:0}
 .contact-address a:first-child{font-size:32px;font-weight:500;letter-spacing:-.03em}
 .contact-address a{font-size:16px}
-.contact-letter{background:#fff;border:1px solid var(--line);padding:36px}
+.contact-letter{background:var(--surface);border:1px solid var(--line);padding:36px}
 .contact-letter>h2{font-size:32px;font-weight:650;line-height:1.1}
 .contact-how{font-size:16px;margin-block:16px 28px}
 .field label{font-size:16px;font-weight:500}
-.field input,.field select,.field textarea{background:#f5f6f9;border-color:#ccd0db;border-radius:0}
+.field input,.field select,.field textarea{background:var(--control);border-color:#55585e;border-radius:0}
 .field-hint,.form-info{font-size:14px}
 .form-extra summary{font-size:16px}
-.draft{background:#f5f6f9;border-color:var(--line)}
+.draft{background:var(--control);border-color:var(--line)}
 .draft h2{font-weight:650}
 .draft>p,.draft .button{font-size:16px}
 .links-list .button{font-size:clamp(1.3rem,2.4vw,2.25rem);font-weight:550}
@@ -196,3 +196,18 @@ body[data-page=label] a:focus-visible,body[data-page=label] button:focus-visible
  .contact-workspace{padding-block:32px 56px}.contact-sheet{gap:32px}.contact-editorial h1{font-size:clamp(3rem,12vw,4rem);margin:0 0 24px}.contact-intro{font-size:17px}.contact-address a:first-child{font-size:28px}.contact-address a{font-size:16px}.contact-letter{padding:26px 18px}.contact-letter>h2{font-size:29px}.contact-how{font-size:16px}.field label{font-size:16px}.field-hint,.form-info{font-size:14px}.form-extra summary{font-size:15px}.draft>p,.draft .button{font-size:16px}.contact-letter form>.button{font-size:16px}.draft .button{padding-inline:14px;gap:12px}
 }
 @media(max-width:359px){:root{--pad:18px}.header-quick{font-size:13px}.wordmark{font-size:30px}.hero-copy h1{font-size:2.65rem}.hero-copy .button{width:100%}.contact-letter{padding-inline:14px}.hero-film-label{font-size:12px}}
+
+/* Dark surfaces also cover native controls, focus and image actions. */
+.wordmark,.footer-signature{font-family:Grotesk,Arial,sans-serif}
+body[data-page=leistungen-audioproduktion] .page-hero{background:var(--paper);color:var(--ink)}
+.project-media{background:var(--surface)}
+.service-overview,.price-grid{border-color:#505258}
+.field input:focus,.field select:focus,.field textarea:focus{background:#1d1f23;border-color:var(--accent);color:var(--ink)}
+.field input::placeholder,.field textarea::placeholder{color:#979ba4;opacity:1}
+.field select option{background:var(--control);color:var(--ink)}
+.field label span{font-size:14px}
+.draft pre{font-family:Satoshi,Arial,sans-serif}
+.notice{background:var(--surface);color:var(--ink)}
+.desktop-nav{border-color:var(--line)}
+::selection{background:var(--accent);color:var(--button-ink)}
+@media(hover:none){.project-open{background:#101113e6;color:var(--ink)}}

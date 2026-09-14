@@ -92,3 +92,13 @@ Die normale Desktopansicht wurde vor der Übergabe wiederhergestellt. Die urspr�
 - Kontraste: Standard-Fließtext auf Papierweiß ca. 6,81:1, Kobaltblau auf Papierweiß ca. 6,20:1. Den Introtext des dunklen Audio-Einstiegs auf helles Grau korrigiert; Fokusringe für Audio-Einstieg, Studioabschnitt und blauen Abschlussbereich angepasst.
 - Mobiles Menü bei 391 CSS-Pixeln geöffnet und per Escape geschlossen. Film-Anfrage mit Testname und Projektidee erfolgreich vorbereitet: Projektart übernommen, Entwurf sichtbar, Fokus auf Entwurfsüberschrift, korrektes mailto-Ziel, kein Überlauf. Entwurfsüberschrift liegt rund 20px unter dem Header. Keine Nachricht versendet.
 - Finaler statischer Check: 19 Seiten, 19 individuelle Titel/Beschreibungen, 447 interne Linkverweise, 131 Medienverweise und 19 gültige JSON-LD-Blöcke.
+
+
+## Schwarze Gestaltung und Satoshi
+
+- Auf allen 19 Seiten überwiegend schwarze Flächen (#08090a), dunkle Graphitbereiche (#111214), gebrochenes Weiß und dezente helle Interaktionsakzente. Header, mobiles Menü, Footer, Audio, Label, Formular und Entwurf gesondert an die dunkle Palette angepasst. `color-scheme: dark` und dunkle Browser-Themenfarbe gesetzt.
+- Satoshi Variable wird als unveränderte WOFF2-Datei aus dem offiziellen Fontshare-Paket lokal eingebunden und vorab geladen. Hauptschrift mit Gewichten von 300 bis 900, kräftige Überschriften und feinere Fließtexte. Space Grotesk bleibt für die FPMC-Wortmarke. Lizenztext ITF FFL 2.0 vom 17.08.2026 und Herkunftsnachweis mit SHA-256 gespeichert.
+- Alle 19 Seiten bei 1727px auf Überlauf, abgeschnittene Überschriften/Buttons, ungewollt helle Bereiche und berechnete Textkontraste geprüft: keine festgestellten Fehler. Die Kontrastprüfung berücksichtigt solide Hintergrundflächen; Bildüberlagerungen waren aus dieser automatisierten Berechnung ausgeschlossen.
+- Weitere 76 lokale Größenprüfungen: alle 19 Seiten bei gemessenen 320, 391, 640 und 1024 CSS-Pixeln. Keine horizontalen Überläufe, abgeschnittenen kontrollierten Überschriften/Buttons/Footerlinks oder defekten Bilder.
+- Visuelle Kontrolle der schwarzen Startseite und Kontaktansicht. Kontakt bei 320px: schwarzes Mobilmenü, lesbare helle Primäraktion, Escape, dunkler Feldfokus mit hellem Fokusring und korrekt erstellter E-Mail-Entwurf geprüft. Entwurf sichtbar, Fokus auf Überschrift, kein Überlauf; keine Nachricht versendet.
+- Die bestehenden Inhalte, SEO-Metadaten, Animationen und Funktionen bleiben erhalten. Die Prüfung erfolgte im eingebetteten Browser; keine separate Safari-/Firefox- oder physische Geräteprüfung.
