@@ -1984,3 +1984,7 @@ body::after {
  .bts-hero-copy>p:not(.cinema-statement){font-size:.875rem;line-height:1.4}
  .bts-hero-copy .actions{margin-top:10px}
 }
+
+/* Header and footer share one unbroken wordmark, scaled without stretching. */
+.footer a.footer-stamp{display:block;font-weight:700;letter-spacing:normal;line-height:1;padding:0;color:var(--ink)}
+.footer-stamp .wordmark{font-size:inherit;color:var(--ink)}

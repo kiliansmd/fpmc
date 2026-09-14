@@ -233,3 +233,10 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - WebKit-Mobil-/Touchansichten bei 320 × 568, 393 × 852 und 844 × 390 sowie Tablet-Hochformat visuell kontrolliert. Die Prüfungen simulieren Geräte-/Fenstergrößen; physische mobile Browserleisten wurden nicht auf echten Geräten gemessen. Stark vergrößerte Schrift darf den Abschnitt natürlich verlängern, statt Inhalte abzuschneiden.
 - Build, JavaScript-Syntax und statischer Check bestanden. Alle 19 Social-Karten, noindex, Grain und Originalmedien bleiben erhalten. Kein Scroll-Lock und kein erzwungenes Zurücksetzen der Browser-Scrollposition ergänzt.
 - Abschließend neun zusätzliche Kontrollen bei 480 × 320, 568 × 320 und 600 × 360 in allen drei Engines bestanden. Kompaktes Handy-Querformat verwendet ein größeres Portrait neben Titel und Copy; für die schmalste Variante sind Titel und Abstände separat begrenzt. Auch hier bleibt die Abschlusskante bündig.
+
+## Navbar- und Footer-Wortmarke angeglichen – 14.09.2026
+
+- Ein gemeinsamer Wortmarken-Baustein ersetzt die vier einzeln verteilten Footer-Buchstaben. Identische Schriftfamilie, Gewicht700, relative Laufweite, Zeilenhöhe und Farbe; nur die Größe unterscheidet sich. Die Navigation selbst bleibt unverändert.
+- Chromium, WebKit und Firefox bei 320, 393, 768, 1440 und 2560px geprüft: 15 Layout-/Schriftbildkontrollen ohne festgestellten Logo-Überlauf. Schriftwerte stimmen proportional überein; für browserbedingte Subpixelrundung wird eine Toleranz von0,001 verwendet.
+- Footerlogo verlinkt weiterhin zur Startseite; Wechsel von der Labelseite über das Logo in allen drei Engines geprüft. Mobile und Desktopdarstellung visuell kontrolliert. Alle 19 Inhaltsseiten enthalten denselben Wortmarken-Baustein in Header und Footer.
+- Build, statischer Check und Diffprüfung bestanden. noindex, Grain, Hero, Medien und Formulare bleiben unverändert.

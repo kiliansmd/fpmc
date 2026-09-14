@@ -152,3 +152,7 @@ Die gesamte Website erhält eine zurückhaltende monochrome Textur über `body::
 ## Viewportfüllender Einstieg
 
 Der Startseiten-Hero schließt bei normaler Schriftgröße bündig mit der aktuellen Fensterunterkante ab. Seine Höhe ergibt sich aus dem dynamischen Viewport abzüglich der tatsächlich gemessenen Headerhöhe und der Abschlusslinie. vh/svh bleiben Fallbacks. Das Portrait wächst nach verfügbarem Raum; der Titel berücksichtigt sowohl Spaltenbreite als auch Fensterhöhe. Mobil und auf Tablets im Hochformat überlagert der große Titel den unteren, dezent abgedunkelten Filmbereich. Der Pause-Regler bleibt oben frei erreichbar; die Bildbeschreibung bleibt für Screenreader erhalten. Bei stark vergrößerter Schrift darf der Hero mit seinem Inhalt wachsen. Scrollpositionen und die native Zurück-Navigation werden nicht zurückgesetzt.
+
+## Einheitliche FPMC-Wortmarke
+
+Navbar und Footer verwenden dasselbe zentrale Markup und dieselbe `.wordmark`-Gestaltung. Im Footer wird die Wortmarke nur größer skaliert: Space Grotesk, Gewicht700, Laufweite−0,065em und dieselbe helle Markenfarbe. Die Buchstaben bleiben zusammenhängend; die frühere Verteilung einzelner Zeichen über die Footerbreite entfällt. Beide Logos führen zur Startseite.
