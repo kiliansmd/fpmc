@@ -1,0 +1,81 @@
+/* FPMC — motion as an extension of the editorial composition. */
+:root{--ease-film:cubic-bezier(.2,.72,.2,1);--ease-cut:cubic-bezier(.76,0,.24,1)}
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:320ms var(--ease-film) both page-out}
+::view-transition-new(root){animation:540ms var(--ease-film) both page-in}
+@keyframes page-out{to{opacity:0;transform:translateY(-18px)}}
+@keyframes page-in{from{opacity:0;transform:translateY(28px)}}
+@keyframes title-in{from{opacity:0;translate:0 26%;filter:blur(3px)}to{opacity:1;translate:0 0;filter:blur(0)}}
+@keyframes letter-in{from{opacity:0;transform:translateY(75%) rotate(7deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+@keyframes copy-in{from{opacity:0;translate:0 15px}to{opacity:1;translate:0 0}}
+@keyframes strip-travel{to{transform:translateX(-50%)}}
+@keyframes frame-in{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+.masthead-top{overflow:clip}
+.masthead-name{overflow:visible;padding-bottom:.075em;margin-bottom:-.075em}
+.masthead-name .logo-letter{display:inline-block;transform-origin:50% 100%}
+html:not(.no-js) .logo-letter{animation:1050ms var(--ease-film) both letter-in;animation-delay:calc(var(--letter-index)*75ms)}
+html:not(.no-js) .masthead-top>p{animation:850ms var(--ease-film) 240ms both copy-in}
+html:not(.no-js) .masthead-bottom{animation:800ms var(--ease-film) 350ms both copy-in}
+html:not(.no-js) .cinema-frame{animation:1150ms var(--ease-film) 180ms both frame-in}
+html:not(.no-js) .page-heading .title-line{animation:900ms var(--ease-film) both title-in;animation-delay:calc(var(--line-index,0)*95ms)}
+html:not(.no-js) .page-heading>.eyebrow,html:not(.no-js) .contact-editorial>.eyebrow{animation:750ms var(--ease-film) 70ms both copy-in}
+html:not(.no-js) .page-intro,html:not(.no-js) .contact-intro{animation:800ms var(--ease-film) 230ms both copy-in}
+html:not(.no-js) .contact-editorial h1{animation:950ms var(--ease-film) both title-in}
+html:not(.no-js) .contact-letter{animation:900ms var(--ease-film) 170ms both copy-in}
+.header{transition:box-shadow .45s var(--ease-film),background .45s;isolation:isolate}
+.menu-toggle{white-space:nowrap;flex-shrink:0}
+.header.has-scrolled{background:rgba(244,244,240,.94);box-shadow:0 7px 28px #1616160a;backdrop-filter:blur(18px)}
+.header:after{content:'';position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:var(--accent);transform:scaleX(var(--reading-progress,0));transform-origin:left;pointer-events:none}
+.wordmark{transition:letter-spacing .5s var(--ease-film)}
+.brand:hover .wordmark{letter-spacing:-.025em}
+.desktop-nav>a:not(.button){transition:color .3s,translate .45s var(--ease-film)}
+.desktop-nav>a:not(.button):hover{translate:0 -2px}
+.button,.text-link{position:relative;transition:color .3s,border-color .3s,background .3s}
+.button:after,.text-link:after{content:'';position:absolute;bottom:-1px;left:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .55s var(--ease-film);pointer-events:none}
+.button:hover:after,.button:focus-visible:after,.text-link:hover:after,.text-link:focus-visible:after{transform:scaleX(1);transform-origin:left}
+.button .arrow,.text-link .arrow,.service-entry>.arrow,.service-row>.arrow,.craft-links .arrow{transition:transform .5s var(--ease-film),color .3s}
+.button:hover .arrow,.text-link:hover .arrow,.service-entry:hover>.arrow,.service-row:hover>.arrow,.craft-links>a:hover .arrow{transform:translate(4px,-4px)}
+.cinema-frame,.project-media,.service-entry-media,.label-portrait{overflow:hidden}
+.cinema-frame .cinema-image{transform:translate3d(0,var(--frame-offset,0px),0) scale(1.1);transition:filter .8s var(--ease-film)}
+.cinema-frame:hover .cinema-image{transform:translate3d(0,var(--frame-offset,0px),0) scale(1.1);filter:saturate(1.12)}
+.project-media>img,.service-entry-media>img,.label-portrait>img{transform:translate3d(0,var(--frame-offset,0px),0) scale(1.075);transition:scale .9s var(--ease-film),filter .8s}
+.project-card:hover .project-media>img,.service-entry:hover .service-entry-media>img,.label-portrait:hover>img{transform:translate3d(0,var(--frame-offset,0px),0) scale(1.075);scale:1.025}
+.project-open,.play-symbol,.coda-action .arrow{translate:var(--magnet-x,0px) var(--magnet-y,0px);transition:translate .35s var(--ease-film),background .4s,color .4s,transform .5s var(--ease-film)}
+.project-card:hover .project-open,.project-card:focus-visible .project-open{background:var(--accent);color:var(--paper);transform:rotate(0)}
+.project-info h3{transition:color .35s,translate .5s var(--ease-film)}
+.project-card:hover .project-info h3{color:var(--accent);translate:4px 0}
+.project-number{backdrop-filter:blur(12px)}
+.production-strip{overflow:hidden;border-block:1px solid var(--line);padding-block:19px;background:var(--paper)}
+.production-strip-track{display:flex;width:max-content;animation:strip-travel 36s linear infinite}
+.production-strip-group{display:flex;align-items:center;gap:42px;padding-right:42px;white-space:nowrap;font-size:clamp(24px,2.2vw,38px);line-height:1}
+.production-strip-group i{font-family:Editorial,Georgia,serif;font-weight:400}
+.production-strip-group b{font-size:18px;font-weight:400;color:var(--accent)}
+.craft-links>a,.service-entry,.service-row,.team-card,.related-link{position:relative}
+.craft-links>a:before,.team-card:before,.related-link:before{content:'';position:absolute;top:-1px;left:0;height:1px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .7s var(--ease-film);pointer-events:none}
+.craft-links>a:hover:before,.team-card:hover:before,.related-link:hover:before{transform:scaleX(1);transform-origin:left}
+.craft-links h2{transition:translate .6s var(--ease-film),color .4s}
+.craft-links>a:hover h2{translate:8px 0}
+.team-card h3{transition:color .4s,translate .6s var(--ease-film)}
+.team-card:hover h3{color:var(--accent);translate:5px 0}
+.home-label .label-copy h2 em{transition:translate .8s var(--ease-film)}
+.home-label:hover .label-copy h2 em{translate:10px 0}
+.filter{position:relative;transition:color .3s,border-color .3s}
+.filter:after{content:'';position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease-film)}
+.filter[aria-pressed=true]:after{transform:scaleX(1)}
+.faq-moving{overflow:hidden}
+.faq summary{transition:color .3s,padding-left .45s var(--ease-film)}
+.faq summary:hover{padding-left:8px;color:var(--accent)}
+.faq details[open]>p{animation:400ms var(--ease-film) both copy-in}
+.field{position:relative}
+.field label{transition:color .3s}
+.field:focus-within label{color:var(--accent)}
+.field input,.field select,.field textarea{transition:border-color .35s,background-color .35s;caret-color:var(--accent)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);background-color:#16161603}
+.draft:not([hidden]){animation:600ms var(--ease-film) both copy-in}
+.coda-link em{transition:translate .8s var(--ease-film)}
+.coda-link:hover em{translate:14px 0}
+.footer-signature{transition:letter-spacing .7s var(--ease-film)}
+.footer-signature:hover{letter-spacing:-.045em}
+.footer-links a{transition:translate .4s var(--ease-film),color .3s}
+.footer-links a:hover{translate:4px 0}
+@media(max-width:600px){.header-inner{gap:18px}.production-strip{padding-block:15px}.production-strip-group{gap:25px;padding-right:25px}.production-strip-track{animation-duration:28s}.craft-links>a:hover h2{translate:4px 0}.home-label:hover .label-copy h2 em,.coda-link:hover em{translate:5px 0}}

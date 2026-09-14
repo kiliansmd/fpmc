@@ -1,0 +1,7 @@
+{
+  "name": "fpmc-house-local",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "build": "node src/build.mjs", "start": "node serve.mjs", "check": "node src/check.mjs" }
+}
