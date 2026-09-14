@@ -48,11 +48,20 @@ Bei einem Medienaustausch Zielname, Originalquelle, Motivrolle und gegebenenfall
 
 Das vorhandene Open-Graph-Bild bleibt unverändert unter `dist/media/film/home-logo/scene-02-poster.jpg` erhalten. Quelle: [FPMC-Original](https://www.fpmc.house/media/film/home-logo/scene-02-poster.jpg), 1920 × 1080 Pixel, 49.503 Bytes. Es zeigt das beleuchtete FPMC-Logo als atmosphärisches Markenmotiv und wird in den Social-Metadaten referenziert.
 
-## Schriften der Art Direction
+## Frühere Schriftfassungen (Dateiarchiv)
 
-Seit der gestalterischen Überarbeitung kommen Space Grotesk (variable Gewichte 300–700) und Instrument Serif (Regular und Italic) hinzu. Beide Familien werden lokal geladen; Latin-Extended-Dateien ergänzen die Sprachabdeckung. Die WOFF2-Dateien wurden unverändert aus dem offiziellen Google-Fonts-CDN übernommen.
+Eine frühere Gestaltungsfassung ergänzte Space Grotesk (variable Gewichte 300–700) und Instrument Serif (Regular und Italic). Die Dateien bleiben im Archiv erhalten; Instrument Serif wird im aktuellen Auftritt nicht geladen. Die WOFF2-Dateien wurden unverändert aus dem offiziellen Google-Fonts-CDN übernommen.
 
 - [Space Grotesk – Originalprojekt und Lizenz](https://github.com/google/fonts/tree/main/ofl/spacegrotesk)
 - [Instrument Serif – Originalprojekt und Lizenz](https://github.com/google/fonts/tree/main/ofl/instrumentserif)
 
-Die vollständigen SIL-OFL-1.1-Lizenztexte liegen unter `LIZENZEN/` und zusätzlich neben den ausgelieferten Schriften in `dist/assets/fonts/`. Die bisherigen Inter- und Antonio-Dateien sind im Export erhalten, werden in der neuen Gestaltung jedoch nicht geladen. Amiri bleibt für den arabischen Originaltitel im Einsatz.
+Die vollständigen SIL-OFL-1.1-Lizenztexte liegen unter `LIZENZEN/` und zusätzlich neben den ausgelieferten Schriften in `dist/assets/fonts/`. Die bisherigen Inter- und Antonio-Dateien sind im Export erhalten, werden in der neuen Gestaltung jedoch nicht geladen. Amiri wird ebenfalls nicht mehr geladen; der arabische Originaltitel verwendet Arial/Tahoma als serifenlosen System-Fallback.
+
+
+## Aktuelle cinematische Fassung
+
+- Der Einstieg verwendet `stage.mp4` stumm als atmosphärisches Markenmotiv. Er wird nicht als Projekt oder Musikproduktionsreferenz bezeichnet. Der Clip enthält eine Audiostream-Spur, die im Hintergrund grundsätzlich stumm bleibt.
+- `stage-motion-poster.jpg` ist ein unveränderter Videoframe bei 1,00 Sekunden aus `stage.mp4`, 1280 × 720 Pixel. Das passende Standbild ersetzt für diesen Einsatzzweck das abweichende Bühnenfoto `stage.png`.
+- Das offizielle Musikvideo folgt direkt auf der Startseite und wird weiterhin ausschließlich nach Klick über YouTube geladen. Spotify bleibt der Zugang zum veröffentlichten Track. Es gibt keinen erfundenen lokalen Audioausschnitt.
+- Das originale BTS-Reel erscheint zusätzlich auf der Filmproduktionsseite. Sein Portraitformat bleibt erhalten. Dieses Video besitzt keine Audiospur.
+- Hauptschrift ist Satoshi Variable; die Wortmarke verwendet Space Grotesk. Beide werden lokal eingebunden. Der aktuelle Auftritt lädt keine Serifenschrift. Satoshi-Lizenz: `LIZENZEN/Satoshi-FFL.txt`.

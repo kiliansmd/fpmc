@@ -163,3 +163,14 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - Originales BTS-Video spielt, pausiert und startet wieder. Der Video-Sprung auf der Labelseite landet unterhalb des festen Headers.
 - Keine JavaScript-Laufzeitfehler in den Browserdurchläufen. Statischer Check: 19 Seiten, 439 interne Linkverweise, 149 Medienverweise und 19 gültige JSON-LD-Blöcke.
 - Schriften bleiben lokal und serifenlos. Es wurden keine zusätzlichen Medien, Referenzen oder Erfolgszahlen erfunden. Die Prüfung simuliert Bildschirmgrößen; sie ist kein Test jedes physischen Geräts.
+
+
+## Cinematische Fassung – 14.09.2026
+
+- Alle 19 Inhaltsseiten bei 320, 390, 720, 900, 1024 und 1440 CSS-Pixeln im Browser geprüft (114 Kombinationen): keine horizontalen Überläufe, keine abgeschnittenen Überschriften/Bedienelemente, genau ein H1 und noindex erhalten.
+- Visuelle Kontrolle der Startseite und der Film-, Musikvideo-, Audio-, Studio-, Label-, Archiv-, Leistungs- und Kontaktgestaltung auf Desktop und Smartphone.
+- Bühnenlicht-Loop spielt stumm, lässt sich manuell pausieren und fortsetzen und pausiert außerhalb des sichtbaren Bereichs. Ein passendes echtes Videostandbild hält den Einstieg vor der Wiedergabe stabil.
+- Der offizielle YouTube-Player wird auf der Startseite erst nach Klick eingebunden. URL und Titel stimmen; eine vollständige externe Videowiedergabe wurde nicht als eigener Nachweis verlangt oder behauptet.
+- Mobilmenü inklusive Escape/Fokus, Projektfilter (6/1/5), FAQ, Anfragevorbelegung, Entwurf und Zurücksetzen sowie BTS-Pause/Abspielen und Video-Sprung erneut bestanden. Keine Nachricht versendet und keine Zwischenablage überschrieben.
+- Keine JavaScript-Laufzeitfehler im Browserlauf. Statischer Check: 19 Seiten, 440 interne Linkverweise, 153 Asset-Verweise und 19 gültige JSON-LD-Blöcke.
+- Anti-Overscroll und manuelle Videosteuerung bleiben erhalten. Die Website lädt keine Serifenschriften und keine neuen Animationsbibliotheken.
