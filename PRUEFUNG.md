@@ -136,3 +136,8 @@ Die normale Desktopansicht wurde vor der Übergabe wiederhergestellt. Die urspr�
 - Prüfung im eingebetteten Browser; keine separate Messung auf physischen Geräten oder in Safari/Firefox. Native View Transitions können bei unterbrochenen Navigationen vom Browser übersprungen werden; die Links bleiben normale Dokumentnavigationen.
 
 Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-behavior), [MDN: scrollRestoration](https://developer.mozilla.org/en-US/docs/Web/API/History/scrollRestoration), [Chrome: Cross-document View Transitions](https://developer.chrome.com/docs/web-platform/view-transitions/cross-document).
+
+
+## Overscroll- und Bounce-Schutz
+
+`overscroll-behavior: none` gilt für HTML/Body sowie die eigenständigen Scrollbereiche Mobilmenü, Entwurf und Textfeld. Die bisherigen `contain`-Werte werden durch die zuletzt eingebundene Interaktionsgestaltung überschrieben. Der Dokumenthintergrund bleibt schwarz. Normales Scrollen, Zoom und Ankersprünge verwenden weiterhin die Browserfunktionen. Build und statische Prüfung der 19 Seiten bestanden. Die Wirkung des systemseitigen Bounce-Effekts hängt von der CSS-Unterstützung des jeweiligen Browsers ab; keine separate Prüfung alter Browser oder externer iframe-Inhalte. Grundlage: [MDN: overscroll-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overscroll-behavior).

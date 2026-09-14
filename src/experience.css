@@ -1,6 +1,10 @@
 /* FPMC interaction cadence: quick response, quiet settling, stable frames. */
 :root{--ease-film:cubic-bezier(.22,.75,.2,1)}
 html{scroll-behavior:auto;scrollbar-gutter:stable;scroll-padding-top:calc(var(--header-size,90px) + 24px)}
+/* Stop boundary bounce and scroll chaining on the page and nested scrollers. */
+html,body{overscroll-behavior:none}
+html{background:var(--paper)}
+.desktop-nav,.draft pre,.field textarea{overscroll-behavior:none}
 .anchor-link{scroll-margin-top:0}
 ::view-transition-old(root){animation:180ms ease-out both page-out}
 ::view-transition-new(root){animation:240ms var(--ease-film) both page-in}
