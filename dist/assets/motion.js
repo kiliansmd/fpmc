@@ -7,9 +7,9 @@
 
   // Editorial rhythm. Every element is revealed once, when it enters the frame.
   const groups = [
-    ['.section-head h2, .home-note h2, .people-heading h2, .label-copy h2, .team-heading, .studio-copy h2, .coda-link h2', 'type'],
-    ['.project-media, .service-entry-media, .studio-image, .motion-screen, .label-portrait, .video-container, .case-image', 'image'],
-    ['.team-card, .process-item, .price-card, .related-link, .fact, .people-names span, .craft-links>a', 'row'],
+    ['.section-head h2, .home-note h2, .people-heading h2, .label-copy h2, .team-heading, .studio-copy h2, .coda-link h2, .home-studio-copy h2, .label-feature h2, .cta-copy h2', 'type'],
+    ['.project-media, .service-entry-media, .studio-image, .motion-screen, .label-portrait, .video-container, .case-image, .hero-film-image, .label-feature-image', 'image'],
+    ['.team-card, .process-item, .price-card, .related-link, .fact, .people-names span, .craft-links>a, .service-overview-item, .studio-credits>span', 'row'],
     ['.note-aside, .people-copy>p, .studio-copy>p, .prose>p, .section-head>p, .label-copy>p, .footer-top>*, .contact-address, .contact-location', 'copy']
   ];
   const pending = new Map();
@@ -27,12 +27,12 @@
       animate(element, [
         {clipPath: 'inset(0 0 100% 0)', opacity: .75},
         {clipPath: 'inset(0 0 0% 0)', opacity: 1}
-      ], {duration: 1000, delay});
+      ], {duration: 800, delay});
     } else {
       animate(element, [
-        {opacity: 0, translate: `0 ${entry.kind === 'type' ? 36 : 22}px`},
+        {opacity: 0, translate: `0 ${entry.kind === 'type' ? 22 : 14}px`},
         {opacity: 1, translate: '0 0'}
-      ], {duration: entry.kind === 'type' ? 880 : 680, delay});
+      ], {duration: entry.kind === 'type' ? 700 : 540, delay});
     }
     element.dataset.revealed = 'true';
   };
@@ -95,7 +95,7 @@
   });
 
   // Small amounts of depth inside existing image frames; no scroll hijacking.
-  const frames = [...document.querySelectorAll('.cinema-frame, .project-media, .service-entry-media, .label-portrait')];
+  const frames = [...document.querySelectorAll('.cinema-frame, .project-media, .service-entry-media, .label-portrait, .hero-film-image')];
   const active = new Set();
   const depthObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
     entries.forEach(entry => entry.isIntersecting ? active.add(entry.target) : active.delete(entry.target));
@@ -127,8 +127,8 @@
   requestFrame();
 
   // The pointer moves the invitation arrow, never the user's cursor or hit area.
-  document.querySelectorAll('.project-card, .cinema-frame, .coda-link').forEach(surface => {
-    const target = surface.querySelector('.project-open, .play-symbol, .coda-action .arrow');
+  document.querySelectorAll('.project-card, .cinema-frame, .coda-link, .hero-film').forEach(surface => {
+    const target = surface.querySelector('.project-open, .play-symbol, .coda-action .arrow, .hero-play');
     if (!target) return;
     surface.addEventListener('pointermove', event => {
       if (event.pointerType !== 'mouse') return;

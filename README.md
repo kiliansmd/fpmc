@@ -1,4 +1,4 @@
-# FPMC – Website mit Art Direction und Motion
+# FPMC – Film, Musik und klare Anfragewege
 
 Die vollständig bearbeitbare Fassung des überarbeiteten Auftritts. Grundlage sind der bereitgestellte Website-Download, die ursprünglichen öffentlichen FPMC-Inhalte und die Ergebnisse des Website-Audits vom 14.09.2026.
 
@@ -23,6 +23,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 - `src/art.mjs`: Art Direction für Startseite, Kontakt, Seiteneinstiege, Navigation, Footer und Bewegtbild.
 - `src/styles.css`: Gestaltung, responsive Ansichten, Schriftdefinitionen und Zustände.
 - `src/motion.css` und `src/motion.js`: Schriftauftritte, Bildenthüllungen, Scrolltiefe, Interaktionen und Seitenübergänge.
+- `src/refinement.css`: verfeinerte Gestaltung, klare Typografieskala, neue Startseite, Anfrageformular und mobile Kontaktaktion.
 - `site.config.json`: Veröffentlichungs-Origin für Canonicals, Sitemap und strukturierte Daten.
 - `src/site.js`: mobiles Menü, Projektfilter, bedarfsgesteuerter Videoplayer und E-Mail-Assistent.
 - `dist/`: fertige Website inklusive lokal gespeicherter Medien und Schriften.
@@ -48,9 +49,9 @@ Nach Änderungen `npm run build` ausführen und die Browseransicht neu laden. `n
 
 ## Kontakt und Veröffentlichungsstand
 
-Der E-Mail-Assistent ist absichtlich ein **Entwurfsassistent**: Eingaben bleiben zunächst im Browser, werden sichtbar zur Prüfung aufbereitet und erst durch das bewusste Absenden im E-Mail-Programm übermittelt. Es gibt keine irreführende Eingangsbestätigung und keinen vorgetäuschten Serverversand. Ein Formular-Backend oder ein Newsletter-Versanddienst war im Download nicht enthalten. Der unbestätigte Newsletter-POST der alten Seite wurde nicht übernommen; der Labelbereich verweist stattdessen auf die bestehenden Kanäle.
+Der E-Mail-Assistent ist absichtlich ein **Entwurfsassistent**: Eingaben werden zunächst im Browser sichtbar zur Prüfung aufbereitet. Die Nutzer können den Text kopieren oder an ihr E-Mail-Programm übergeben. Erst dort senden sie die Nachricht an FPMC. Name und Projektidee sind die Pflichtangaben; eine abweichende Antwortadresse, Organisation und Zeitraum sind optional aufklappbar. Es gibt keine irreführende Eingangsbestätigung und keinen vorgetäuschten Serverversand. Ein Formular-Backend oder ein Newsletter-Versanddienst war im Download nicht enthalten. Der unbestätigte Newsletter-POST der alten Seite wurde nicht übernommen; der Labelbereich verweist stattdessen auf die bestehenden Kanäle.
 
-Die Website ist für die öffentliche Bereitstellung über OpenAI Sites vorbereitet. Die Originaldateien im Downloadordner bleiben erhalten. Die lokale Vorschau liefert weiterhin `X-Robots-Tag: noindex, nofollow`; diese Einstellung des lokalen Servers wird nicht in die statische Veröffentlichung übernommen. Die neue öffentliche Adresse steht in `site.config.json`. Ein späterer Domainwechsel erfordert eine entsprechende Anpassung und einen neuen Build.
+Die Website wird öffentlich über OpenAI Sites bereitgestellt. Die Originaldateien im Downloadordner bleiben erhalten. Die lokale Vorschau liefert weiterhin `X-Robots-Tag: noindex, nofollow`; diese Einstellung des lokalen Servers wird nicht in die statische Veröffentlichung übernommen. Die neue öffentliche Adresse steht in `site.config.json`. Ein späterer Domainwechsel erfordert eine entsprechende Anpassung und einen neuen Build.
 
 Die Weiterleitungen liegen für das statische Hosting in `dist/_redirects`. Die Datenschutzerklärung beschreibt die Bereitstellung über OpenAI Sites und Cloudflare. Unternehmensdaten, steuerliche Preisinformationen und verbindliche Leistungs-/Vertragsbedingungen stammen aus dem bisherigen Auftritt. Es wurde keine Rechtsprüfung vorgenommen.
 
@@ -60,30 +61,30 @@ Die Bilder und Videos stammen aus dem bestehenden FPMC-Auftritt. Das Musikvideo-
 
 Bestehende Preise wurden als Orientierung beibehalten. Pauschale Versprechen wie garantierte Reichweite, DSGVO-Konformität, Antwort in Minuten und universelle 48-Stunden-Produktion wurden durch konkrete Anfrageführung ersetzt.
 
-## Aktuelle Art Direction
+## Aktuelle Gestaltung und Anfrageführung
 
-Der Auftritt orientiert sich an einem unabhängigen Film- und Musikmagazin: große typografische Setzungen, Schwarz und Papierweiß, ein kräftiger roter Akzent und bewusst unterschiedliche Bildformate. Space Grotesk bildet die klare Grundschrift; Instrument Serif setzt ausgewählte redaktionelle Akzente. Beide werden lokal geladen.
+Der Auftritt verbindet eine ruhige Gestaltung mit dem Charakter eines unabhängigen Film- und Musikhauses: Papierweiß, dunkle Typografie, ein zurückhaltender roter Akzent und echte Arbeiten. Space Grotesk bildet die klare Grundschrift; Instrument Serif setzt ausgewählte redaktionelle Akzente. Beide werden lokal geladen.
 
-Die Startseite beginnt mit einem großen FPMC-Schriftzug und einem originalen Filmframe. Es folgen eine Bild-/Ton-Komposition, Produktionsbereiche mit echtem Bewegtbild vom Set, das Team und ein roter Labelabschnitt. Das Projektarchiv ordnet die Referenzen asymmetrisch an. Film, Musikvideo und Audio haben unterschiedliche Bild- und Textkompositionen. Die Studioseite stellt die Menschen und den Produktionsprozess heraus; die Labelseite erhält einen dunklen, musikalischen Charakter. Der Kontaktbereich verbindet direkte Erreichbarkeit mit einem unmittelbar zugänglichen Formular in einer eigenen zweispaltigen Komposition.
+Die Startseite erklärt unmittelbar Film-, Musikvideo- und Audioproduktion für Artists, Labels und Marken. Der erste sichtbare Bereich kombiniert diese Aussage mit einer realen Arbeit und den beiden Wegen „Projekt anfragen“ und „Arbeiten ansehen“. Der übergroße FPMC-Schriftzug, das endlose Textband und der großflächig rote Labelabschnitt sind entfallen. Es folgen drei klar verlinkte Produktionsbereiche, ein ergänzender Web-/Digitalhinweis, die Menschen hinter FPMC und ein kompakter Labelabschnitt.
 
-Das originale achtsekündige Behind-the-scenes-Video wird auf Start- und Studioseite erst in Sichtnähe geladen. Es bleibt stumm und lässt sich manuell pausieren. Die automatischen Abschaltungen für reduzierte Bewegung und Datensparmodus wurden auf ausdrücklichen Wunsch entfernt. Keine neuen Fotos, Filmprojekte oder Referenzen wurden erfunden.
+Projektarchiv, Leistungen, Studio, Label und Detailseiten verwenden einheitlichere Abstände und eine abgestimmte Schriftgröße. Film, Musikvideo und Audio behalten ihre eigenen Bildkompositionen, das Label seinen dunklen Charakter. Die gemeinsame Einladung am Seitenende erläutert den nächsten Schritt und führt zu einer passenden Anfrage oder zur direkten E-Mail.
 
-Die Detailseiten enthalten passende Projektfragen und Wege zu verwandten Leistungen. Webprojekte verlinken auf die nächste Referenz; die Redstar-Projektseite führt zu den zugehörigen Produktionsleistungen. Die Navigation bleibt mit JavaScript beim Scrollen erreichbar, eine zusätzliche Seitennavigation steht im Footer.
+Der hervorgehobene Anfragebutton ist auf Desktop und Smartphone direkt in der Navigation erreichbar. Leistungslinks übernehmen die passende Projektart ins Formular. Paketlinks übergeben Simple, Professional, Cinematic, Digital Boost beziehungsweise Spec-Ad. Die Auswahl ist dort sichtbar und änderbar. Allgemeine Anfragen beginnen mit „Eine erste Idee“. Jede Änderung macht einen bereits erzeugten Entwurf ungültig und setzt dessen Kopierstatus zurück.
 
-Paketlinks übergeben Simple, Professional, Cinematic, Digital Boost beziehungsweise Spec-Ad an die Anfrage. Die passende Auswahl ist dort sichtbar und änderbar und wird in den E-Mail-Entwurf übernommen. Allgemeine Anfragen beginnen mit „Eine erste Idee“. Ein geänderter Formularstand macht den alten Entwurf ungültig und entfernt dessen Kopierstatus.
+Das Formular fragt zunächst nach Projektart, Name und Idee. Weitere Angaben bleiben optional. Es erklärt bereits vor der Eingabe, dass es eine Nachricht für das eigene E-Mail-Programm vorbereitet. Ein ungültiger Wert im eingeklappten optionalen Bereich öffnet diesen automatisch zur Korrektur. Es werden keine Nachrichten automatisch versendet.
 
-Der aktuelle statische Check umfasst 19 Seiten, 428 interne Linkverweise und 131 Medienverweise. Breadcrumb-Daten und strukturierte Leistungsdaten ergänzen die individuellen Metadaten. Die laufende Vorschau zeigt diese aktuelle Fassung.
+Das originale achtsekündige Behind-the-scenes-Video wird auf Start- und Studioseite erst in Sichtnähe geladen. Es bleibt stumm und lässt sich manuell pausieren. Keine neuen Fotos, Filmprojekte, Referenzen, Kundenstimmen oder Erfolgszahlen wurden erfunden.
 
-## Animationen der veröffentlichten Fassung
+Der aktuelle statische Check umfasst 19 Seiten, 447 interne Linkverweise und 131 Medienverweise. Breadcrumb-Daten und strukturierte Leistungsdaten ergänzen die individuellen Metadaten. Die Anfrageführung wurde vereinfacht; eine gemessene Steigerung der Conversion-Rate wird nicht behauptet.
 
-- Gestaffelter Auftritt der vier FPMC-Buchstaben und der Titelzeilen; danach Einleitung und Aktionen.
-- Einmalige Bildenthüllungen und gestaffelte Text-/Zeilenauftritte beim Eintritt in den sichtbaren Bereich.
-- Endlos laufendes typografisches Band auf der Startseite.
-- An die Bildgröße angepasste Tiefenbewegung in Bildern, ohne das Scrollverhalten zu ersetzen.
+## Animationen
+
+- Kürzere Titelauftritte und einmalige Bildenthüllungen beim Eintritt in den sichtbaren Bereich.
+- Gestaffelte Text- und Zeilenauftritte sowie eine geringe, an den Bildüberstand angepasste Tiefenbewegung.
 - Bewegliche Projektpfeile, fein animierte Linien und Hoverzustände.
 - Animiertes Umordnen des Projektarchivs, ein aufklappendes Mobilmenü und weich öffnende FAQ-Antworten.
 - Native Übergänge zwischen Seiten in Browsern mit Unterstützung für Cross-document View Transitions. Andere Browser navigieren weiterhin normal.
 
-Es gibt keine automatische Reduced-Motion-, No-Motion- oder Save-Data-Abschaltung. Lesbare Inhalte ohne JavaScript und manuelle Videosteuerungen bleiben erhalten. Die zusätzliche Bewegung erfordert keine externe Animationsbibliothek.
+Auf ausdrücklichen Wunsch gibt es keine automatische Reduced-Motion-, No-Motion- oder Save-Data-Abschaltung. Lesbare Inhalte ohne JavaScript und manuelle Videosteuerungen bleiben erhalten. Die Bewegung erfordert keine externe Animationsbibliothek.
 
 Technische Referenzen: [MDN: Element.animate](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate), [MDN: @view-transition](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@view-transition).

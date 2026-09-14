@@ -1,6 +1,6 @@
 # Prüfung der lokalen Website
 
-Stand: 14.09.2026. Vorherige Fassung: Art Direction; Ergänzung zur aktuellen Motion-Fassung am Ende. Geprüfte Vorschau: http://localhost:4179
+Stand: 14.09.2026. Historische Funktionsprüfungen mit Ergänzung zur aktuellen Gestaltungs- und Anfrageverfeinerung am Ende. Geprüfte Vorschau: http://localhost:4179
 
 ## Aktuelles Ergebnis
 
@@ -17,7 +17,7 @@ Die vollständige Website ist lokal benutzbar. Der statische Inhalts-, Link- und
 | Navigation | Mobiles Menü öffnet und schließt; Escape schließt und setzt den Fokus zurück. Nach dem Umbau erneut bei 320 Pixeln geprüft. |
 | Projektfilter | Sichtbare Web-Auswahl mit fünf Projekten erneut geprüft. Filterlogik unverändert; vorheriger vollständiger Durchlauf: Alle 6, Film & Musik 1, Web & Digital 5. |
 | Kontakt | Gültige Testangaben erzeugen im neuen Layout einen sichtbaren Entwurf mit korrekt kodiertem mailto-Link. Website und Professional werden aus der URL übernommen. Wechsel zu Film entfernt das unpassende Angebot und verbirgt den vorherigen Entwurf. Native E-Mail-Validierung ebenfalls beobachtet. |
-| Lokales Bewegtbild | Originales BTS-Video auf Studio- und Startseite startet stumm. Abspielen und Pausieren im Browser geprüft. Reduzierte Bewegung, Datensparmodus und Sichtbarkeit werden im Code berücksichtigt. |
+| Lokales Bewegtbild | Originales BTS-Video auf Studio- und Startseite startet stumm. Abspielen und Pausieren im Browser geprüft. Die Sichtbarkeit wird im Code berücksichtigt. Die Abschaltungen für reduzierte Bewegung und Datensparmodus wurden in der nachfolgenden Motion-Fassung entfernt. |
 | Schriften | Neue Schriftdateien lokal vorhanden; Latin und Latin Extended eingebunden. Original-Lizenztexte werden mitgeliefert. |
 | Browsermeldungen | Bei der abschließenden Kontrolle keine eigenen Warnungen oder Fehler in den verfügbaren Browserlogs. |
 
@@ -54,3 +54,17 @@ Die normale Desktopansicht wurde vor der Übergabe wiederhergestellt. Die urspr�
 - Browsermeldungen bei den geprüften neuen Abläufen ohne Website-Fehler. Native Seitenübergänge hängen von der Browserunterstützung ab.
 
 - Alle 19 Routen der Motion-Fassung erneut bei 320 CSS-Pixeln geprüft: kein horizontaler Seitenüberlauf. Anschließend Desktopansicht wiederhergestellt.
+
+## Verfeinerung von Gestaltung und Anfrageführung
+
+- Alle 19 Seiten bei 320 und 1707 CSS-Pixeln Breite erneut geprüft: kein horizontaler Seitenüberlauf, genau ein H1 pro Seite, keine defekten Bilder im mobilen Durchlauf.
+- Acht repräsentative Seiten bei 1024 CSS-Pixeln Breite kontrolliert: kein Überlauf.
+- Visuelle Kontrolle der neuen Startseite auf Desktop und Smartphone sowie von Kontakt und Filmproduktion.
+- Neuer mobiler Anfragebutton führt direkt zum Kontaktformular. Der Film-Anfragelink übernimmt „Film“ als Projektart.
+- Vereinfachtes Formular mit Name und Projektidee, ohne E-Mail-Angabe erfolgreich geprüft. Website und Professional werden aus der URL übernommen und korrekt in den Entwurf geschrieben.
+- Optionale abweichende Antwortadresse: ungültige Eingabe bei eingeklapptem Bereich öffnet diesen und setzt den Fokus ins Feld. Nach Korrektur ist die Antwortadresse im Entwurf enthalten.
+- Die Erklärung vor der Eingabe und der Entwurf benennen den tatsächlichen Ablauf: Nachricht vorbereiten, prüfen, im eigenen E-Mail-Programm senden. Keine Testnachricht versendet.
+- Statischer Check der verfeinerten Ausgabe: 19 Seiten, 19 individuelle Titel und Beschreibungen, 447 interne Linkverweise, 131 Medienverweise, 19 gültige JSON-LD-Blöcke.
+- Keine zusätzliche externe Animationsbibliothek, kein Tracking und kein Formularbackend ergänzt. Keine Conversion-Messung oder A/B-Prüfung durchgeführt.
+- Labelseite: Text- und Outline-Hoverfarben sowie primäre Buttons für den dunklen Bereich korrigiert; dunkle Fokusringe auf der hellen Navigation, Abschluss-CTA und im Footer. Helle CTA im Browser visuell und anhand der berechneten Farben kontrolliert.
+- Browserlogs: Beim schnellen automatisierten Wechsel zwischen Seiten meldete der Browser einmal „AbortError: Transition was skipped“. Die Navigation und Zielseite funktionierten. Keine weiteren Website-Warnungen oder -Fehler im kontrollierten Log.
