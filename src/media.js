@@ -101,13 +101,44 @@
   document.querySelectorAll('[data-motion-src]').forEach(video => {
     const frame = video.parentElement;
     const toggle = frame.querySelector('[data-motion-toggle]');
+    const nativeAutoplay = video.hasAttribute('autoplay');
     let userPaused = false;
+    let manuallyStarted = false;
     let inView = false;
-    let request;
-    let loadingTimer;
-    let failed = false;
+    let pageActive = true;
+    let failed = !!video.error;
+    let blocked = false;
+    let needsInteraction = false;
     let wantsPlayback = false;
+    let request = null;
     let generation = 0;
+    let loadingTimer;
+    let retryTimer;
+    let abortRetries = 0;
+    let readinessRetried = false;
+
+    function configureInlinePlayback() {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.setAttribute('muted','');
+      video.setAttribute('playsinline','');
+      video.setAttribute('webkit-playsinline','');
+    }
+    function visibleNow() {
+      const r = video.getBoundingClientRect();
+      const viewport = window.visualViewport;
+      const top = viewport?.offsetTop || 0;
+      const left = viewport?.offsetLeft || 0;
+      const height = viewport?.height || window.innerHeight;
+      const width = viewport?.width || window.innerWidth;
+      const visibleHeight = Math.max(0,Math.min(r.bottom,top+height)-Math.max(r.top,top));
+      const visibleWidth = Math.max(0,Math.min(r.right,left+width)-Math.max(r.left,left));
+      const area = visibleHeight * visibleWidth;
+      // An explicitly pressed, visible play control also works at the frame's edge.
+      return r.width > 0 && r.height > 0 && area > 0 && area >= r.width * r.height * (manuallyStarted ? 0 : .15);
+    }
+    const canRun = () => pageActive && !document.hidden && inView && !userPaused && !failed;
     function labelToggle(text) {
       if (!('motionCompact' in toggle.dataset)) toggle.textContent = text;
       toggle.setAttribute('aria-label',text);
@@ -115,82 +146,174 @@
     function setState(state) {
       clearTimeout(loadingTimer);
       frame.dataset.playback = state;
-      const active = wantsPlayback && !userPaused;
-      const text = state === 'error' ? 'Bewegtbild erneut laden' : active ? 'Bewegtbild pausieren' : 'Bewegtbild abspielen';
+      const active = state === 'playing' && !video.paused;
+      const text = state === 'error' ? 'Bewegtbild erneut laden' : active ? 'Bewegtbild pausieren' : state === 'starting' ? 'Bewegtbild startet – abbrechen' : 'Bewegtbild abspielen';
       labelToggle(text);
       toggle.setAttribute('aria-pressed',String(active));
       toggle.removeAttribute('aria-busy');
     }
     function waitForFrames() {
       clearTimeout(loadingTimer);
+      if (!wantsPlayback || !canRun()) return;
       loadingTimer = setTimeout(() => {
-        if (!wantsPlayback) return;
+        if (!wantsPlayback || !canRun()) return;
         frame.dataset.playback = 'loading';
-        labelToggle('Bewegtbild lädt – pausieren');
+        labelToggle('Bewegtbild lädt – abbrechen');
         toggle.setAttribute('aria-busy','true');
-      }, 300);
+      },300);
+    }
+    function cancelPending() {
+      generation += 1;
+      request = null;
+      clearTimeout(retryTimer);
+      retryTimer = null;
+      clearTimeout(loadingTimer);
     }
     function pause() {
       wantsPlayback = false;
+      manuallyStarted = false;
+      cancelPending();
+      video.autoplay = false;
       video.pause();
       setState(failed ? 'error' : 'paused');
     }
-    function play() {
-      if (failed || document.hidden) return;
+    function play(recover = false) {
+      if (!canRun()) return;
+      if (recover) { blocked = false; abortRetries = 0; readinessRetried = false; }
+      if (blocked || request !== null || retryTimer) return;
+      configureInlinePlayback();
+      video.autoplay = nativeAutoplay;
       wantsPlayback = true;
-      if (request) return;
+      // Native autoplay may already be running before this deferred script arrives.
+      if (!video.paused && video.readyState >= 2) {
+        needsInteraction = false;
+        setState('playing');
+        return;
+      }
       setState('starting');
       if (!video.getAttribute('src')) {
         video.src = video.dataset.motionSrc;
         video.load();
       }
+      const attempt = ++generation;
+      request = attempt;
       waitForFrames();
-      const attempt = generation;
-      request = video.play();
-      request.catch(error => {
-        if (attempt !== generation) return;
-        if (!failed && (error.name !== 'AbortError' || !wantsPlayback)) {
-          wantsPlayback = false;
-          setState('paused');
-        }
-      }).finally(() => {
+      function rejected(error) {
+        if (request !== attempt) return;
         request = null;
-        if (wantsPlayback && video.paused && !failed && !document.hidden) play();
-      });
+        if (failed || !canRun() || !wantsPlayback) { setState(failed ? 'error' : 'paused'); return; }
+        // Interrupted requests get a bounded retry, never an endless promise loop.
+        if (error?.name === 'AbortError' && abortRetries < 2) {
+          abortRetries += 1;
+          clearTimeout(loadingTimer);
+          retryTimer = setTimeout(() => { retryTimer = null; play(); },abortRetries * 160);
+          return;
+        }
+        wantsPlayback = false;
+        blocked = error?.name === 'NotAllowedError';
+        needsInteraction = true;
+        setState(blocked ? 'blocked' : 'paused');
+      }
+      try {
+        const promise = video.play();
+        // Older embedded browsers may not return a promise from play().
+        if (promise && typeof promise.then === 'function') {
+          promise.then(() => {
+            if (request !== attempt) return;
+            request = null;
+            if (!canRun()) { pause(); return; }
+            if (!video.paused) { abortRetries = 0; needsInteraction = false; setState('playing'); }
+            else { wantsPlayback = false; needsInteraction = true; setState('paused'); }
+          },rejected);
+        } else {
+          request = null;
+          if (!video.paused && video.readyState >= 2) setState('playing');
+        }
+      } catch (error) { rejected(error); }
     }
+    function syncVisibility(recover = false) {
+      const wasInView = inView;
+      inView = visibleNow();
+      if (canRun()) play(recover || !wasInView);
+      else pause();
+    }
+    configureInlinePlayback();
     toggle.hidden = false;
-    setState('paused');
+    setState(failed ? 'error' : 'paused');
     toggle.addEventListener('click', () => {
-      if (wantsPlayback) { userPaused = true; pause(); return; }
+      if (!video.paused || wantsPlayback) { userPaused = true; pause(); return; }
       userPaused = false;
-      if (failed) { failed = false; generation += 1; video.removeAttribute('src'); }
-      play();
+      manuallyStarted = true;
+      inView = visibleNow();
+      if (failed) { failed = false; cancelPending(); video.removeAttribute('src'); }
+      // Keep play() directly inside the trusted gesture, including after an error.
+      play(true);
     });
     video.addEventListener('playing', () => {
-      if (!wantsPlayback || document.hidden) { pause(); return; }
+      inView = visibleNow();
+      if (!canRun()) { pause(); return; }
+      wantsPlayback = true;
+      blocked = false;
+      needsInteraction = false;
+      abortRetries = 0;
+      clearTimeout(retryTimer);
+      retryTimer = null;
       setState('playing');
     });
     video.addEventListener('waiting',waitForFrames);
     video.addEventListener('stalled', () => { if (video.readyState < 3) waitForFrames(); });
-    video.addEventListener('pause', () => { if (!wantsPlayback) setState(failed ? 'error' : 'paused'); });
-    function mediaError() { failed = true; wantsPlayback = false; setState('error'); }
-    video.addEventListener('error',mediaError);
-    // An eager hero request can fail before this script attaches its listeners.
-    if (video.error) mediaError();
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(entries => {
-        const latest = entries[entries.length-1];
-        inView = latest.isIntersecting && latest.intersectionRatio >= .15;
-        if (inView && !userPaused && !failed) play(); else pause();
-      }, {threshold:[0,.15]});
+    video.addEventListener('pause', () => {
+      if (!video.paused) return; // Ignore an old queued pause after a quick restart.
+      if (wantsPlayback) needsInteraction = true;
+      wantsPlayback = false;
+      cancelPending();
+      setState(failed ? 'error' : blocked ? 'blocked' : 'paused');
+    });
+    video.addEventListener('error', () => {
+      failed = true;
+      wantsPlayback = false;
+      cancelPending();
+      setState('error');
+    });
+    video.addEventListener('loadeddata', () => {
+      inView = visibleNow();
+      if (!canRun()) return;
+      if (blocked) {
+        if (readinessRetried) return;
+        readinessRetried = true;
+        blocked = false;
+      }
+      play();
+    });
+    // Initial geometry starts the hero immediately, independently of observer timing.
+    syncVisibility();
+    let queued = false;
+    const scheduleVisibility = () => {
+      if (queued) return;
+      queued = true;
+      window.requestAnimationFrame(() => { queued = false; syncVisibility(); });
+    };
+    if ('IntersectionObserver' in window && typeof window.IntersectionObserver === 'function') {
+      const observer = new IntersectionObserver(() => syncVisibility(), {threshold:[0,.15]});
       observer.observe(video);
+    } else {
+      window.addEventListener('scroll',scheduleVisibility,{passive:true});
+      window.addEventListener('resize',scheduleVisibility,{passive:true});
     }
+    window.visualViewport?.addEventListener('resize',scheduleVisibility,{passive:true});
+    window.visualViewport?.addEventListener('scroll',scheduleVisibility,{passive:true});
+    function recoverFromGesture(event) {
+      if (!event.isTrusted || event.repeat || event.target?.closest?.('[data-motion-toggle]')) return;
+      if (!blocked && !needsInteraction) return;
+      inView = visibleNow();
+      if (canRun()) play(true);
+    }
+    ['click','touchend','keydown'].forEach(type => document.addEventListener(type,recoverFromGesture,{passive:true}));
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden) pause(); else if (inView && !userPaused && !failed) play();
+      if (document.hidden) pause(); else syncVisibility(true);
     });
-    window.addEventListener('pagehide',pause);
-    window.addEventListener('pageshow',event => {
-      if (event.persisted && inView && !userPaused && !failed) play();
-    });
+    window.addEventListener('focus', () => syncVisibility(true));
+    window.addEventListener('pagehide', () => { pageActive = false; pause(); });
+    window.addEventListener('pageshow', () => { pageActive = true; syncVisibility(true); });
   });
 })();
