@@ -1,6 +1,6 @@
 # Medienherkunft
 
-Stand: 14.09.2026. Die folgenden Dateien wurden aus dem bestehenden FPMC-Auftritt beziehungsweise der dort verlinkten offiziellen Musikvideo-Veröffentlichung übernommen. Die Zuordnung wurde durch Sichtprüfung und identische SHA-256-Dateihashes zwischen Quelle und Export bestätigt. Die neue Social-Vorschau ist eine separat dokumentierte KI-generierte Markengrafik; die Produktionsmedien bleiben Originalmaterial. Die Dokumentation beschreibt die Herkunft; sie enthält keine eigenständige Aussage über Nutzungsrechte oder Lizenzen.
+Stand: 14.09.2026. Die folgenden Dateien wurden aus dem bestehenden FPMC-Auftritt beziehungsweise der dort verlinkten offiziellen Musikvideo-Veröffentlichung übernommen. Die Zuordnung wurde durch Sichtprüfung und identische SHA-256-Dateihashes zwischen Quelle und Export bestätigt. Die aktuelle Social-Vorschau und die Studio-Wortmarke stammen aus den am 15.09.2026 vom Nutzer bereitgestellten Anhängen; die Produktionsmedien bleiben Originalmaterial. Die Dokumentation beschreibt die Herkunft; sie enthält keine eigenständige Aussage über Nutzungsrechte oder Lizenzen.
 
 ## Verwendete Abbildungen
 
@@ -78,3 +78,14 @@ Die technische Prüfung des Originalclips bestätigt H.264 Main Level 3.0, 8-Bit
 ## Globale Filmkörnung – 14.09.2026
 
 `src/grain.svg` / `dist/assets/grain.svg`: eigens erstellte prozedurale SVG-Textur, 256 × 256 Einheiten, 420 Bytes. Monochromes Fraktalrauschen mit festem Seed und nahtlosem Kachelrand. Kein Fremdbild und keine bearbeitete Produktionsaufnahme. Die Einbindung als CSS-Hintergrund verändert die Originalbilder und -videos nicht.
+
+## FPMC Studio: bereitgestellte Markenassets, 15.09.2026
+
+Die aktuellen Anhänge ersetzen die bisherige Schrift-Wortmarke und die zuvor erzeugte Social-Vorschau. Die rechtliche Bezeichnung FPMC GbR bleibt erhalten.
+
+- `src/branding/logo.png.base64`: unveränderte PNG-Quelle (2172 × 724), SHA-256 `7e15c75981153e225052f75acd52e5ba66733f1535778e0b93249cd825da5af7`.
+- `src/branding/social.png.base64`: unveränderte Social-PNG-Quelle (1738 × 905), SHA-256 `7771ab01fcd3a95ece043b4e14ef00869898216de95635421bab74c089c0fa88`.
+- Beide Quellen sind Base64-Textdateien. `src/branding.mjs` erzeugt beim Build die öffentlichen Dateien `/assets/fpmc-studio.svg`, `/assets/fpmc-studio-icon.svg` und `/social/fpmc-studio.png`. Diese Ausgaben sind gezielt in `.gitignore` ausgeschlossen und werden auf Vercel beim Build rekonstruiert. Keine neuen Binärdateien müssen eingecheckt werden.
+- Die SVG-Wortmarke enthält die Originalpixel und entfernt über den sichtbaren Ausschnitt lediglich transparenten Leerraum. Sie ist keine Vektor-Neuzeichnung. Das Favicon zeigt den F-Ausschnitt derselben Quelle.
+- Header und Footer verwenden dieselbe Logo-Datei. Open Graph, Twitter und WebPage-Schema verwenden das neue Social-Motiv mit eigener URL, Bildmaßen und Alternativtext. Das Organization-Schema verweist auf die neue Wortmarke.
+- Historische Dateien `dist/og.png` und `dist/assets/logo.svg` bleiben als Altbestand unverändert; die aktuellen Seiten verweisen nicht mehr darauf.

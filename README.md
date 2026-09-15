@@ -168,3 +168,7 @@ Die Produktionsbereiche erscheinen als großzügige, wechselnde Bild-/Textkompos
 Label und Artist bilden eine gemeinsame Release-Komposition ohne separaten blaugrauen Hintergrundkasten. Das Team erscheint in zwei großzügigen Spalten beziehungsweise einer Spalte auf schmalen Smartphones. FAQ-Titel und Fragen stehen auf Desktop nebeneinander. Kontaktfelder verwenden sichtbare Labels und klare Unterkanten. Auf Mobilgeräten folgt das Formular unmittelbar auf die Einleitung; direkte Kontaktwege stehen anschließend darunter.
 
 Es wurden keine neuen Medien, Referenzen oder Erfolgsversprechen ergänzt. Native Videosteuerung, Grain, Scrollverhalten, Social-Metadaten und noindex bleiben erhalten.
+
+### Neue Studio-Markenassets ohne binäre Git-Änderungen
+
+`npm run build` rekonstruiert Logo, Favicon und Social-PNG aus den Textquellen unter `src/branding/`. Deshalb vor lokalem Start oder Veröffentlichung immer den Build ausführen. Die generierten Ausgaben sind gitignored; Vercel erstellt sie über den vorhandenen Build-Befehl automatisch. Herkunft und SHA-256-Prüfsummen stehen in `MEDIEN.md`.

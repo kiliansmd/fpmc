@@ -1,3 +1,4 @@
+import {brandLogo,socialImage} from './branding.mjs';
 import {readFileSync,existsSync,statSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {join} from 'node:path';
@@ -11,6 +12,7 @@ function target(path){const file=join(root,path);return existsSync(file)&&statSy
 for(const route of routes){
  const file=target(route.path),html=readFileSync(file,'utf8');
  if(!indexable&&!html.includes('<meta name="robots" content="noindex, nofollow">'))errors.push(`${route.path}: noindex missing`);
+ if((html.match(/class="brand-logo"/g)||[]).length!==2||!html.includes(`rel="icon" href="${brandLogo.icon}"`))errors.push(`${route.path}: shared Studio branding missing`);
  const title=html.match(/<title>(.*?)<\/title>/s)?.[1],description=html.match(/<meta name="description" content="([^"]*)"/)?.[1];
  if(!title||titles.has(title))errors.push(`${route.path}: missing or duplicate title`);titles.add(title);
  if(!description||descriptions.has(description))errors.push(`${route.path}: missing or duplicate description`);descriptions.add(description);
@@ -23,10 +25,10 @@ for(const route of routes){
  if(meta(html,'og:description')!==description||meta(html,'twitter:description')!==description)errors.push(`${route.path}: social description mismatch`);
  if(meta(html,'og:url')!==origin+route.path)errors.push(`${route.path}: social URL must match canonical`);
  const imageUrl=meta(html,'og:image');
- if(imageUrl!==origin+'/og.png'||meta(html,'twitter:image')!==imageUrl||meta(html,'og:image:secure_url')!==imageUrl)errors.push(`${route.path}: social image URL mismatch`);
+ if(imageUrl!==origin+socialImage.path||meta(html,'twitter:image')!==imageUrl||meta(html,'og:image:secure_url')!==imageUrl)errors.push(`${route.path}: social image URL mismatch`);
  if(meta(html,'og:image:type')!=='image/png'||meta(html,'twitter:card')!=='summary_large_image')errors.push(`${route.path}: unsupported preview format`);
  if(meta(html,'og:image:alt')!==meta(html,'twitter:image:alt'))errors.push(`${route.path}: social alt mismatch`);
- const imageFile=target('/og.png');
+ const imageFile=target(socialImage.path);
  if(!existsSync(imageFile))errors.push('Social image missing');
  else{
    const png=readFileSync(imageFile);
@@ -45,7 +47,7 @@ for(const route of routes){
    const webpage=nodes.find(node=>['WebPage','ContactPage','AboutPage','CollectionPage'].includes(node['@type']));
    if(!webpage||webpage.url!==origin+route.path||webpage.primaryImageOfPage?.contentUrl!==imageUrl)errors.push(`${route.path}: WebPage structured data mismatch`);
    const organization=nodes.find(node=>node['@type']==='Organization');
-   if(organization?.logo!==origin+'/assets/logo.svg')errors.push(`${route.path}: organization logo missing`);
+   if(organization?.logo!==origin+brandLogo.path)errors.push(`${route.path}: organization logo missing`);
    if(route.path==='/'&&!nodes.some(node=>node['@type']==='WebSite'&&node.name==='FPMC'&&node.url===origin+'/'))errors.push('Homepage WebSite schema missing');
    if(html.includes('data-video=')&&!nodes.some(node=>node['@type']==='VideoObject'&&node['@id']&&node.embedUrl))errors.push(`${route.path}: video schema missing`);
  }catch{errors.push(`${route.path}: invalid structured data`);}}

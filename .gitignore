@@ -6,3 +6,8 @@ node_modules/
 .vercel/
 .vercel
 .env*
+
+# Reconstructed from src/branding/*.png.base64 by npm run build
+/dist/social/fpmc-studio.png
+/dist/assets/fpmc-studio.svg
+/dist/assets/fpmc-studio-icon.svg

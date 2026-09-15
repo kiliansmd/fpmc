@@ -1,13 +1,7 @@
 import {origin} from './config.mjs';
 
-// One crop-safe brand image; each shared route keeps its own title and description.
-export const socialImage = Object.freeze({
-  path: '/og.png',
-  width: 1738,
-  height: 905,
-  type: 'image/png',
-  alt: 'FPMC – FILM. SOUND. Weiße Wortmarke vor schwarzem Hintergrund und einem filmischen Lichtkegel.'
-});
+import {brandLogo,socialImage} from './branding.mjs';
+export {socialImage};
 
 const esc = value => String(value).replace(/[&<>"']/g, char => ({
   '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
@@ -69,7 +63,7 @@ export function siteStructuredData(path, title, description, org, extra) {
     inLanguage:'de-DE', publisher:{'@id':org['@id']}
   };
   return [
-    {...org,logo:origin + '/assets/logo.svg'},
+    {...org,logo:origin + brandLogo.path},
     ...(path === '/' ? [website] : []),
     page,
     ...extra.map(node=>node === breadcrumb ? {...node,'@id':canonical + '#breadcrumb'} : node)

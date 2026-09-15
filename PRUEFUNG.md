@@ -268,3 +268,12 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - Enger Nachtest des Filters: 129 Animationsframes beim Wechsel Web→Alle, durchgehend 1440px Dokumentbreite und 0px mögliche horizontale Verschiebung.
 - Vergleich alter und neuer CSS in vier isolierten WebKit-Aufrufen bei 393×852 und 1440×900: alle vier Videos starteten ohne Nutzerinteraktion. Vorübergehende NotAllowedError-Ablehnungen traten bei beiden CSS-Fassungen auf; anschließend übernahm die native Wiedergabe. Keine festgestellte CSS-bedingte Autoplay-Regression.
 - Die zuletzt angepasste Kontaktreihenfolge in neun Kombinationen aus drei Browserengines und 393/768/1440px nachgeprüft. Formularanordnung, Entwurferstellung und Übereinstimmung der Navbar-/Footer-Wortmarken bestanden.
+
+## Studio-Logo und Social-Vorschau, 15.09.2026
+
+- Build und Seitenprüfung: 19 Seiten, 19 Social-Metadatensätze, 19 gültige JSON-LD-Blöcke, 439 interne Links und 191 Asset-Verweise bestanden.
+- Chromium, Firefox und WebKit: jeweils 320, 393, 768 und 1440 Pixel Breite. Header-/Footer-Logo geladen, keine horizontale Überbreite, keine JavaScript-Seitenfehler. Mobile Menünavigation zur Studio-Seite funktioniert in allen drei Engines.
+- Header mobil und Desktop sowie Footer visuell geprüft. Beide Stellen nutzen dieselbe unverzerrte Original-Wortmarke.
+- Generierte Markenassets gelöscht und allein aus den versionierten Textquellen erneut aufgebaut. Social-PNG stimmt per SHA-256 mit dem Nutzeranhang überein.
+- Generierte PNG/SVG-Ausgaben gezielt gitignored. Neue Markenquellen sind Base64-Text; keine neuen oder geänderten Binärdateien im Commit.
+- Bestehende noindex-Metas und Vercel-X-Robots-Tag bleiben aktiv.
