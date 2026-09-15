@@ -23,6 +23,7 @@ Node.js wird benötigt. Es sind keine zusätzlichen Pakete und keine Installatio
 - `src/icons.mjs`: einheitliche SVG-Pfeile, Play- und Menüsymbole ohne plattformabhängige Emoji-Glyphen.
 - `src/adaptive.css`: abschließende responsive Gestaltung für Smartphone, Tablet, breite Monitore, kurze Fenster und Touch-Bedienung.
 - `src/seo.mjs`: gemeinsame Social-Vorschau, Open-Graph-/X-Metadaten und verknüpfte Website-/Seiten-Daten.
+- `src/craft.css`: aktuelle cinematische Gestaltung, proportionierte Bildkompositionen, Typografieskala, Kontaktreihenfolge und responsive Anordnung.
 - `src/art.mjs`: Art Direction für Startseite, Kontakt, Seiteneinstiege, Navigation, Footer und Bewegtbild.
 - `src/styles.css`: Gestaltung, responsive Ansichten, Schriftdefinitionen und Zustände.
 - `src/motion.css` und `src/motion.js`: Schriftauftritte, Bildenthüllungen, Scrolltiefe, Interaktionen und Seitenübergänge.
@@ -156,3 +157,14 @@ Der Startseiten-Hero schließt bei normaler Schriftgröße bündig mit der aktue
 ## Einheitliche FPMC-Wortmarke
 
 Navbar und Footer verwenden dasselbe zentrale Markup und dieselbe `.wordmark`-Gestaltung. Im Footer wird die Wortmarke nur größer skaliert: Space Grotesk, Gewicht700, Laufweite−0,065em und dieselbe helle Markenfarbe. Die Buchstaben bleiben zusammenhängend; die frühere Verteilung einzelner Zeichen über die Footerbreite entfällt. Beide Logos führen zur Startseite.
+
+
+## Gestalterische Verfeinerung – 15.09.2026
+
+Die aktuelle Gestaltung bündelt ihre Regeln in `src/craft.css`. Schwarz, gebrochenes Weiß und zurückhaltende Grautöne umgeben die Originalmedien. Kräftige Satoshi-Überschriften verwenden normale Groß-/Kleinschreibung; die FPMC-Wortmarke bleibt in Space Grotesk. Film und Sound behalten den bildschirmhohen Einstieg mit dem originalen Portraitvideo.
+
+Die Produktionsbereiche erscheinen als großzügige, wechselnde Bild-/Textkompositionen. Das BTS-Motiv behält sein Portraitformat, der offizielle Musikvideoframe erhält einen breiten Ausschnitt, das Audio-Motiv mehr horizontale Fläche. Das Projektarchiv verwendet auf großen Bildschirmen ein asymmetrisches Raster, während gefilterte Ergebnisse ein regelmäßiges Raster erhalten. Die Filteranimation bleibt innerhalb des Projektbereichs.
+
+Label und Artist bilden eine gemeinsame Release-Komposition ohne separaten blaugrauen Hintergrundkasten. Das Team erscheint in zwei großzügigen Spalten beziehungsweise einer Spalte auf schmalen Smartphones. FAQ-Titel und Fragen stehen auf Desktop nebeneinander. Kontaktfelder verwenden sichtbare Labels und klare Unterkanten. Auf Mobilgeräten folgt das Formular unmittelbar auf die Einleitung; direkte Kontaktwege stehen anschließend darunter.
+
+Es wurden keine neuen Medien, Referenzen oder Erfolgsversprechen ergänzt. Native Videosteuerung, Grain, Scrollverhalten, Social-Metadaten und noindex bleiben erhalten.

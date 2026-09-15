@@ -253,3 +253,18 @@ Technische Grundlagen: [MDN: scroll-behavior](https://developer.mozilla.org/en-U
 - Originalvideo technisch geprüft: H.264 Main Level 3.0, 8-Bit yuv420p, 30fps, 8 Sekunden, ohne Audiospur, moov vor mdat und vollständige fehlerfreie Decodierung. Keine Medien-Neukomprimierung.
 - Build, JavaScript-Syntax, Diff-Prüfung und statischer Check bestanden: 19 Seiten, 439 interne Links, 153 Asset-Verweise, 19 gültige JSON-LD-Blöcke und 19 vollständige Social-Karten.
 - Tests verwenden Browserengines und Geräteemulation. Physische Geräte, iOS-Energiesparmodus und sämtliche Regeln fremder In-App-Browser wurden nicht getestet. Erzwungene Autoplay-Sperren können eine echte Nutzerinteraktion voraussetzen; dafür bleibt der Play-Regler direkt bedienbar.
+
+
+## Cinematische Gestaltung – 15.09.2026
+
+- Alle 19 Inhaltsseiten bei 320, 768 und 1440px in Chromium, Firefox und WebKit geprüft: 171/171 Ansichten ohne Seitenüberbreite oder abgeschnittene kontrollierte Texte/Bedienelemente. Zusätzlich 54 geöffnete FAQ-/Formularzustände geprüft. Keine festgestellten JavaScript- oder Konsolenfehler.
+- Acht zentrale Seitentypen auf Desktop und Smartphone visuell kontrolliert, zusätzlich Produktionsbereiche, Film, Team und Footer der Startseite. Titelhierarchie, Originalbildausschnitte, schwarze Flächen und responsive Reihenfolge abgestimmt.
+- Zehn gezielte Hero-Geometrieprüfungen in Chromium/WebKit:320×568,393×852,768×1024,1440×900 und844×390. Header plus Hero schließen bei Standardtextgröße mit dem sichtbaren Fenster ab.
+- Mobil-/Querformatmenü, Escape/Fokusrückgabe, Navigation, Projektfilter mit 6/1/5 Ergebnissen, Anfrageentwurf/Invalidierung, FAQ, Videopause und Offscreen-Resume geprüft. Keine Nachricht versendet.
+- Ein temporärer horizontaler Überlauf während des Filterwechsels Web→Alle wurde erkannt und durch horizontales Clipping am Projektgrid korrigiert. Eine durch das Bildseitenverhältnis ausgelöste interne Überbreite von 4,56px bei 768px wurde mit min-width:0 beseitigt.
+- Der Mediencontroller und Videodateien sind unverändert. In einem mobilen WebKit-Prüfkontext wurde eine explizite NotAllowedError-Sperre beobachtet; Laden, Stummschaltung und Inline-Eigenschaften waren korrekt, Wiedergabe per erster Interaktion funktionierte. Weitere Ergebnisse stehen im Live-Nachweis.
+- Build, Syntax und statischer Check bestanden: 19 eindeutige Seitentitel/Beschreibungen, 439 interne Links, 153 Asset-Verweise, 19 gültige JSON-LD-Blöcke und vollständige Social-Metadaten. Die Prüfungen verwenden Browseremulation, keine Tests sämtlicher physischer Geräte.
+
+- Enger Nachtest des Filters: 129 Animationsframes beim Wechsel Web→Alle, durchgehend 1440px Dokumentbreite und 0px mögliche horizontale Verschiebung.
+- Vergleich alter und neuer CSS in vier isolierten WebKit-Aufrufen bei 393×852 und 1440×900: alle vier Videos starteten ohne Nutzerinteraktion. Vorübergehende NotAllowedError-Ablehnungen traten bei beiden CSS-Fassungen auf; anschließend übernahm die native Wiedergabe. Keine festgestellte CSS-bedingte Autoplay-Regression.
+- Die zuletzt angepasste Kontaktreihenfolge in neun Kombinationen aus drei Browserengines und 393/768/1440px nachgeprüft. Formularanordnung, Entwurferstellung und Übereinstimmung der Navbar-/Footer-Wortmarken bestanden.
